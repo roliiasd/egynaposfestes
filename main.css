@@ -60,9 +60,7 @@ body, html {
 }
 
 .cta-button:hover {
-    background-color: white;
-    color: #e74c3c;
-    
+    background-color: #c0392b;
 }
 
 /* Ikonok stílusa */
@@ -270,3 +268,31 @@ body, html {
         font-size: 0.9rem;
     }
 }
+
+.intro {
+    text-align: center; /* Középre igazítás */
+    margin: 50px 0; /* Felső és alsó margó */
+    color: #606060; /* Szöveg szín */
+}
+
+.intro h1 {
+    font-size: 3rem; /* Cím méret */
+    margin-bottom: 10px; /* Cím alatti margó */
+}
+
+.underline {
+    width: 50%; /* Vonal szélessége */
+    height: 2px; /* Vonal vastagsága */
+    background-color: #FF4500; /* Vonal színe */
+    margin: 0 auto 20px; /* Középre igazítás */
+}
+
+.intro p {
+    font-size: 1.2rem; /* Szöveg mérete */
+    margin: 10px 0; /* Szövegek közötti margó */
+    line-height: 1.5; /* Sor magasság beállítása */
+    max-width: 800px; /* Maximális szélesség a szöveghez */
+    margin-left: auto; /* Középre igazítás */
+    margin-right: auto; /* Középre igazítás */
+}
+
