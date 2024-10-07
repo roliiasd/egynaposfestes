@@ -14,7 +14,7 @@ body, html {
 .hero {
     position: relative;
     height: 100vh;
-    background-image: url('https://roliiasd.github.io/egynaposfestes/kepek/wall-3414653_1920.jpg'); /* Használd a saját háttérképedet */
+    background-image: url('/kepek/wall-3414653_1920.jpg'); /* Használd a saját háttérképedet */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -102,7 +102,7 @@ body, html {
     color: #e74c3c;
 }
 
-/* További tartalom */
+/* Tartalom szekció */
 .content {
     padding: 50px;
     text-align: center;
@@ -110,4 +110,120 @@ body, html {
 
 .content h2 {
     font-size: 2rem;
+}
+
+/* Szolgáltatások szekció stílus */
+.szolgaltatasok {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+.szolgaltatas {
+    background-color: #FF4500; /* Narancssárga háttér */
+    padding: 20px;
+    color: white;
+    border-radius: 8px;
+    flex: 1;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.szolgaltatas h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.szolgaltatas p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Reszponzív @media lekérdezések */
+
+/* 1024px vagy annál kisebb eszközökhöz */
+@media (max-width: 1024px) {
+    .szolgaltatasok {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .szolgaltatas {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .icon img {
+        width: 500px;
+    }
+}
+
+/* 768px vagy annál kisebb eszközökhöz (táblagépek és mobilok) */
+@media (max-width: 768px) {
+    .navbar ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .szolgaltatas {
+        padding: 15px;
+    }
+
+    .szolgaltatas h3 {
+        font-size: 1.3em;
+    }
+
+    .szolgaltatas p {
+        font-size: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .icon img {
+        width: 300px;
+    }
+}
+
+/* 480px vagy annál kisebb eszközökhöz (mobiltelefonokhoz) */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        padding: 8px 15px;
+        font-size: 1rem;
+    }
+
+    .icon img {
+        width: 250px;
+    }
+
+    .szolgaltatas h3 {
+        font-size: 1.2em;
+    }
+
+    .szolgaltatas p {
+        font-size: 0.9rem;
+    }
 }
