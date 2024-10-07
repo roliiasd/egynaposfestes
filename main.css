@@ -60,7 +60,9 @@ body, html {
 }
 
 .cta-button:hover {
-    background-color: #c0392b;
+    background-color: white;
+    color: #e74c3c;
+    
 }
 
 /* Ikonok stílusa */
