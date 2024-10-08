@@ -5,81 +5,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EgyNaposFestés</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-
-    <!-- Teljes képernyős hero szekció -->
-    <section class="hero">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <div class="icon">
-                <img src="https://roliiasd.github.io/egynaposfestes/kepek/logo.svg" alt="Ikon 1">
+    <!-- Navigacios szekcio -->
+    <nav class="navbar navbar-expand-lg" style="background-color: #333333;">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://roliiasd.github.io/egynaposfestes/kepek/logo.svg" alt="EgyNaposFestés logó" style="width:150px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: white; font-weight: bold;">Szobafestés</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: white; font-weight: bold;">Referencia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: white; font-weight: bold;">Szobafestés árak</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: white; font-weight: bold;">Kapcsolat</a>
+                    </li>
+                </ul>
             </div>
-            <h1>EgyNaposFestés.hu</h1>
-            <p>Teljeskörű szolgáltatás kül- és beltéri felületek felújításában.</p>
-            <a href="#" class="cta-button">Érdekel</a>
         </div>
-    </section>
-
-    <!-- Navigációs sáv -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="#">Főoldal</a></li>
-            <li><a href="#">Helló</a></li>
-            <li><a href="#">Szolgáltatások</a></li>
-            <li><a href="#">Kontakt</a></li>
-        </ul>
     </nav>
+    
 
-    <!-- Tartalom szekció -->
-    <section class="content">
-        <h2>Helló!</h2>
-        <div class="intro">
-            <h1>EgynaposFestés.hu</h1>
-            <div class="underline"></div>
-            <p>Teljeskörű szolgáltatást nyújtunk kül- és beltéri felületek felújításában.</p>
-            <p>Cégünk a hét bármely napján ügyfeleink rendelkezésére áll, minőséget - megbízhatóságot és versenyképes árat biztosítva. Ingyenes felmérés, szaktanácsadás, árajánlat készítés lakosság és közület részére egyaránt.</p>
-            <p>Reméljük hamarosan önt is ügyfeleink között, tudhatjuk és megvalósíthatjuk álmait.</p>
+    <!-- Szolgáltatások blokk -->
+     <section class="py-5" style="background-image: url('hatterkeped.jpg'); background-size: cover;">
+        <div class="container">
+            <h2 class="text-center text-white mb-4">Szolgáltatások</h2>
+            <div class="row">
+                <!-- Szolgáltatás 1: Diszperziós festés -->
+                <div class="col-md-3">
+                    <div class="card text-center bg-dark text-white mb-4">
+                        <img src="https://roliiasd.github.io/egynaposfestes/kepek/diszperzios-festes.jpg" class="card-img-top" alt="Diszperziós festés">
+                        <div class="card-body">
+                            <h5 class="card-title">Diszperziós festés</h5>
+                            <p class="card-text">A diszperziós festékek kedvező fedési tulajdonságaik miatt terjedtek el.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Szolgáltatás 2: Homlokzat festés -->
+                <div class="col-md-3">
+                    <div class="card text-center bg-dark text-white mb-4">
+                        <img src="https://roliiasd.github.io/egynaposfestes/kepek/homlokzat-festes.jpg" class="card-img-top" alt="Homlokzat festés">
+                        <div class="card-body">
+                            <h5 class="card-title">Homlokzat festés</h5>
+                            <p class="card-text">A homlokzat festésével az épületek esztétikai megjelenését és állapotát növeljük.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Szolgáltatás 3: Glettelés -->
+                <div class="col-md-3">
+                    <div class="card text-center bg-dark text-white mb-4">
+                        <img src="https://roliiasd.github.io/egynaposfestes/kepek/gletteles.jpg" class="card-img-top" alt="Glettelés">
+                        <div class="card-body">
+                            <h5 class="card-title">Glettelés</h5>
+                            <p class="card-text">A falak hibáinak kijavítására és simítására tökéletes megoldást nyújt a glettelés.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Szolgáltatás 4: Tapétázás -->
+                <div class="col-md-3">
+                    <div class="card text-center bg-dark text-white mb-4">
+                        <img src="https://roliiasd.github.io/egynaposfestes/kepek/tapetazas.jpg" class="card-img-top" alt="Tapétázás">
+                        <div class="card-body">
+                            <h5 class="card-title">Tapétázás</h5>
+                            <p class="card-text">A tapétázás kiváló módja annak, hogy gyorsan új külsőt adjon otthonának.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-
-        <!-- Szolgáltatások blokk -->
-        <div class="szolgaltatasok">
-            <div class="szolgaltatas">
-                <h3>Diszperziós festés</h3>
-                <p>
-                    A "diszperzió" szó szétosztódást, terjedést jelent. A hagyományos diszperziós festékek nagy fedési
-                    tulajdonsággal és ellenálló képességgel bírnak.
-                    Előnyös tulajdonságai: az időjárásállóság, színtartósság, moshatóság és súrolhatóság.
-                </p>
-            </div>
-            <div class="szolgaltatas">
-                <h3>Homlokzat festés</h3>
-                <p>
-                    Élénk, erős színű homlokzatok az esztétikai élmény mellett az épületek külső védelmét is
-                    biztosítják. A festett homlokzatok tartósságát a bevonóanyag minőségével növeljük.
-                </p>
-            </div>
-            <div class="szolgaltatas">
-                <h3>Glettelés</h3>
-                <p>
-                    A falak kisebb-nagyobb hibáinak kijavítására szolgáló eljárás. A glettelés vékony, esztétikus
-                    réteget képez, amely megszünteti a fal egyenetlenségeit.
-                </p>
-            </div>
-            <div class="szolgaltatas">
-                <h3>Tapétázás</h3>
-                <p>
-                    A tapéta gyors és látványos megoldás a szebbé tételre. Esztétikus és megoszthatja a tereket.
-                </p>
-            </div>
-        </div>
-
-
     </section>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
