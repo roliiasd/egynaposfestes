@@ -1,298 +1,63 @@
-/* Alapbeállítások */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+    background-color: #f8f9fa;
 }
 
-body, html {
-    height: 100%;
-    font-family: Arial, sans-serif;
-}
-
-/* Teljes képernyős háttérkép */
-.hero {
-    position: relative;
-    height: 100vh;
-    background-image: url('https://roliiasd.github.io/egynaposfestes/kepek/wall-3414653_1920.jpg'); /* Használd a saját háttérképedet */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Átlátszó sötét réteg */
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    color: white;
-    text-align: center;
-}
-
-.hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.hero-content p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.cta-button {
-    background-color: #e74c3c;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 5px;
-}
-
-.cta-button:hover {
-    background-color: #c0392b;
-}
-
-/* Ikonok stílusa */
-.icon {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 20px;
-}
-
-.icon img {
-    width: 700px;
-    height: auto;
-}
-
-/* Navigációs sáv */
-.navbar {
-    background-color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.navbar ul {
-    list-style: none;
-}
-
-.navbar ul li {
-    display: inline;
-    margin: 0 20px;
-}
-
-.navbar ul li a {
-    text-decoration: none;
+h2 {
     color: #333;
-    font-size: 1.2rem;
 }
 
-.navbar ul li a:hover {
-    color: #e74c3c;
-}
-
-/* Tartalom szekció */
-.content {
-    padding: 50px;
-    text-align: center;
-}
-
-.content h2 {
-    font-size: 2rem;
-}
-
-/* Szolgáltatások szekció stílus */
-.szolgaltatasok {
-    display: flex;
-    flex-wrap: wrap; /* Hogy kisebb képernyőkön is jól nézzen ki */
-    justify-content: space-between;
-    gap: 20px;
-    padding: 20px;
-}
-
-.szolgaltatasok {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 20px;
-    background-image: url('https://roliiasd.github.io/egynaposfestes/kepek/pexels-polina-tankilevitch-5583123.jpg'); /* Háttérkép hozzáadása */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 100vh; /* A szekció teljes magassága a képernyő 100%-a lesz */
-    position: relative; /* A szövegek a háttér előtt fognak megjelenni */
-}
-
-.szolgaltatas {
-    background-color: rgba(255, 69, 0, 0.85); /* Átlátszó narancssárga háttér */
-    padding: 20px;
+.card {
+    background-color: #ff6600;
+    border: none;
     color: white;
-    border-radius: 8px;
-    flex: 1;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    min-width: 300px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.szolgaltatas h3 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
+.card-title {
+    font-size: 1.2rem;
+    color: #ffffff; /* Narancssárga cím */
+    font-weight: bold;
 }
 
-.szolgaltatas p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin-bottom: 0;
+.card-text {
+    color: #ffffff; /* Világos szürke szöveg */
 }
 
-/* A szöveg illeszkedéséhez */
-.szolgaltatasok:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Sötét átlátszó réteg a szöveg olvashatóságához */
-    z-index: -1; /* A háttér mögött jelenik meg */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
 }
 
-.hero-content {
-    z-index: 1;
+.card-body {
+    background-color: #3b3939; /* Narancssárga háttér */
+    color: white;
 }
 
-/* Reszponzív viselkedés kisebb képernyőkön */
+.text-white {
+    color: #fff;
+}
+
+/* Szekció háttér, ha szeretnél saját képet */
+section {
+    background-color: #323335;
+    font-weight: bold;
+    padding: 3rem 0;
+}
+
+.navbar-nav .nav-link {
+    color: white; /* Alapértelmezett szín */
+    font-weight: bold; /* Vastagabb szöveg */
+    transition: color 0.3s ease; /* Animáció a színváltoztatáshoz */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff6600; /* Narancssárga hover szín */
+}
+
+
+/* Reszponzív kártya stílus */
 @media (max-width: 768px) {
-    .szolgaltatasok {
-        background-position: top;
+    .card-body {
+        padding: 1rem;
     }
 }
-
-
-
-/* Reszponzív @media lekérdezések */
-
-/* 1024px vagy annál kisebb eszközökhöz */
-@media (max-width: 1024px) {
-    .szolgaltatasok {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .szolgaltatas {
-        margin-bottom: 20px;
-        width: 100%;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-content p {
-        font-size: 1.2rem;
-    }
-
-    .icon img {
-        width: 500px;
-    }
-}
-
-/* 768px vagy annál kisebb eszközökhöz (táblagépek és mobilok) */
-@media (max-width: 768px) {
-    .navbar ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .szolgaltatas {
-        padding: 15px;
-    }
-
-    .szolgaltatas h3 {
-        font-size: 1.3em;
-    }
-
-    .szolgaltatas p {
-        font-size: 1rem;
-    }
-
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-    }
-
-    .icon img {
-        width: 300px;
-    }
-}
-
-/* 480px vagy annál kisebb eszközökhöz (mobiltelefonokhoz) */
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 1.5rem;
-    }
-
-    .hero-content p {
-        font-size: 0.9rem;
-    }
-
-    .cta-button {
-        padding: 8px 15px;
-        font-size: 1rem;
-    }
-
-    .icon img {
-        width: 250px;
-    }
-
-    .szolgaltatas h3 {
-        font-size: 1.2em;
-    }
-
-    .szolgaltatas p {
-        font-size: 0.9rem;
-    }
-}
-
-.intro {
-    text-align: center; /* Középre igazítás */
-    margin: 50px 0; /* Felső és alsó margó */
-    color: #606060; /* Szöveg szín */
-}
-
-.intro h1 {
-    font-size: 3rem; /* Cím méret */
-    margin-bottom: 10px; /* Cím alatti margó */
-}
-
-.underline {
-    width: 50%; /* Vonal szélessége */
-    height: 2px; /* Vonal vastagsága */
-    background-color: #FF4500; /* Vonal színe */
-    margin: 0 auto 20px; /* Középre igazítás */
-}
-
-.intro p {
-    font-size: 1.2rem; /* Szöveg mérete */
-    margin: 10px 0; /* Szövegek közötti margó */
-    line-height: 1.5; /* Sor magasság beállítása */
-    max-width: 800px; /* Maximális szélesség a szöveghez */
-    margin-left: auto; /* Középre igazítás */
-    margin-right: auto; /* Középre igazítás */
-}
-
