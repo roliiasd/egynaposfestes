@@ -1,4 +1,4 @@
-var animation = bodymovin.loadAnimation({
+var animation = bodymovin.loadAnimation(){
     container: document.getElementById('lottie'),
     renderer: 'svg',
     loop: false, // Az animáció nem fog folyamatosan játszódni
