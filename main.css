@@ -85,7 +85,9 @@ h4,h3{
     color: #ff00d4; /* Hover szín */
 }
 
-
+#lottie{
+    color: wheat;
+}
 
 /* Reszponzív kártya stílus */
 @media (max-width: 768px) {
