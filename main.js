@@ -1,4 +1,4 @@
-var animation = bodymovin.loadAnimation({
+/*var animation = bodymovin.loadAnimation({
     container: document.getElementById('lottie'),
     renderer: 'svg',
     loop: false, // Az animáció nem fog folyamatosan játszódni
@@ -19,3 +19,4 @@ document.querySelector('.navbar-toggler').addEventListener('click', function() {
         animation.play(); // Lejátszási animáció a megnyitáskor
     }
 });
+*/
