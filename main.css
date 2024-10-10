@@ -86,7 +86,7 @@ h4,h3{
 }
 
 #lottie{
-    color: wheat;
+    --lottie-player-toolbar-icon-color: wheat;
 }
 
 /* Reszponzív kártya stílus */
