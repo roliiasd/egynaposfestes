@@ -49,6 +49,12 @@ section {
     background-color: #ffffff; /* világos háttér */
 }
 
+.navbar-toggler-icon {
+    width: 30px;
+    height: 30px;
+    background-color: black /* Fehér háttér a hamburger ikonhoz */
+}
+
 a[nav-link]:hover{
     color: #521d11;
 }
@@ -85,9 +91,57 @@ h4,h3{
     color: #ff00d4; /* Hover szín */
 }
 
-#lottie{
-    --lottie-player-toolbar-icon-color: wheat;
+.card {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #532727;
+}
+
+td {
+    background-color: #fff;
+}
+
+.table-wrapper {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #532727;
+}
+
+.navbar {
+    background-color: #532727;
+}
+
+.navbar-brand img {
+    width: 150px;
+}
+
+.nav-link {
+    color: wheat !important;
+    font-weight: bold;
+}
+
 
 /* Reszponzív kártya stílus */
 @media (max-width: 768px) {
