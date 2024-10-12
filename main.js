@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const navbarCollapse = document.getElementById('navbarNav');
 
         if (navbarCollapse.classList.contains('show')) {
-            icon.classList.remove('fa-caret-left');
+            icon.classList.remove('fa-caret-up');
             icon.classList.add('fa-bars');
         } else {
             icon.classList.remove('fa-bars');
-            icon.classList.add('fa-caret-left');
+            icon.classList.add('fa-caret-up');
         }
     });
 });
