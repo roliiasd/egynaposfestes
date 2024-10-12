@@ -141,6 +141,13 @@ h2 {
     color: wheat !important;
     font-weight: bold;
 }
+
+/* 
+ */
+ /*  
+ */
+/* RESZPONZIV RESZ */
+
 .card-body {
     max-width: 100%; /* Biztosítja, hogy ne lépje túl a kártya szélességét */
     overflow: hidden; /* Ha túl hosszú szöveg van, ne lógjon ki */
@@ -153,6 +160,50 @@ h2 {
 }
 
 
+/* Alap táblázat stílusok */
+.table {
+    width: 100%;
+    table-layout: auto;
+}
+
+.table td, .table th {
+    white-space: normal;  /* Tördeljük a szöveget, ha hosszú */
+    word-wrap: break-word; /* Ha szükséges, törjük a szót */
+    padding: 12px; /* Kényelmes padding a cellák körül */
+    text-align: left; /* Balra igazított szöveg */
+}
+
+/* Mobil nézetre optimalizált stílus */
+@media (max-width: 768px) {
+    .table thead {
+        display: none; /* Elrejti az oszlopfejléceket mobil nézetben */
+    }
+
+    .table, .table tbody, .table tr, .table td {
+        display: block; /* Blokk elemként jeleníti meg a táblázatot */
+        width: 100%; /* Képernyő szélességhez igazítja */
+    }
+
+    .table tr {
+        margin-bottom: 15px; /* Távolság a sorok között */
+    }
+
+    .table td {
+        position: relative; /* A cellákat blokkosítja */
+        padding-left: 50%; /* Helyet ad a címkéknek */
+        text-align: right; /* Jobbra igazítja a szöveget */
+    }
+
+    .table td:before {
+        /* Az oszlopfejléc szimulálása */
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        font-weight: bold;
+        color: wheat;
+    }
+}
 
 /* Reszponzív kártya stílus */
 @media (max-width: 768px) {
