@@ -1,0 +1,87 @@
+       body{
+        background-color: #323232;
+       }
+       
+       
+       /* Kalkulátor rész */
+        .calculator-section {
+            padding: 40px;
+            background-color: #ffffff; /* Fehér háttér */
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px; /* Max szélesség */
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        h2 {
+            color: #1e4063;
+            font-weight: bold;
+        }
+
+        .btn-custom {
+            color: #1e4063;
+            font-weight: bold;
+            border-radius: 10pt;
+        }
+
+        .btn-custom:hover {
+            background-color: #e65c00;
+            color: white;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #3b3939;
+        }
+
+        /* Leírás rész */
+        .description-section {
+            padding: 40px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        .description-section h3 {
+            color: #521d11;
+            font-weight: bold;
+        }
+
+        .description-section p {
+            color: #3b3939;
+        }
+        
+        .description-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .description-section ul li {
+            color: #3b3939;
+            margin-bottom: 10px;
+        }
+
+        /* Flexbox elrendezés */
+        .flex-container {
+            flex-direction: row;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Középre igazítja az elemeket */
+            align-items: center; /* Felülre igazítja az elemeket */
+        }
+
+        .flex-item {
+            flex: 1 1 500px; /* Alapértelmezett szélesség: 500px, de kisebb képernyőn szűkít */
+            margin: 20px; /* Térköz a két szekció között */
+        }
+
+        @media (max-width: 768px) {
+            .flex-item {
+                flex: 1 1 100%; /* Mobilon a teljes szélesség */
+            }
+        }
