@@ -141,6 +141,17 @@ h2 {
     color: wheat !important;
     font-weight: bold;
 }
+.card-body {
+    max-width: 100%; /* Biztosítja, hogy ne lépje túl a kártya szélességét */
+    overflow: hidden; /* Ha túl hosszú szöveg van, ne lógjon ki */
+    padding: 20px; /* Kényelmes távolságot biztosít a tartalom körül */
+}
+
+.card-title, .card-text {
+    word-wrap: break-word; /* Ha túl hosszú a szöveg, tördelje azt */
+    text-overflow: ellipsis; /* A túl hosszú szöveget elcsípheti, ha kell */
+}
+
 
 
 /* Reszponzív kártya stílus */
