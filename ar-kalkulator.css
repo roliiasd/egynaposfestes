@@ -19,7 +19,8 @@
             font-weight: bold;
         }
 
-        .btn-custom {
+     .btn-custom {
+            border: 2pt solid #323232;
             color: #1e4063;
             font-weight: bold;
             border-radius: 10pt;
