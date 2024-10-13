@@ -1,31 +1,60 @@
        body{
         background-color: #323232;
        }
-       
-       #vissza {
-        color: wheat;
-        font-weight: bold;
-        position: fixed; /* A gomb fix pozíciója a képernyőn */
-        top: 20px; /* A képernyő teteje */
-        left: 20px; /* A képernyő bal oldala */
-        background-color: #585858; /* Fehér háttér */
-        padding: 10px 15px; /* Párnázás */
-        border-radius: 5px; /* Lekerekített sarkok */
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Árnyék */
-        font-size: 18px;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        z-index: 1000; /* Tetejére helyezi */
-    }
-    
-    #vissza:hover {
-        background-color: #323232; /* Hover hatás */
-    }
+        /* Alap beállítások a vissza gombhoz */
+        #vissza {
+            color: wheat;
+            font-weight: bold;
+            position: fixed; /* A gomb fix pozíciója a képernyőn */
+            top: 20px; /* A képernyő teteje */
+            left: 20px; /* A képernyő bal oldala */
+            background-color: #5c5c5c; /* Fehér háttér */
+            padding: 10px 15px; /* Párnázás */
+            border-radius: 5px; /* Lekerekített sarkok */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Árnyék */
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000; /* Tetejére helyezi */
+        }
+        
+        /* Hover hatás */
+        #vissza:hover {
+            background-color: #323232; 
+        }
 
-    #vissza i {
-        margin-right: 8px; /* Nyíl és szöveg közötti távolság */
-    }
+        /* Ikon és szöveg közötti távolság */
+        #vissza i {
+            margin-right: 8px;
+        }
+
+        /* Mobilnézet (telefon) optimalizálása */
+        @media (max-width: 576px) {
+            #vissza {
+                top: 10px;
+                left: 10px;
+                font-size: 16px; /* Kisebb betűméret telefonon */
+            }
+        }
+
+        /* Tablet nézet optimalizálása */
+        @media (min-width: 576px) and (max-width: 768px) {
+            #vissza {
+                top: 15px;
+                left: 15px;
+                font-size: 18px; /* Optimalizálva a közepes képernyőkre */
+            }
+        }
+
+        /* Deszkop nézet optimalizálása */
+        @media (min-width: 768px) {
+            #vissza {
+                top: 20px;
+                left: 20px;
+                font-size: 18px; /* Optimalizálva a nagyobb képernyőkre */
+            }
+        }
        
        /* Kalkulátor rész */
         .calculator-section {
@@ -91,18 +120,56 @@
             margin-bottom: 10px;
         }
 
-        /* Flexbox elrendezés */
         .flex-container {
-            flex-direction: row;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; /* Középre igazítja az elemeket */
-            align-items: center; /* Felülre igazítja az elemeket */
+            gap: 20px;
+            justify-content: space-around;
+            margin-top: 20px;
         }
 
         .flex-item {
-            flex: 1 1 500px; /* Alapértelmezett szélesség: 500px, de kisebb képernyőn szűkít */
-            margin: 20px; /* Térköz a két szekció között */
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 45%;
+            min-width: 300px;
+        }
+
+        .calculator-section {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+        .calculator-section input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .result {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        /* Mobilnézet optimalizálása - a szekciók egymás alá kerülnek */
+        
+        @media (max-width: 768px) {
+            .category-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            .category-description, .category-calculator {
+                width: 100%;
+                margin-bottom: 20px;
+            }
         }
 
         @media (max-width: 768px) {
