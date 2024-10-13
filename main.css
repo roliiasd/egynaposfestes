@@ -3,134 +3,22 @@ body {
 }
 
 h2 {
-    color: #333;
-}
-
-.card {
-    background-color: #521d11;
-    border: none;
-    color: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.card-title {
-    font-size: 1.2rem;
-    color: #ffffff; /* Narancssárga cím */
-    font-weight: bold;
-}
-
-.card-text {
-    color: #ffffff; /* Világos szürke szöveg */
-}
-
-.card-img-top {
-    height: 200px;
-    object-fit: cover;
-}
-
-.card-body {
-    background-color: #3b3939; /* Narancssárga háttér */
-    color: white;
+    color: #532727;
 }
 
 .text-white {
     color: #fff;
 }
 
-/* Szekció háttér, ha szeretnél saját képet */
-section {
-    background-color: #323335;
-    font-weight: bold;
-    padding: 3rem 0;
-}
-
 /* Navbar stílus */
 .navbar {
-    background-color: #ffffff; /* világos háttér */
+    background-color: #532727;
 }
 
 .navbar-toggler-icon {
     width: 30px;
     height: 30px;
-    background-color: black /* Fehér háttér a hamburger ikonhoz */
-}
-
-a[nav-link]:hover{
-    color: #521d11;
-}
-
-.nav-link {
-    color: #333333; /* alap szín */
-    font-weight: bold; /* vastag szöveg */
-}
-.nav-link:hover {
-    color: #ff6600; /* narancssárga hover szín */
-}
-/* Footer stílus */
-footer {
-    background-color: #333333; /* sötét háttér */
-    color: white; /* szöveg színe */
-    padding: 20px 0; /* padding a lábléchez */
-}
-footer a {
-    color: #929292; /* világos szürke szín */
-    font-weight: bold; /* félkövér */
-    text-decoration: none; /* aláhúzás eltávolítása */
-}
-footer a:hover {
-    color: #d3d3d3; /* narancssárga hover szín */
-}
-h4,h3{
-    font-weight: bold;
-}
-
-#specialis-szoveg{
-    color: #9c9a22; /* Alapértelmezett szín */
-}
-#specialis-szoveg:hover {
-    color: #ff00d4; /* Hover szín */
-}
-
-.card {
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-
-
-table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-th {
-    background-color: #f2f2f2;
-    color: #532727;
-}
-
-td {
-    background-color: #fff;
-}
-
-.table-wrapper {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    color: #532727;
-}
-
-.navbar {
-    background-color: #532727;
+    background-color: black;
 }
 
 .navbar-brand img {
@@ -142,72 +30,167 @@ h2 {
     font-weight: bold;
 }
 
-/* 
- */
- /*  
- */
-/* RESZPONZIV RESZ */
+a[nav-link]:hover {
+    color: #521d11;
+}
+
+.nav-link:hover {
+    color: #ff6600;
+}
+
+/* Footer stílus */
+footer {
+    background-color: #333333;
+    color: white;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #929292;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #d3d3d3;
+}
+
+h4, h3 {
+    font-weight: bold;
+}
+
+#specialis-szoveg {
+    color: #9c9a22;
+}
+
+#specialis-szoveg:hover {
+    color: #ff00d4;
+}
+
+/* Szekció háttér */
+section {
+    background-color: #323335;
+    font-weight: bold;
+    padding: 3rem 0;
+}
+
+/* Kártya stílusok */
+.card {
+    background-color: #521d11;
+    border: none;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #ffffff;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
 
 .card-body {
-    max-width: 100%; /* Biztosítja, hogy ne lépje túl a kártya szélességét */
-    overflow: hidden; /* Ha túl hosszú szöveg van, ne lógjon ki */
-    padding: 20px; /* Kényelmes távolságot biztosít a tartalom körül */
+    background-color: #3b3939;
+    color: white;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 20px;
 }
 
-.card-title, .card-text {
-    word-wrap: break-word; /* Ha túl hosszú a szöveg, tördelje azt */
-    text-overflow: ellipsis; /* A túl hosszú szöveget elcsípheti, ha kell */
+/* Reszponzív kártya stílusok */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1rem;
+        margin: 0;
+    }
 }
 
+/* Táblázat stílusok */
+.table-wrapper {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-/* Alap táblázat stílusok */
 .table {
     width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
     table-layout: auto;
 }
 
 .table td, .table th {
-    white-space: normal;  /* Tördeljük a szöveget, ha hosszú */
-    word-wrap: break-word; /* Ha szükséges, törjük a szót */
-    padding: 12px; /* Kényelmes padding a cellák körül */
-    text-align: left; /* Balra igazított szöveg */
+    white-space: normal;
+    word-wrap: break-word;
+    padding: 12px;
+    text-align: left;
 }
 
-/* Mobil nézetre optimalizált stílus */
+th {
+    background-color: #727272;
+    color: #ffffff;
+    padding: 12px;
+    font-weight: bold;
+}
+
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(even) td {
+    background-color: #ffffff;
+}
+
+tr:hover td {
+    background-color: #f1f1f1;
+}
+
+.table-bordered {
+    border: 1px solid #ccc;
+}
+
+/* Reszponzív táblázat stílusok - fejlécek megőrzése mobil nézetben */
 @media (max-width: 768px) {
     .table thead {
-        display: none; /* Elrejti az oszlopfejléceket mobil nézetben */
+        display: table-header-group;
     }
 
-    .table, .table tbody, .table tr, .table td {
-        display: block; /* Blokk elemként jeleníti meg a táblázatot */
-        width: 100%; /* Képernyő szélességhez igazítja */
+    .table, .table tbody, .table tr, .table td, .table th {
+        display: table-row-group;
+        width: 100%;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
     }
 
     .table tr {
-        margin-bottom: 15px; /* Távolság a sorok között */
+        margin-bottom: 15px;
     }
 
     .table td {
-        position: relative; /* A cellákat blokkosítja */
-        padding-left: 50%; /* Helyet ad a címkéknek */
-        text-align: right; /* Jobbra igazítja a szöveget */
+        position: relative;
+        padding-left: 12px;
+        text-align: left;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .table th {
+        text-align: left;
     }
 
     .table td:before {
-        /* Az oszlopfejléc szimulálása */
-        content: attr(data-label);
-        position: absolute;
-        left: 10px;
-        top: 10px;
-        font-weight: bold;
-        color: #2c3e50;
-    }
-}
-
-/* Reszponzív kártya stílus */
-@media (max-width: 768px) {
-    .card-body {
-        padding: 1rem;
+        content: none;
     }
 }
