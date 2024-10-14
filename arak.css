@@ -54,7 +54,7 @@ a[nav-link]:hover {
 /* Táblázat fejléc (`th`) stílusai */
 .table-wrapper th {
     background-color: #818181; /* Világos szürke háttér a fejléceknek */
-    color: #000; /* Fekete betűszín az olvashatóság érdekében */
+    color: wheat; /* Fekete betűszín az olvashatóság érdekében */
     font-weight: bold;
     padding: 12px;
     border: 1px solid #ccc; /* Vékony szegély a fejléc körül */
