@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,44 +10,298 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="ar-kalkulator.css">
 </head>
+
 <body>
- <div class="container py-5">
-    <h2 class="text-center mb-4" style="color: wheat; font-weight: bold;">Alapmunkák Árai 2024</h2>
-    <div class="pair-container-wrapper">
-        <div class="pair-container">
-            <div class="work-item">
-                <h3>Padló takarása fóliával, szegélyek maszkolása krepp ragasztószalaggal</h3>
-                <p><strong>Munkadíj:</strong> 550 Ft/m², <strong>Anyagdíj:</strong> 300 Ft/m²</p>
-            </div>
-            <div class="calculator-item">
-                <div class="form-group">
-                    <label for="area1">Adja meg a területet (m²):</label>
-                    <input type="number" class="form-control area-input" id="area1" data-munkadij="550" data-anyagdij="300" placeholder="Adja meg a területet">
-                </div>
-                <p><strong>Összesen:</strong> <span id="totalCost1">0 Ft</span></p>
-            </div>
+        <!-- Vissza gomb -->
+
+        <div id="vissza" onclick="window.location.href='index.html';">
+            <i class="bi bi-arrow-left-circle"></i> Vissza a Főoldalra
         </div>
-        <!-- Ismételje meg a pair-container-t minden további leírás és kalkulátor páros esetén -->
-        <div class="pair-container">
-            <div class="work-item">
-                <h3>Laminált padló takarása fóliával, szegélyek maszkolása szenzitív krepp ragasztószalaggal</h3>
-                <p><strong>Munkadíj:</strong> 550 Ft/m², <strong>Anyagdíj:</strong> 400 Ft/m²</p>
-            </div>
-            <div class="calculator-item">
-                <div class="form-group">
-                    <label for="area2">Adja meg a területet (m²):</label>
-                    <input type="number" class="form-control area-input" id="area2" data-munkadij="550" data-anyagdij="400" placeholder="Adja meg a területet">
+
+        <!-- leirasok -->
+         
+    <div class="container">
+            <div class="container">
+                <div class="container py-5">
+                    <h2 class="text-center mb-4" style="color: #2c3e50; font-weight: bold;">Alapmunkák Árai 2024</h2>
+                    <div class="d-flex">
+                        <!-- Bal oldali oszlop: Munkafolyamatok -->
+                        <div class="work-list flex-fill p-3">
+                            <!-- Minden egyes munkafolyamat felsorolása -->
+                            <div class="work-item mb-3">
+                                <h3>Padló takarása fóliával, szegélyek maszkolása krepp ragasztószalaggal</h3>
+                                <p><strong>Munkadíj:</strong> 550 Ft/m², <strong>Anyagdíj:</strong> 300 Ft/m²</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Laminált padló takarása fóliával, szegélyek maszkolása szenzitív krepp ragasztószalaggal</h3>
+                                <p><strong>Munkadíj:</strong> 550 Ft/m², <strong>Anyagdíj:</strong> 400 Ft/m²</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Padló és bútorok takarása fóliával, szegélyek maszkolása krepp ragasztószalaggal</h3>
+                                <p><strong>Munkadíj:</strong> 750 Ft/m², <strong>Anyagdíj:</strong> 350 Ft/m²</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Padló takarása fóliával és hullámpapírral</h3>
+                                <p><strong>Munkadíj:</strong> 850 Ft/m², <strong>Anyagdíj:</strong> 550 Ft/m²</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Falkaparás (Régi, laza bevonat eltávolítása 3rtg-ig)</h3>
+                                <p><strong>Munkadíj:</strong> 1 900 Ft/m², <strong>Anyagdíj:</strong> N/A</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Laza műanyag alapú festék eltávolítása kaparással</h3>
+                                <p><strong>Munkadíj:</strong> 1 900 Ft/m², <strong>Anyagdíj:</strong> N/A</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Tapéta bontása (Tapétaleoldó szerrel)</h3>
+                                <p><strong>Munkadíj:</strong> 1 300 Ft/m², <strong>Anyagdíj:</strong> 100 Ft/m²</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Falfelület mélyalapozása (impregnálás)</h3>
+                                <p><strong>Munkadíj:</strong> 500 Ft/m², <strong>Anyagdíj:</strong> 200 Ft/m²</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Glettelés egy rétegben, sima felületen</h3>
+                                <p><strong>Munkadíj:</strong> 1 250 Ft/m², <strong>Anyagdíj:</strong> 300 Ft/m²</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Glettelés két rétegben régi lekapart felületen vagy új vakolaton</h3>
+                                <p><strong>Munkadíj:</strong> 2 250 Ft/m², <strong>Anyagdíj:</strong> 500 Ft/m²</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Glettelés három rétegben gipszes alapú glettanyaggal</h3>
+                                <p><strong>Munkadíj:</strong> 3 100 Ft/m², <strong>Anyagdíj:</strong> 750 Ft/m²</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Glettelt felület csiszolása</h3>
+                                <p><strong>Munkadíj:</strong> 400 Ft/m², <strong>Anyagdíj:</strong> 50 Ft/m²</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Felület erősítő üvegfátyol ragasztása</h3>
+                                <p><strong>Munkadíj:</strong> 1 850 Ft/m², <strong>Anyagdíj:</strong> 650 Ft/m²</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Alumínium élvédő felhelyezése (Ft/m)</h3>
+                                <p><strong>Munkadíj:</strong> 700 Ft/m, <strong>Anyagdíj:</strong> 350 Ft/m</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Alumínium élvédő felhelyezése görbe, nem függő élekre</h3>
+                                <p><strong>Munkadíj:</strong> 2 000 Ft/m, <strong>Anyagdíj:</strong> 700 Ft/m</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Műanyag flexibilis élvédő felhelyezése glettbe ágyazva (Ft/m)</h3>
+                                <p><strong>Munkadíj:</strong> 900 Ft/m, <strong>Anyagdíj:</strong> 650 Ft/m</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Strait-Flex papír-üvegszál élvédő felrakása (Ft/m)</h3>
+                                <p><strong>Munkadíj:</strong> 700 Ft/m, <strong>Anyagdíj:</strong> 800 Ft/m</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Vezetékhorony javítása 5 cm szélességig és 5 cm mélységig</h3>
+                                <p><strong>Munkadíj:</strong> 1 500 Ft/m, <strong>Anyagdíj:</strong> 600 Ft/m</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Vezetékhorony javítása 5-10 cm szélességig és 5 cm mélységig</h3>
+                                <p><strong>Munkadíj:</strong> 2 500 Ft/m, <strong>Anyagdíj:</strong> 1 200 Ft/m</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Akriltömítés max. 2 mm-ig (Ft/m)</h3>
+                                <p><strong>Munkadíj:</strong> 220 Ft/m, <strong>Anyagdíj:</strong> 110 Ft/m</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Penészes felület kezelése HÉRA penészgátló lemosóoldattal</h3>
+                                <p><strong>Munkadíj:</strong> 500 Ft/m², <strong>Anyagdíj:</strong> 320 Ft/m²</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Diletáció, repedések javítása 3 mm szélességig</h3>
+                                <p><strong>Munkadíj:</strong> 300 Ft/m, <strong>Anyagdíj:</strong> 100 Ft/m</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Villanyszerelési kötődobozok elfedése 100x100 mm-es gipszkarton javító lappal</h3>
+                                <p><strong>Munkadíj:</strong> 500 Ft/m², <strong>Anyagdíj:</strong> 800 Ft/m²</p>
+                            </div>
+                            <div class="work-item mb-3">
+                                <h3>Szerelvénydoboz vakolófedél elhelyezése (gépi glettelés esetén)</h3>
+                                <p><strong>Munkadíj:</strong> 150 Ft/m, <strong>Anyagdíj:</strong> 100 Ft/m</p>
+                            </div>
+                        </div>
+                
+                        <!-- Jobb oldali oszlop: Kalkulátorok -->
+                        <div class="calculator-list flex-fill p-3">
+                            <!-- Minden munkafolyamat kalkulátora -->
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area1">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area1" data-munkadij="550" data-anyagdij="300" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost1">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area2">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area2" data-munkadij="550" data-anyagdij="400" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost2">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area3">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area3" data-munkadij="750" data-anyagdij="350" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost3">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area4">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area4" data-munkadij="850" data-anyagdij="550" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost4">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area5">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area5" data-munkadij="1900" data-anyagdij="0" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost5">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area6">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area6" data-munkadij="1900" data-anyagdij="0" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost6">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area7">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area7" data-munkadij="1300" data-anyagdij="100" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost7">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area8">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area8" data-munkadij="500" data-anyagdij="200" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost8">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area9">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area9" data-munkadij="1250" data-anyagdij="300" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost9">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area10">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area10" data-munkadij="2250" data-anyagdij="500" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost10">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area11">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area11" data-munkadij="3100" data-anyagdij="750" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost11">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area12">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area12" data-munkadij="400" data-anyagdij="50" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost12">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area13">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area13" data-munkadij="1850" data-anyagdij="650" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost13">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area14">Adja meg a területet (m):</label>
+                                    <input type="number" class="form-control area-input" id="area14" data-munkadij="700" data-anyagdij="350" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost14">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area15">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area15" data-munkadij="2000" data-anyagdij="700" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost15">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area16">Adja meg a területet (m):</label>
+                                    <input type="number" class="form-control area-input" id="area16" data-munkadij="900" data-anyagdij="650" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost16">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area17">Adja meg a területet (m):</label>
+                                    <input type="number" class="form-control area-input" id="area17" data-munkadij="700" data-anyagdij="800" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost17">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area18">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area18" data-munkadij="1500" data-anyagdij="600" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost18">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area19">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area19" data-munkadij="2500" data-anyagdij="1200" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost19">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area20">Adja meg a területet (m):</label>
+                                    <input type="number" class="form-control area-input" id="area20" data-munkadij="220" data-anyagdij="110" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost20">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area21">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area21" data-munkadij="500" data-anyagdij="320" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost21">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area22">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area22" data-munkadij="300" data-anyagdij="100" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost22">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area23">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area23" data-munkadij="500" data-anyagdij="800" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost23">0 Ft</span></p>
+                            </div>
+                            <div class="calculator-item mb-3">
+                                <div class="form-group">
+                                    <label for="area24">Adja meg a területet (m²):</label>
+                                    <input type="number" class="form-control area-input" id="area24" data-munkadij="150" data-anyagdij="100" placeholder="Adja meg a területet">
+                                </div>
+                                <p><strong>Összesen:</strong> <span id="totalCost24">0 Ft</span></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p><strong>Összesen:</strong> <span id="totalCost2">0 Ft</span></p>
-            </div>
-        </div>
-        <!-- Folytatható további elemekkel -->
-    </div>
-</div>
-    <!-- Vissza gomb bal felső sarokban nyíllal -->
-    <div id="vissza" onclick="window.location.href='index.html';">
-        <i class="bi bi-arrow-left-circle" style="color: wheat;"></i> Vissza a Főoldalra
-    </div>
-<script src="main.js"></script>
+
+    <script src="main.js"></script>
 </body>
+
 </html>
