@@ -158,6 +158,45 @@
             font-weight: bold;
             color: #333;
         }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pair-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Távolság a párok között */
+}
+
+.pair-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between; /* Távolság egyenletes elosztása a két elem között */
+}
+
+.work-item,
+.calculator-item {
+    flex: 1;
+    min-width: 45%;
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .pair-container {
+        flex-direction: column; /* Ha a képernyő kisebb, akkor egymás alá helyezzük a leírás és kalkulátor elemeket */
+    }
+
+    .work-item,
+    .calculator-item {
+        min-width: 100%;
+    }
+}
         
         /* Mobilnézet optimalizálása - a szekciók egymás alá kerülnek */
         
