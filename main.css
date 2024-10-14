@@ -1,12 +1,7 @@
-/* Globális beállítások */
 body {
     background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    color: #323232;
 }
 
-/* Fejlécek */
 h2 {
     color: #532727;
 }
@@ -35,6 +30,10 @@ h2 {
     font-weight: bold;
 }
 
+a[nav-link]:hover {
+    color: #521d11;
+}
+
 .nav-link:hover {
     color: #ff6600;
 }
@@ -56,7 +55,10 @@ footer a:hover {
     color: #d3d3d3;
 }
 
-/* Kiemelt szöveg */
+h4, h3 {
+    font-weight: bold;
+}
+
 #specialis-szoveg {
     color: #9c9a22;
 }
@@ -65,10 +67,9 @@ footer a:hover {
     color: #ff00d4;
 }
 
-/* Szekciók stílusa */
+/* Szekció háttér */
 section {
     background-color: #323335;
-    color: #ffffff;
     font-weight: bold;
     padding: 3rem 0;
 }
@@ -112,7 +113,6 @@ section {
     }
 }
 
-/* Táblázat alapstílusok */
 .table-responsive {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -130,124 +130,86 @@ section {
     padding: 12px;
     text-align: left;
     border: 1px solid #ddd;
-    white-space: nowrap;
+    white-space: nowrap; /* Ezzel megakadályozzuk, hogy a szöveg sorba törjön, így jobban néz ki kisebb képernyőkön */
 }
 
 .work-table th {
-    background-color: #2c3e50;
-    color: #ffffff;
+    background-color: #2c3e50; /* Ezt a színt választottad, ezért megtartjuk */
+    color: #fff;
     font-weight: bold;
 }
 
-.work-table td {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-/* Alternáló sorok színe */
-.work-table tr:nth-child(even) td {
-    background-color: #f9f9f9;
-}
-
-/* Reszponzív táblázat megjelenítés */
 @media (max-width: 768px) {
     .work-table {
         display: block;
-        overflow-x: auto;
+        overflow-x: auto; /* Görgethetővé teszi a táblázatot kisebb kijelzőkön */
+    }
+    
+    .work-table thead,
+    .work-table th {
+        display: block; /* A fejlécek is jól láthatóak lesznek */
     }
 
-    .work-table thead {
-        display: none; /* Fejlécek elrejtése mobil nézetben */
-    }
-
-    .work-table tr {
-        display: block;
-        margin-bottom: 15px;
-    }
-
-    .work-table td {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-        border: 1px solid #ddd;
-        position: relative;
-    }
-
-    .work-table td::before {
-        content: attr(data-label); /* Fejlécek címkéinek megjelenítése */
-        font-weight: bold;
-        padding-right: 10px;
-        color: #333;
-    }
-}
-
-/* Táblázat mobilbarát fejlécek */
-@media (max-width: 768px) {
-    .table-responsive table,
-    .table-responsive tbody,
-    .table-responsive tr,
-    .table-responsive td {
-        display: block;
-        width: 100%;
-    }
-
-    .table-responsive td {
-        position: relative;
-        padding-left: 50%;
+    .work-table th {
         text-align: left;
     }
 
-    .table-responsive td:before {
-        content: attr(data-label);
-        position: absolute;
-        left: 10px;
+    .work-table tbody {
+        display: block;
+    }
+
+    .work-table tr {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 15px; /* Távolság a sorok között */
+    }
+
+    .work-table td {
+        flex: 1;
+        padding: 8px;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .work-table td::before {
+        content: attr(data-label); /* Hozzáad egy címkét az értékek előtt */
         font-weight: bold;
+        padding-right: 10px;
     }
 }
 
-/* Pair-container kialakítása */
-.pair-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    padding: 15px;
-    background-color: #ffffff;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.work-item,
-.calculator-item {
-    width: 48%; /* Hogy a két oszlop egymás mellett jelenjen meg */
-}
-
-.work-item h3 {
-    color: #532727;
-}
-
-.calculator-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.calculator-item .form-group {
-    margin-bottom: 10px;
-}
-
-/* Reszponzív elrendezés - mobilnézethez */
+/* Reszponzív táblázat stílusok - fejlécek megőrzése mobil nézetben */
 @media (max-width: 768px) {
-    .pair-container {
-        flex-direction: column;
+    .table thead {
+        display: table-header-group;
     }
 
-    .work-item,
-    .calculator-item {
+    .table, .table tbody, .table tr, .table td, .table th {
+        display: table-row-group;
         width: 100%;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
     }
-}
 
-/* Speciális formázás */
-h4, h3 {
-    font-weight: bold;
-}
+    .table tr {
+        margin-bottom: 15px;
+    }
+
+    .table td {
+        position: relative;
+        padding-left: 12px;
+        text-align: left;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .table th {
+        text-align: left;
+    }
+
+    .table td:before {
+        content: none;
+    }
+} 
