@@ -113,52 +113,71 @@ section {
     }
 }
 
-/* Táblázat stílusok */
-.table-wrapper {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
 }
 
-.table {
+.work-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
-    table-layout: auto;
+    margin-bottom: 20px;
 }
 
-.table td, .table th {
-    white-space: normal;
-    word-wrap: break-word;
+.work-table th,
+.work-table td {
     padding: 12px;
     text-align: left;
+    border: 1px solid #ddd;
+    white-space: nowrap; /* Ezzel megakadályozzuk, hogy a szöveg sorba törjön, így jobban néz ki kisebb képernyőkön */
 }
 
-th {
-    background-color: #727272;
-    color: #ffffff;
-    padding: 12px;
+.work-table th {
+    background-color: #2c3e50; /* Ezt a színt választottad, ezért megtartjuk */
+    color: #fff;
     font-weight: bold;
 }
 
-td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-    background-color: #f9f9f9;
-}
+@media (max-width: 768px) {
+    .work-table {
+        display: block;
+        overflow-x: auto; /* Görgethetővé teszi a táblázatot kisebb kijelzőkön */
+    }
+    
+    .work-table thead,
+    .work-table th {
+        display: block; /* A fejlécek is jól láthatóak lesznek */
+    }
 
-tr:nth-child(even) td {
-    background-color: #ffffff;
-}
+    .work-table th {
+        text-align: left;
+    }
 
-tr:hover td {
-    background-color: #f1f1f1;
-}
+    .work-table tbody {
+        display: block;
+    }
 
-.table-bordered {
-    border: 1px solid #ccc;
+    .work-table tr {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 15px; /* Távolság a sorok között */
+    }
+
+    .work-table td {
+        flex: 1;
+        padding: 8px;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .work-table td::before {
+        content: attr(data-label); /* Hozzáad egy címkét az értékek előtt */
+        font-weight: bold;
+        padding-right: 10px;
+    }
 }
 
 /* Reszponzív táblázat stílusok - fejlécek megőrzése mobil nézetben */
