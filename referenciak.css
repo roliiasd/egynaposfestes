@@ -1,0 +1,119 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden; /* Csak vízszintes túlcsordulást tiltjuk */
+    background-color: #4a4a4a;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigációs sáv */
+.navbar {
+    width: 100%;
+    background-color: #532727;
+}
+
+.navbar-brand img {
+    width: 150px;
+}
+
+.nav-link {
+    color: wheat !important;
+    font-weight: bold;
+}
+
+.nav-link.active {
+    color: #9c9a22 !important;
+}
+
+/* Carousel stílusok */
+.carousel-container {
+    min-width: 400px;
+    max-width: 1200px; /* Növelt max-width */
+    margin: 50px auto; /* Növelt margó a navigációs sáv alatt */
+    border-radius: 20px;
+    overflow: visible ;
+}
+
+.carousel-item img {
+    height: 370px;
+    object-fit: cover; /* Kép átméretezése, hogy kitöltse a konténert */
+    border-radius: 20px;
+    filter: saturate(100%); /* Teljes színtelítettség */
+    transition: filter 0.3s ease; /* Csökkentett átmenet ideje */
+    width: 100%; /* Biztosítja, hogy a kép kitöltse a carousel-t */
+}
+
+.carousel-item img:hover {
+    filter: saturate(110%);
+    /* Remove transform: scale(1.05); to prevent image growing */
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/* Lábléc stílusok */
+footer {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #9c9a22;
+}
+
+.list-unstyled li a {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.list-unstyled li a:hover {
+    color: #9c9a22;
+}
+
+/* Kiemelt szöveg stílus */
+#specialis-szoveg {
+    color: #9c9a22;
+}
+
+/* Logó készítő link */
+.logok-link {
+    font-size: 8pt;
+    color: #fff;
+}
+
+.logok-link a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.logok-link a:hover {
+    color: #9c9a22;
+}
+
+/* Reszponzív beállítások */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 250px; /* Kisebb képméret mobilon */
+    }
+
+    .carousel-caption {
+        font-size: 14px;
+    }
+}
