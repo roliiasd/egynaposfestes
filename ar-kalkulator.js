@@ -59,7 +59,7 @@ function toggleBackToTopButton() {
     // Debug üzenet a konzolban
     console.log(`Görgetési pozíció: ${scrollPosition}`);
 
-    if (scrollPosition > 400) {
+    if (scrollPosition > 250) {
         backToTopButton.style.display = "block";
         console.log("Megjelenik a gomb"); // Naplózás: Gomb megjelenik
     } else {
