@@ -5,36 +5,127 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Általános stílusok */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    /* Menüt a jobb oldalra igazítja */
+    padding-right: 20px;
+}
+/* Általános ikon stílus */
+.dropbtn i {
+    font-size: 20px; /* Alapértelmezett ikonméret */
+    color: #ffffff; /* Alapértelmezett ikon színe */
+}
+
+/* Ha az ikon 'fa-bars' osztállyal rendelkezik, nagyobb és láthatóbb lesz */
+.dropbtn i.fa-bars {
+    font-size: 24px; /* Nagyobb méret hamburger ikonhoz */
+    color: #fff; /* Fehér szín */
+}
+
+/* A dropbtn stílusa */
+.dropbtn {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* A legördülő menü tartalma alapból rejtett */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #333;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+
+#tetejereGomb {
+    display: none;
+    /* Alapértelmezés szerint rejtett */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    margin-right: 365px;
+    cursor: pointer;
+    font-size: 28pt;
+    text-align: center;
+    z-index: 1000;
+    /* Biztosítja, hogy a gomb felül legyen minden más elemhez képest */
+}
+
+#tetejereGomb:hover {
+    background-color: transparent;
+    color: #b8860b;
+    transform: scale(1.15);
+}
+
 /* "Vissza" gomb stílusok - Módosított verzió */
 #vissza {
-    color: white; /* Világos szín a kontraszthoz */
+    color: white;
+    /* Világos szín a kontraszthoz */
     font-weight: bold;
     position: fixed;
     top: 20px;
     left: 20px;
-    background-color: #5c5c5c; /* Világosszürke háttér */
+    background-color: #5c5c5c;
+    /* Világosszürke háttér */
     padding: 10px 15px;
     border-radius: 5px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     font-size: 18px;
-    display: flex; /* Flexbox a jobb igazításhoz */
-    align-items: center; /* Középre igazítás függőlegesen */
-    gap: 10px; /* Távolság az ikon és a szöveg között */
+    display: flex;
+    /* Flexbox a jobb igazításhoz */
+    align-items: center;
+    /* Középre igazítás függőlegesen */
+    gap: 10px;
+    /* Távolság az ikon és a szöveg között */
     cursor: pointer;
     z-index: 1000;
-    text-decoration: none; /* Eltávolítjuk az esetleges aláhúzást */
+    text-decoration: none;
+    /* Eltávolítjuk az esetleges aláhúzást */
     min-width: 25px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
 #vissza:hover {
-    background-color: #b8860b; /* Már meglévő szín */
-    transform: scale(1.05); /* Kicsit nagyít a hover során */
+    background-color: #b8860b;
+    /* Már meglévő szín */
+    transform: scale(1.05);
+    /* Kicsit nagyít a hover során */
 }
 
 #vissza i {
-    margin: 0; /* Eltávolítjuk a felesleges margót */
+    margin: 0;
+    /* Eltávolítjuk a felesleges margót */
 }
-a#vissza{
+
+a#vissza {
     margin-right: 15px;
 }
 
@@ -45,34 +136,47 @@ a#vissza{
     margin: auto;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start; /* Felülre igazítás, hogy egyvonalban legyenek */
-    border: 1px solid #d4af37; /* Lágy szürke szegély */
+    align-items: flex-start;
+    /* Felülre igazítás, hogy egyvonalban legyenek */
+    border: 1px solid #d4af37;
+    /* Lágy szürke szegély */
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 20px;
     min-width: 1000px;
     max-width: 1000px;
-    background-color: #4a4a4a   ; /* Fehér háttérszín a konténernek */
-    gap: 15px; /* Távolság a leírás és kalkulátor között */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Árnyék a konténerhez */
+    background-color: #4a4a4a;
+    /* Fehér háttérszín a konténernek */
+    gap: 15px;
+    /* Távolság a leírás és kalkulátor között */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    /* Árnyék a konténerhez */
     /* Eltávolítjuk a pair-container alján lévő fekete szegélyt */
 }
 
 /* Munkafolyamat és kalkulátor szélesség és szegély */
-.work-item, .calculator-item {
-    flex: 1; /* Egyenlő arányban oszlik meg a hely */
-    max-width: 100%; /* Biztosítjuk, hogy a gyermekek ne lépjék túl a konténer szélességét */
-    background-color: #4a4a4a; /* Világos szürke háttér a munkafolyamatoknak */
+.work-item,
+.calculator-item {
+    flex: 1;
+    /* Egyenlő arányban oszlik meg a hely */
+    max-width: 100%;
+    /* Biztosítjuk, hogy a gyermekek ne lépjék túl a konténer szélességét */
+    background-color: #4a4a4a;
+    /* Világos szürke háttér a munkafolyamatoknak */
     padding: 20px;
     border-radius: 8px;
-    color: #ecf0f1; /* Sötétebb szövegszín a jobb olvashatóság érdekében */
+    color: #ecf0f1;
+    /* Sötétebb szövegszín a jobb olvashatóság érdekében */
 }
 
 /* Egyenlő szélesség biztosítása és szöveg tördelése */
-.pair-container .work-item, .pair-container .calculator-item {
+.pair-container .work-item,
+.pair-container .calculator-item {
     flex: 1;
-    min-width: 250px; /* Minimális szélesség biztosítása */
-    word-wrap: break-word; /* Szöveg tördelése */
+    min-width: 250px;
+    /* Minimális szélesség biztosítása */
+    word-wrap: break-word;
+    /* Szöveg tördelése */
     min-width: auto;
 }
 
@@ -82,7 +186,8 @@ a#vissza{
     font-weight: bold;
 }
 
-.work-item p, .calculator-item p {
+.work-item p,
+.calculator-item p {
     color: #ecf0f1;
 }
 
@@ -111,16 +216,19 @@ a#vissza{
 }
 
 .form-control::placeholder {
-    color: #bdc3c7; /* Placeholder szöveg színe */
+    color: #bdc3c7;
+    /* Placeholder szöveg színe */
 }
 
 /* Reszponzív beállítások kisebb képernyőre */
 @media (max-width: 768px) {
     .pair-container {
-        flex-direction: column; /* Ha a képernyő kisebb, akkor a leírás és a kalkulátor egymás alá kerül */
+        flex-direction: column;
+        /* Ha a képernyő kisebb, akkor a leírás és a kalkulátor egymás alá kerül */
     }
 
-    .work-item, .calculator-item {
+    .work-item,
+    .calculator-item {
         max-width: 100%;
     }
 
