@@ -10,6 +10,10 @@ section {
     background-color: #323232;
 }
 
+gomb:hover{
+    transform: scale(1.15);
+}
+
 .text-white {
     color: #fff;
 }
