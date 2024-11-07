@@ -59,7 +59,7 @@ a[nav-link]:hover {
 .table-wrapper th {
     background-color: #818181;
     /* Világos szürke háttér a fejléceknek */
-    color: #000;
+    color: #5c5c5c;
     /* Fekete betűszín az olvashatóság érdekében */
     font-weight: bold;
     padding: 12px;
