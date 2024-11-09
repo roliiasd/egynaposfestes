@@ -33,16 +33,43 @@ document.addEventListener('DOMContentLoaded', function () {
 //Ar kalkulator
 //Ar kalkulator
 
+// Tároló az összes számításhoz
+let totalAmount = 0;
+
+// Elemek lekérése és események beállítása
 document.querySelectorAll('.area-input').forEach(input => {
     input.addEventListener('input', function () {
+        // Munkadíj, anyagdíj és terület lekérése
         const munkadij = parseFloat(this.getAttribute('data-munkadij')) || 0;
         const anyagdij = parseFloat(this.getAttribute('data-anyagdij')) || 0;
         const area = parseFloat(this.value) || 0;
+
+        // Kiválasztott elem teljes költségének kiszámítása
         const total = (munkadij + anyagdij) * area;
+        
+        // Kijelzés az egyes elemeknél
         const totalCostSpan = document.getElementById('totalCost' + this.id.replace('area', ''));
         totalCostSpan.textContent = total.toLocaleString() + ' Ft';
+
+        // Összesítés frissítése
+        updateTotal();
     });
 });
+
+// Összes érték frissítése
+function updateTotal() {
+    // Újraszámoljuk az összesített összeget
+    totalAmount = Array.from(document.querySelectorAll('.area-input')).reduce((sum, input) => {
+        const munkadij = parseFloat(input.getAttribute('data-munkadij')) || 0;
+        const anyagdij = parseFloat(input.getAttribute('data-anyagdij')) || 0;
+        const area = parseFloat(input.value) || 0;
+        return sum + (munkadij + anyagdij) * area;
+    }, 0);
+
+    // Összesített költség kiírása
+    const totalCostDisplay = document.getElementById('osszegzes');
+    totalCostDisplay.textContent = 'Összesen: ' + totalAmount.toLocaleString() + ' Ft';
+}
 
 /*
 // Görgetés figyelése
