@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
     const dropbtn = document.querySelector('.dropbtn');
     const icon = document.getElementById('menu-icon');
@@ -43,7 +44,7 @@ document.querySelectorAll('.area-input').forEach(input => {
     });
 });
 
-
+/*
 // Görgetés figyelése
 window.addEventListener('scroll', toggleBackToTopButton);
 
@@ -67,7 +68,7 @@ function toggleBackToTopButton() {
         console.log("Eltűnik a gomb"); // Naplózás: Gomb eltűnik
     }
 }
-
+*/
 // Visszagörgetés a tetejére
 function scrollToTop() {
     console.log("Visszagörgetés a tetejére indult"); // Naplózás: Visszagörgetés indult
