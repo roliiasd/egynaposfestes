@@ -178,7 +178,7 @@ nav {
     .work-item,
     .calculator-item {
         width: 100%;
-        padding: 5px;
+        padding: 10px;
     }
 
     .work-item h3, .work-item p {
@@ -199,6 +199,11 @@ nav {
     .dropbtn {
         font-size: 14px;
     }
+    h3, p, input[type="text"] {
+    max-width: 100%;
+    box-sizing: border-box; /* Elemek szélesség kezelése */
+    }
+    
 }
 
 /* Reszponzív beállítások 480px alatti képernyőkhöz */
@@ -249,5 +254,10 @@ nav {
         bottom: 10px;
         right: 10px;
         font-size: 24pt;
+    }
+
+    h3, p, input[type="text"] {
+    max-width: 100%;
+    box-sizing: border-box; /* Elemek szélesség kezelése */
     }
 }
