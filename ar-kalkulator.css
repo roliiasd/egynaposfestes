@@ -1,4 +1,4 @@
-*{
+html, body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -19,54 +19,86 @@ nav {
     /* Menüt a jobb oldalra igazítja */
     padding-right: 20px;
 }
-/* Általános ikon stílus */
-.dropbtn i {
-    font-size: 20px; /* Alapértelmezett ikonméret */
-    color: #ffffff; /* Alapértelmezett ikon színe */
-}
 
-/* Ha az ikon 'fa-bars' osztállyal rendelkezik, nagyobb és láthatóbb lesz */
-.dropbtn i.fa-bars {
-    font-size: 24px; /* Nagyobb méret hamburger ikonhoz */
-    color: #fff; /* Fehér szín */
-}
 
-/* A dropbtn stílusa */
-.dropbtn {
+/* Asztali menü alapértelmezett */
+.desktop-menu {
+    display: none;  /* Az asztali nézetben mindig látható */
     background-color: #333;
-    color: white;
     padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
+  }
 
-/* A legördülő menü tartalma alapból rejtett */
-.dropdown-content {
+
+/* Mobil menü alapértelmezett elrejtése */
+.mobile-menu {
     display: none;
-    position: absolute;
-    right: 0;
     background-color: #333;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    padding: 10px;
+    position: fixed;  /* A menüt a képernyőhöz rögzítjük */
+    top: 0;  /* A menü a képernyő tetejére kerül */
+    right: 0;  /* A menü a jobb oldalra kerül */
+    width: 250px;  /* A menü szélessége */
+    height: 100%;  /* A menü teljes magasságban kitölti a képernyőt */
+    z-index: 1000;  /* Biztosítja, hogy a menü a többi elem felett jelenjen meg */
 }
 
-.dropdown-content.show {
-    display: block;
+/* Asztali menü - a jobb oldalra helyezése */
+.desktop-menu {
+    display: block;  /* Az asztali nézetben mindig látható */
+    position: fixed;  /* Rögzítjük az asztali menüt */
+    top: 0;  /* A menü a képernyő tetején helyezkedik el */
+    right: 0;  /* A menü a jobb oldalon jelenik meg */
+    width: 250px;  /* Az asztali menü szélessége */
+    height: 100%;  /* Az asztali menü teljes magasságot kitölt */
+    background-color: #333;  /* Az asztali menü háttere is sötétszürke */
+    z-index: 999;  /* Az asztali menü egy szinttel alacsonyabb, mint a mobil menü */
 }
 
-.dropdown-content a {
-    color: white;
-    padding: 12px 16px;
+.desktop-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+.desktop-menu ul li a {
+    color: #a9a9a9  /* A menü linkek színe */;
     text-decoration: none;
+    font-weight: bold;
+}
+/* Mobil menü lista */
+.mobile-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Mobil menü listaelemek */
+.mobile-menu ul li {
+    margin: 10px 0;
+}
+
+/* Mobil menü linkek */
+.mobile-menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hamburger gomb stílusa */
+.menu-toggle {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
     display: block;
 }
 
-.dropdown-content a:hover {
-    background-color: #575757;
+/* Menü megjelenítése, ha a gomb be van jelölve */
+.menu-toggle:checked + .mobile-menu {
+    display: block;
 }
 
+/* Hamburger gomb fókusza */
+.menu-toggle:focus {
+    outline: none;
+}
 
 #tetejereGomb {
     display: none;
@@ -78,7 +110,7 @@ nav {
     color: white;
     border: none;
     border-radius: 50%;
-    margin-right: 365px;
+    right: 20px;
     cursor: pointer;
     font-size: 28pt;
     text-align: center;
@@ -184,7 +216,6 @@ a#vissza {
     /* Minimális szélesség biztosítása */
     word-wrap: break-word;
     /* Szöveg tördelése */
-    min-width: auto;
 }
 
 /* Címek és szövegek stílusai */
@@ -240,13 +271,28 @@ a#vissza {
     z-index: 100;
 }
 
+@media (max-width: 768px) {
 /* Reszponzív beállítások kisebb képernyőre */
 @media (max-width: 768px) {
     .pair-container {
         flex-direction: column;
         /* Ha a képernyő kisebb, akkor a leírás és a kalkulátor egymás alá kerül */
     }
-
+    .desktop-menu {
+        display: none; /* Asztali menü elrejtése mobilon */
+      }
+    
+      .menu-toggle {
+        display: block; /* Hamburger gomb megjelenítése mobilon */
+      }
+    
+      .mobile-menu {
+        display: none;  /* Alapértelmezés szerint el van rejtve */
+      }
+    
+      .menu-toggle:checked + .mobile-menu {
+        display: block; /* Menü megjelenítése, ha a gomb be van jelölve */
+      }
     .work-item,
     .calculator-item {
         max-width: 100%;
@@ -255,7 +301,7 @@ a#vissza {
     .calculator-item {
         margin-top: 15px;
     }
-    .result-container {
+        .result-container {
         position: fixed;
         bottom: 10px;
         left: 50%;
@@ -287,4 +333,4 @@ a#vissza {
     .calculator-item p {
         font-size: 1rem;
     }
-}
+}}
