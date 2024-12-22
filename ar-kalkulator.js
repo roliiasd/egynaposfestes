@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     const dropbtn = document.querySelector('.dropbtn');
     const icon = document.getElementById('menu-icon');
@@ -33,45 +32,18 @@ document.addEventListener('DOMContentLoaded', function () {
 //Ar kalkulator
 //Ar kalkulator
 
-// Tároló az összes számításhoz
-let totalAmount = 0;
-
-// Elemek lekérése és események beállítása
 document.querySelectorAll('.area-input').forEach(input => {
     input.addEventListener('input', function () {
-        // Munkadíj, anyagdíj és terület lekérése
         const munkadij = parseFloat(this.getAttribute('data-munkadij')) || 0;
         const anyagdij = parseFloat(this.getAttribute('data-anyagdij')) || 0;
         const area = parseFloat(this.value) || 0;
-
-        // Kiválasztott elem teljes költségének kiszámítása
         const total = (munkadij + anyagdij) * area;
-        
-        // Kijelzés az egyes elemeknél
         const totalCostSpan = document.getElementById('totalCost' + this.id.replace('area', ''));
         totalCostSpan.textContent = total.toLocaleString() + ' Ft';
-
-        // Összesítés frissítése
-        updateTotal();
     });
 });
 
-// Összes érték frissítése
-function updateTotal() {
-    // Újraszámoljuk az összesített összeget
-    totalAmount = Array.from(document.querySelectorAll('.area-input')).reduce((sum, input) => {
-        const munkadij = parseFloat(input.getAttribute('data-munkadij')) || 0;
-        const anyagdij = parseFloat(input.getAttribute('data-anyagdij')) || 0;
-        const area = parseFloat(input.value) || 0;
-        return sum + (munkadij + anyagdij) * area;
-    }, 0);
 
-    // Összesített költség kiírása
-    const totalCostDisplay = document.getElementById('osszegzes');
-    totalCostDisplay.textContent = 'Összesen: ' + totalAmount.toLocaleString() + ' Ft';
-}
-
-/*
 // Görgetés figyelése
 window.addEventListener('scroll', toggleBackToTopButton);
 
@@ -87,18 +59,18 @@ function toggleBackToTopButton() {
     // Debug üzenet a konzolban
     console.log(`Görgetési pozíció: ${scrollPosition}`);
 
-    if (scrollPosition > 250) {
+    if (scrollPosition > 400) {
         backToTopButton.style.display = "block";
-        console.log("Megjelenik a gomb"); // Naplózás: Gomb megjelenik
+        //console.log("Megjelenik a gomb"); // Naplózás: Gomb megjelenik
     } else {
         backToTopButton.style.display = "none";
-        console.log("Eltűnik a gomb"); // Naplózás: Gomb eltűnik
+        //console.log("Eltűnik a gomb"); // Naplózás: Gomb eltűnik
     }
 }
-*/
+
 // Visszagörgetés a tetejére
 function scrollToTop() {
-    console.log("Visszagörgetés a tetejére indult"); // Naplózás: Visszagörgetés indult
+    //console.log("Visszagörgetés a tetejére indult"); // Naplózás: Visszagörgetés indult
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
