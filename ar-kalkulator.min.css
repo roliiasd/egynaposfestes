@@ -1,0 +1,336 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* Általános beállítások a testreszabott háttérszínhez */
+body {
+    background-color: #2e2e2e;
+    color: #ecf0f1;
+    font-family: Arial, sans-serif;
+}
+
+/* Általános stílusok */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    /* Menüt a jobb oldalra igazítja */
+    padding-right: 20px;
+}
+
+
+/* Asztali menü alapértelmezett */
+.desktop-menu {
+    display: none;  /* Az asztali nézetben mindig látható */
+    background-color: #333;
+    padding: 10px;
+  }
+
+
+/* Mobil menü alapértelmezett elrejtése */
+.mobile-menu {
+    display: none;
+    background-color: #333;
+    padding: 10px;
+    position: fixed;  /* A menüt a képernyőhöz rögzítjük */
+    top: 0;  /* A menü a képernyő tetejére kerül */
+    right: 0;  /* A menü a jobb oldalra kerül */
+    width: 250px;  /* A menü szélessége */
+    height: 100%;  /* A menü teljes magasságban kitölti a képernyőt */
+    z-index: 1000;  /* Biztosítja, hogy a menü a többi elem felett jelenjen meg */
+}
+
+/* Asztali menü - a jobb oldalra helyezése */
+.desktop-menu {
+    display: block;  /* Az asztali nézetben mindig látható */
+    position: fixed;  /* Rögzítjük az asztali menüt */
+    top: 0;  /* A menü a képernyő tetején helyezkedik el */
+    right: 0;  /* A menü a jobb oldalon jelenik meg */
+    width: 250px;  /* Az asztali menü szélessége */
+    height: 100%;  /* Az asztali menü teljes magasságot kitölt */
+    background-color: #333;  /* Az asztali menü háttere is sötétszürke */
+    z-index: 999;  /* Az asztali menü egy szinttel alacsonyabb, mint a mobil menü */
+}
+
+.desktop-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+.desktop-menu ul li a {
+    color: #a9a9a9  /* A menü linkek színe */;
+    text-decoration: none;
+    font-weight: bold;
+}
+/* Mobil menü lista */
+.mobile-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Mobil menü listaelemek */
+.mobile-menu ul li {
+    margin: 10px 0;
+}
+
+/* Mobil menü linkek */
+.mobile-menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hamburger gomb stílusa */
+.menu-toggle {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+}
+
+/* Menü megjelenítése, ha a gomb be van jelölve */
+.menu-toggle:checked + .mobile-menu {
+    display: block;
+}
+
+/* Hamburger gomb fókusza */
+.menu-toggle:focus {
+    outline: none;
+}
+
+#tetejereGomb {
+    display: none;
+    /* Alapértelmezés szerint rejtett */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    right: 20px;
+    cursor: pointer;
+    font-size: 28pt;
+    text-align: center;
+    z-index: 1000;
+    /* Biztosítja, hogy a gomb felül legyen minden más elemhez képest */
+}
+
+#tetejereGomb:hover {
+    background-color: transparent;
+    color: #b8860b;
+    transform: scale(1.15);
+}
+
+/* "Vissza" gomb stílusok - Módosított verzió */
+#vissza {
+    color: white;
+    /* Világos szín a kontraszthoz */
+    font-weight: bold;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #5c5c5c;
+    /* Világosszürke háttér */
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    display: flex;
+    /* Flexbox a jobb igazításhoz */
+    align-items: center;
+    /* Középre igazítás függőlegesen */
+    gap: 10px;
+    /* Távolság az ikon és a szöveg között */
+    cursor: pointer;
+    z-index: 1000;
+    text-decoration: none;
+    /* Eltávolítjuk az esetleges aláhúzást */
+    min-width: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#vissza:hover {
+    background-color: #b8860b;
+    /* Már meglévő szín */
+    transform: scale(1.05);
+    /* Kicsit nagyít a hover során */
+}
+
+#vissza i {
+    margin: 0;
+    /* Eltávolítjuk a felesleges margót */
+}
+
+a#vissza {
+    margin-right: 15px;
+}
+
+
+/* Flexbox elrendezés a pair-container használatával */
+.pair-container {
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Felülre igazítás, hogy egyvonalban legyenek */
+    border: 1px solid #d4af37;
+    /* Lágy szürke szegély */
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    min-width: 1000px;
+    max-width: 1000px;
+    background-color: #4a4a4a;
+    /* Fehér háttérszín a konténernek */
+    gap: 15px;
+    /* Távolság a leírás és kalkulátor között */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    /* Árnyék a konténerhez */
+    /* Eltávolítjuk a pair-container alján lévő fekete szegélyt */
+}
+
+/* Munkafolyamat és kalkulátor szélesség és szegély */
+.work-item,
+.calculator-item {
+    flex: 1;
+    /* Egyenlő arányban oszlik meg a hely */
+    max-width: 100%;
+    /* Biztosítjuk, hogy a gyermekek ne lépjék túl a konténer szélességét */
+    background-color: #4a4a4a;
+    /* Világos szürke háttér a munkafolyamatoknak */
+    padding: 20px;
+    border-radius: 8px;
+    color: #ecf0f1;
+    /* Sötétebb szövegszín a jobb olvashatóság érdekében */
+}
+
+/* Egyenlő szélesség biztosítása és szöveg tördelése */
+.pair-container .work-item,
+.pair-container .calculator-item {
+    flex: 1;
+    min-width: 250px;
+    /* Minimális szélesség biztosítása */
+    word-wrap: break-word;
+    /* Szöveg tördelése */
+}
+
+/* Címek és szövegek stílusai */
+.work-item h3 {
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.work-item p,
+.calculator-item p {
+    color: #ecf0f1;
+}
+
+/* Form stílusok */
+.form-group label {
+    font-weight: bold;
+    color: #ecf0f1;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #7f8c8d;
+    background-color: #555555;
+    color: #ecf0f1;
+}
+
+.result {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: wheat;
+}
+
+.form-control::placeholder {
+    color: #bdc3c7;
+    /* Placeholder szöveg színe */
+}
+
+.result-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: wheat;
+    padding: 10px;
+    display: none; /* Initially hidden */
+    border-radius: 10px;
+    z-index: 100;
+}
+
+@media (max-width: 768px) {
+/* Reszponzív beállítások kisebb képernyőre */
+@media (max-width: 768px) {
+    .pair-container {
+        flex-direction: column;
+        /* Ha a képernyő kisebb, akkor a leírás és a kalkulátor egymás alá kerül */
+    }
+    .desktop-menu {
+        display: none; /* Asztali menü elrejtése mobilon */
+      }
+    
+      .menu-toggle {
+        display: block; /* Hamburger gomb megjelenítése mobilon */
+      }
+    
+      .mobile-menu {
+        display: none;  /* Alapértelmezés szerint el van rejtve */
+      }
+    
+      .menu-toggle:checked + .mobile-menu {
+        display: block; /* Menü megjelenítése, ha a gomb be van jelölve */
+      }
+    .work-item,
+    .calculator-item {
+        max-width: 100%;
+    }
+
+    .calculator-item {
+        margin-top: 15px;
+    }
+        .result-container {
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    #vissza {
+        top: 10px;
+        left: 10px;
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+
+    .work-item h3 {
+        font-size: 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-control {
+        padding: 8px;
+    }
+
+    .calculator-item p {
+        font-size: 1rem;
+    }
+}}
