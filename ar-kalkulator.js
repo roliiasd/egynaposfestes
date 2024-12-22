@@ -1,30 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const dropbtn = document.querySelector('.dropbtn');
-    const icon = document.getElementById('menu-icon');
-    const dropdownMenu = document.getElementById('dropdown-menu');
-
-    dropbtn.addEventListener('click', function (event) {
-        event.stopPropagation();
-        dropdownMenu.classList.toggle('show');
-
-        if (dropdownMenu.classList.contains('show')) {
-            icon.classList.remove('bi-caret-down-fill');
-            icon.classList.add('fa-bars');
-        } else {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('bi-caret-down-fill');
-        }
-    });
-
-    document.addEventListener('click', function () {
-        dropdownMenu.classList.remove('show');
-        icon.classList.remove('fa-bars');
-        icon.classList.add('bi-caret-down-fill');
-    });
-});
-
-
-
 
 //Ar kalkulator
 //Ar kalkulator
@@ -43,6 +16,9 @@ document.querySelectorAll('.area-input').forEach(input => {
     });
 });
 
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.mobile-menu').classList.toggle('show');
+});
 
 // Görgetés figyelése
 window.addEventListener('scroll', toggleBackToTopButton);
@@ -74,20 +50,6 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const dropbtn = document.querySelector('.dropbtn');
-    const dropdownContent = document.querySelector('.dropdown-content');
-
-    dropbtn.addEventListener('click', function(event) {
-        event.stopPropagation(); // Megakadályozza, hogy a kattintás az egész dokumentumra hasson
-        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-    });
-
-    // Bezárás, ha máshová kattintunk az oldalon
-    document.addEventListener('click', function() {
-        dropdownContent.style.display = 'none';
-    });
-});
 
 
 //automata vegosszeg szamitas
