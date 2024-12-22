@@ -1,3 +1,10 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
 /* Általános beállítások a testreszabott háttérszínhez */
 body {
     background-color: #2e2e2e;
@@ -220,6 +227,19 @@ a#vissza {
     /* Placeholder szöveg színe */
 }
 
+.result-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: wheat;
+    padding: 10px;
+    display: none; /* Initially hidden */
+    border-radius: 10px;
+    z-index: 100;
+}
+
 /* Reszponzív beállítások kisebb képernyőre */
 @media (max-width: 768px) {
     .pair-container {
@@ -234,6 +254,13 @@ a#vissza {
 
     .calculator-item {
         margin-top: 15px;
+    }
+    .result-container {
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
     }
 }
 
