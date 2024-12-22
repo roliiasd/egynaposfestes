@@ -74,9 +74,6 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const dropbtn = document.querySelector('.dropbtn');
     const dropdownContent = document.querySelector('.dropdown-content');
@@ -91,3 +88,135 @@ document.addEventListener('DOMContentLoaded', function() {
         dropdownContent.style.display = 'none';
     });
 });
+// Function to calculate the total cost based on input values
+function updateTotalCost(id) {
+    let area = document.getElementById(id).value;
+    let munkadij = document.getElementById(id).dataset.munkadij;
+    let anyagdij = document.getElementById(id).dataset.anyagdij;
+
+    if (area >= 0) {
+        let total = (area * munkadij) + (area * anyagdij);
+        document.getElementById("totalCost" + id.slice(-2)).textContent = total + " Ft";
+        saveData(id, area);  // Save the data to localStorage
+        updateOverallTotal();
+    }
+}
+
+// Function to save data to localStorage
+function saveData(id, area) {
+    localStorage.setItem(id, area);
+}
+
+// Function to load data from localStorage and set the values
+function loadData() {
+    const inputs = document.querySelectorAll('.area-input');
+    inputs.forEach(input => {
+        let savedValue = localStorage.getItem(input.id);
+        if (savedValue) {
+            input.value = savedValue;
+            updateTotalCost(input.id);  // Recalculate the total for each field on page load
+        }
+    });
+}
+
+window.onload = function() {
+    // A DOM elemek teljes betöltése után fut le
+    const inputs = document.querySelectorAll('.area-input');
+    inputs.forEach(input => {
+        input.addEventListener('input', function() {
+            updateTotalCost(input.id);
+        });
+    });
+
+    // Betöltjük a mentett adatokat
+    loadData();
+};
+
+// Function to calculate the total cost based on input values
+function updateTotalCost(id) {
+    let area = document.getElementById(id).value;
+    let munkadij = document.getElementById(id).dataset.munkadij;
+    let anyagdij = document.getElementById(id).dataset.anyagdij;
+
+    if (area >= 0) {
+        let total = (area * munkadij) + (area * anyagdij);
+        document.getElementById("totalCost" + id.slice(-2)).textContent = total + " Ft";
+        saveData(id, area);  // Save the data to localStorage
+        updateOverallTotal();
+    }
+}
+
+window.onload = function() {
+    // A DOM elemek teljes betöltése után fut le
+    const inputs = document.querySelectorAll('.area-input');
+    inputs.forEach(input => {
+        input.addEventListener('input', function() {
+            updateTotalCost(input.id);
+        });
+    });
+
+    // Betöltjük a mentett adatokat
+    loadData();
+};
+
+// Function to calculate the total cost based on input values
+function updateTotalCost(id) {
+    let area = document.getElementById(id).value;
+    let munkadij = document.getElementById(id).dataset.munkadij;
+    let anyagdij = document.getElementById(id).dataset.anyagdij;
+
+    if (area >= 0) {
+        let total = (area * munkadij) + (area * anyagdij);
+
+        // Check if the element with the corresponding totalCost id exists
+        const totalCostElement = document.getElementById("totalCost" + id.slice(-2));
+        if (totalCostElement) {
+            totalCostElement.textContent = total + " Ft";  // Update the total cost display
+        }
+
+        saveData(id, area);  // Save the data to localStorage
+        updateOverallTotal();
+    }
+}
+
+// Function to save data to localStorage
+function saveData(id, area) {
+    localStorage.setItem(id, area);
+}
+
+// Function to load data from localStorage and set the values
+function loadData() {
+    const inputs = document.querySelectorAll('.area-input');
+    inputs.forEach(input => {
+        let savedValue = localStorage.getItem(input.id);
+        if (savedValue) {
+            input.value = savedValue;
+            updateTotalCost(input.id);  // Recalculate the total for each field on page load
+        }
+    });
+}
+
+// Function to update the overall total cost
+function updateOverallTotal() {
+    let total = 0;
+    const inputs = document.querySelectorAll('.area-input');
+    let anyInput = false; // Flag to check if any input was filled
+    inputs.forEach(input => {
+        let area = input.value || 0;
+        let munkadij = input.dataset.munkadij;
+        let anyagdij = input.dataset.anyagdij;
+        if (area > 0) {
+            anyInput = true;
+        }
+        total += (area * munkadij) + (area * anyagdij);
+    });
+
+    // Show or hide the result container based on if any input is filled
+    const resultContainer = document.querySelector('.result-container');
+    if (anyInput) {
+        resultContainer.style.display = 'block';
+        document.getElementById('totalSum').textContent = total + " Ft";
+    } else {
+        resultContainer.style.display = 'none';
+    }
+}
