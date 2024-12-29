@@ -10,10 +10,6 @@ section {
     background-color: #323232;
 }
 
-gomb:hover{
-    transform: scale(1.15);
-}
-
 .text-white {
     color: #fff;
 }
@@ -63,7 +59,7 @@ a[nav-link]:hover {
 .table-wrapper th {
     background-color: #818181;
     /* Világos szürke háttér a fejléceknek */
-    color: #e0dcdc;
+    color: #f0f0f0;
     /* Fekete betűszín az olvashatóság érdekében */
     font-weight: bold;
     padding: 12px;
