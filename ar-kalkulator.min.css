@@ -12,92 +12,28 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Általános stílusok */
-nav {
-    display: flex;
-    justify-content: flex-end;
-    /* Menüt a jobb oldalra igazítja */
-    padding-right: 20px;
+/* Navbar stílus */
+.navbar {
+    background-color: #532727;
 }
 
-
-/* Asztali menü alapértelmezett */
-.desktop-menu {
-    display: none;  /* Az asztali nézetben mindig látható */
-    background-color: #333;
-    padding: 10px;
-  }
-
-
-/* Mobil menü alapértelmezett elrejtése */
-.mobile-menu {
-    display: none;
-    background-color: #333;
-    padding: 10px;
-    position: fixed;  /* A menüt a képernyőhöz rögzítjük */
-    top: 0;  /* A menü a képernyő tetejére kerül */
-    right: 0;  /* A menü a jobb oldalra kerül */
-    width: 250px;  /* A menü szélessége */
-    height: 100%;  /* A menü teljes magasságban kitölti a képernyőt */
-    z-index: 1000;  /* Biztosítja, hogy a menü a többi elem felett jelenjen meg */
+.navbar-toggler-icon {
+    width: 30px;
+    height: 30px;
+    background-color: black;
 }
 
-/* Asztali menü - a jobb oldalra helyezése */
-.desktop-menu {
-    display: block;  /* Az asztali nézetben mindig látható */
-    position: fixed;  /* Rögzítjük az asztali menüt */
-    top: 0;  /* A menü a képernyő tetején helyezkedik el */
-    right: 0;  /* A menü a jobb oldalon jelenik meg */
-    width: 250px;  /* Az asztali menü szélessége */
-    height: 100%;  /* Az asztali menü teljes magasságot kitölt */
-    background-color: #333;  /* Az asztali menü háttere is sötétszürke */
-    z-index: 999;  /* Az asztali menü egy szinttel alacsonyabb, mint a mobil menü */
-}
-
-.desktop-menu ul {
-    list-style-type: none;
-    padding: 0;
-}
-.desktop-menu ul li a {
-    color: #a9a9a9  /* A menü linkek színe */;
-    text-decoration: none;
+.nav-link {
+    color: wheat !important;
     font-weight: bold;
 }
-/* Mobil menü lista */
-.mobile-menu ul {
-    list-style-type: none;
-    padding: 0;
+
+a[nav-link]:hover {
+    color: #521d11;
 }
 
-/* Mobil menü listaelemek */
-.mobile-menu ul li {
-    margin: 10px 0;
-}
-
-/* Mobil menü linkek */
-.mobile-menu ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-/* Hamburger gomb stílusa */
-.menu-toggle {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    display: block;
-}
-
-/* Menü megjelenítése, ha a gomb be van jelölve */
-.menu-toggle:checked + .mobile-menu {
-    display: block;
-}
-
-/* Hamburger gomb fókusza */
-.menu-toggle:focus {
-    outline: none;
+.nav-link:hover {
+    color: #ff6600;
 }
 
 #tetejereGomb {
@@ -129,9 +65,9 @@ nav {
     color: white;
     /* Világos szín a kontraszthoz */
     font-weight: bold;
-    position: fixed;
-    top: 20px;
-    left: 20px;
+    position:static;
+    margin-top: auto;
+    margin-bottom: auto;
     background-color: #5c5c5c;
     /* Világosszürke háttér */
     padding: 10px 15px;
@@ -197,6 +133,7 @@ a#vissza {
 .work-item,
 .calculator-item {
     flex: 1;
+    text-wrap: break-word;
     /* Egyenlő arányban oszlik meg a hely */
     max-width: 100%;
     /* Biztosítjuk, hogy a gyermekek ne lépjék túl a konténer szélességét */
@@ -271,28 +208,12 @@ a#vissza {
     z-index: 100;
 }
 
-@media (max-width: 768px) {
 /* Reszponzív beállítások kisebb képernyőre */
 @media (max-width: 768px) {
     .pair-container {
         flex-direction: column;
         /* Ha a képernyő kisebb, akkor a leírás és a kalkulátor egymás alá kerül */
     }
-    .desktop-menu {
-        display: none; /* Asztali menü elrejtése mobilon */
-      }
-    
-      .menu-toggle {
-        display: block; /* Hamburger gomb megjelenítése mobilon */
-      }
-    
-      .mobile-menu {
-        display: none;  /* Alapértelmezés szerint el van rejtve */
-      }
-    
-      .menu-toggle:checked + .mobile-menu {
-        display: block; /* Menü megjelenítése, ha a gomb be van jelölve */
-      }
     .work-item,
     .calculator-item {
         max-width: 100%;
@@ -302,7 +223,6 @@ a#vissza {
         margin-top: 15px;
     }
         .result-container {
-        position: fixed;
         bottom: 10px;
         left: 50%;
         transform: translateX(-50%);
@@ -333,4 +253,4 @@ a#vissza {
     .calculator-item p {
         font-size: 1rem;
     }
-}}
+}
