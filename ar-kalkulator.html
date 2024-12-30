@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="hu-HU">
 
 <head>
     <meta charset="UTF-8">
@@ -8,26 +8,44 @@
     <!-- Bootstrap Icons - A link helyes, hogy az ikonok megjelenjenek -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="ar-kalkulator.min.css">
 </head>
 
 <body>
-    <!-- "Vissza" gomb -->
+    
+    <nav class="navbar navbar-expand-lg" style="background-color: #532727;">
+        <div class="container">
+            <!-- "Vissza" gomb -->
     <a href="index.html" id="vissza">
         <i class="bi bi-box-arrow-left"></i> Vissza
     </a>
-    <nav>
-        <div class="dropdown">
-            <button class="dropbtn"><i class="fa fa-bars" id="menu-icon"></i></button>
-            <div class="dropdown-content" id="dropdown-menu">
-                <a href="#Alapmunkak">Alapmunkák Árai</a>
-                <a href="#Festes">Festés Árai</a>
-                <a href="#Mazolas">Mázolás Árai</a>
-                <a href="#Tapetazas">Tapétázás Árai</a>
-                <a href="#Egyeb">Egyéb Munkák Árai</a>
-                <a href="#Gipszkarton">Gipszkartonozás Árai</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i id="menu-icon" class="fas fa-bars" style="color:wheat;"></i>
+            </button>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Alapmunkak" style="color: wheat; font-weight: bold;">Alapmunkák Árai</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Festes" style="color: wheat; font-weight: bold;">Festés árai</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Mazolas" style="color: wheat; font-weight: bold;">Mázolás árai</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Tapetazas" style="color: wheat; font-weight: bold;">Tapétázás árai</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Egyeb" style="color: wheat; font-weight: bold;">Egyéb Munkák árai</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Gipszkarton" style="color: wheat; font-weight: bold;">Gipszkartonozás árai</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -51,7 +69,7 @@
                         <div class="form-group">
                             <label for="area1">Adja meg a területet (m²):</label>
                             <input type="number" class="form-control area-input" id="area1" data-munkadij="550"
-                                data-anyagdij="300" placeholder="Adja meg a területet">
+                                data-anyagdij="300" placeholder="Adja meg a területet" min="0">
                         </div>
                         <p><strong>Összesen:</strong> <span id="totalCost1">0 Ft</span></p>
                     </div>
@@ -69,7 +87,7 @@
                         <div class="form-group">
                             <label for="area2">Adja meg a területet (m²):</label>
                             <input type="number" class="form-control area-input" id="area2" data-munkadij="550"
-                                data-anyagdij="400" placeholder="Adja meg a területet">
+                                data-anyagdij="400" placeholder="Adja meg a területet" min="0">
                         </div>
                         <p><strong>Összesen:</strong> <span id="totalCost2">0 Ft</span></p>
                     </div>
@@ -86,7 +104,7 @@
                         <div class="form-group">
                             <label for="area3">Adja meg a területet (m²):</label>
                             <input type="number" class="form-control area-input" id="area3" data-munkadij="750"
-                                data-anyagdij="350" placeholder="Adja meg a területet">
+                                data-anyagdij="350" placeholder="Adja meg a területet" min="0">
                         </div>
                         <p><strong>Összesen:</strong> <span id="totalCost3">0 Ft</span></p>
                     </div>
@@ -103,7 +121,7 @@
                         <div class="form-group">
                             <label for="area4">Adja meg a területet (m²):</label>
                             <input type="number" class="form-control area-input" id="area4" data-munkadij="850"
-                                data-anyagdij="550" placeholder="Adja meg a területet">
+                                data-anyagdij="550" placeholder="Adja meg a területet" min="0">
                         </div>
                         <p><strong>Összesen:</strong> <span id="totalCost4">0 Ft</span></p>
                     </div>
@@ -453,7 +471,7 @@
     </div>
 
 
-    <h2 class="text-center mb-4" style="font-weight: bold; color: wheat;" id="Festes">Festés Árak</h2>
+    <h2 class="text-center mb-4" style="font-weight: bold; color: wheat;" id="Festes">Festés Árai</h2>
 
     <!-- Új Pár-container elemek a második kódból -->
     <div class="d-flex flex-column flex-md-row flex-wrap">
@@ -1310,7 +1328,7 @@
 
     <div class="container">
         <div class="table-wrapper">
-            <h2 class="text-center mb-4" style="font-weight: bold; color: wheat;" id="Gipszkarton">Gipszkartonozás Árak
+            <h2 class="text-center mb-4" style="font-weight: bold; color: wheat;" id="Gipszkarton">Gipszkartonozás Árai
             </h2>
             <h6 class="text-center mb-4" style="color: #ff0000; font-weight: bold;">
                 (Az árak <span style="font-size: larger;">100 m²</span> feletti mennyiségre értendők)
@@ -1489,7 +1507,7 @@
     </div>
 
 
-
+    <script src="main.js"></script>
     <script src="ar-kalkulator.js"></script>
 </body>
 
