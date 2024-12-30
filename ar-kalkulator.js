@@ -1,24 +1,19 @@
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.navbar-toggler').addEventListener('click', function () {
+        const icon = document.getElementById('menu-icon');
+        const navbarCollapse = document.getElementById('navbarNav');
 
-//Ar kalkulator
-//Ar kalkulator
-//Ar kalkulator
-//Ar kalkulator
-//Ar kalkulator
-
-document.querySelectorAll('.area-input').forEach(input => {
-    input.addEventListener('input', function () {
-        const munkadij = parseFloat(this.getAttribute('data-munkadij')) || 0;
-        const anyagdij = parseFloat(this.getAttribute('data-anyagdij')) || 0;
-        const area = parseFloat(this.value) || 0;
-        const total = (munkadij + anyagdij) * area;
-        const totalCostSpan = document.getElementById('totalCost' + this.id.replace('area', ''));
-        totalCostSpan.textContent = total.toLocaleString() + ' Ft';
+        if (navbarCollapse.classList.contains('show')) {
+            icon.classList.remove('fa-caret-up');
+            icon.classList.add('fa-bars');
+        } else {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-caret-up');
+        }
     });
 });
 
-document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('.mobile-menu').classList.toggle('show');
-});
+
 
 // Görgetés figyelése
 window.addEventListener('scroll', toggleBackToTopButton);
@@ -33,7 +28,7 @@ function toggleBackToTopButton() {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
     // Debug üzenet a konzolban
-    console.log(`Görgetési pozíció: ${scrollPosition}`);
+    //console.log(`Görgetési pozíció: ${scrollPosition}`);
 
     if (scrollPosition > 400) {
         backToTopButton.style.display = "block";
