@@ -8,58 +8,64 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="main.css">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y51M4FZ529"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'G-Y51M4FZ529');
+        gtag('config', 'G-Y51M4FZ529');
     </script>
+
 </head>
 
 <body>
-   <!-- Navigacios szekcio -->
-   <nav class="navbar navbar-expand-lg" style="background-color: #532727;">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="https://roliiasd.github.io/egynaposfestes/kepek/logo.svg" alt="EgyNaposFestés logó" style="width:150px;">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <i id="menu-icon" class="fas fa-bars" style="color:wheat;"></i>
-        </button>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: wheat; font-weight: bold;">Szobafestés</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="arak.html" style="color: wheat; font-weight: bold;">Árak</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="referenciak.html" style="color: wheat; font-weight: bold;">Referenciák</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: wheat; font-weight: bold;">Kapcsolat</a>
-                </li>
-            </ul>
+    <!-- Navigacios szekcio -->
+    <nav class="navbar navbar-expand-lg" style="background-color: #532727;">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://roliiasd.github.io/egynaposfestes/kepek/logo.svg" alt="EgyNaposFestés logó"
+                    style="width:150px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i id="menu-icon" class="fas fa-bars" style="color:wheat;"></i>
+            </button>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: wheat; font-weight: bold;">Szobafestés</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="arak.html" style="color: wheat; font-weight: bold;">Árak</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="referenciak.html"
+                            style="color: wheat; font-weight: bold;">Referenciák</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: wheat; font-weight: bold;">Kapcsolat</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-    
-    
+    </nav>
 
 
     <!-- Szolgáltatások blokk -->
     <section class="py-5" style="background-size: cover;">
+        <a href="arak.html">
+            <h1 class="pulse" style="font-size: 1.5rem; color: red; 
+            text-align: center; font-weight: bold; margin-bottom: 15px;">Árak</h1>
+        </a>
         <div class="container">
             <h2 class="text-center text-white mb-4">Szolgáltatások</h2>
-            <div class="row">
+            <div class="row row-cols-1 row-cols-md-2">
                 <!-- Szolgáltatás 1: Diszperziós festés -->
-                <div class="col-md-3">
+                <div class="col mb-3">
                     <div class="card text-center bg-dark text-white mb-4">
                         <div class="card-body">
                             <h5 class="card-title">Szobafestés</h5>
@@ -68,7 +74,7 @@
                 </div>
 
                 <!-- Szolgáltatás 2: Homlokzat festés -->
-                <div class="col-md-3">
+                <div class="col mb-3">
                     <div class="card text-center bg-dark text-white mb-4">
                         <div class="card-body">
                             <h5 class="card-title">Homlokzat festés</h5>
@@ -77,7 +83,7 @@
                 </div>
 
                 <!-- Szolgáltatás 3: Glettelés -->
-                <div class="col-md-3">
+                <div class="col mb-3">
                     <div class="card text-center bg-dark text-white mb-4">
                         <div class="card-body">
                             <h5 class="card-title">Mázolás</h5>
@@ -86,79 +92,87 @@
                 </div>
 
                 <!-- Szolgáltatás 4: Tapétázás -->
-                <div class="col-md-3">
+                <div class="col mb-3">
                     <div class="card text-center bg-dark text-white mb-4">
                         <div class="card-body">
                             <h5 class="card-title">Tapétázás</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col mb-3">
                     <div class="card text-center bg-dark text-white mb-4">
                         <div class="card-body">
                             <h5 class="card-title">Gipszkartonozása</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col mb-3">
                     <div class="card text-center bg-dark text-white mb-4">
                         <div class="card-body">
                             <h5 class="card-title">Komplett felújítás</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col mb-3">
                     <div class="card text-center bg-dark text-white mb-4">
                         <div class="card-body">
                             <h5 class="card-title">Lazurozás</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col mb-3">
                     <div class="card text-center bg-dark text-white mb-4">
                         <div class="card-body">
                             <h5 class="card-title">Kertiés festés</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col mb-3">
                     <div class="card text-center bg-dark text-white mb-4">
                         <div class="card-body">
-                            <h5 class="card-title">Iparimunkák</h5>
+                            <h5 class="card-title">Ipari munkák</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col mb-3">
                     <div class="card text-center bg-dark text-white mb-4">
                         <div class="card-body">
                             <h5 class="card-title">Gépi glettelés</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col mb-3">
                     <div class="card text-center bg-dark text-white mb-4">
                         <div class="card-body">
                             <h5 class="card-title">Gépi festés</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col mb-3">
                     <div class="card text-center bg-dark text-white mb-4">
                         <div class="card-body">
                             <h5 class="card-title">Emelőkosaras autóhasználat</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col mb-3">
                     <div class="card text-center bg-dark text-white mb-4">
                         <div class="card-body">
                             <h5 class="card-title">Tűzvédelmi festés tömítés</h5>
                         </div>
                     </div>
                 </div>
+                <div class="col mb-3">
+                    <div class="card text-center bg-dark text-white mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Homlokzat tisztítás</h5>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
     <!-- Új szövegrész beillesztése -->
     <section class="py-5 bg-light">
         <div class="container">
@@ -239,12 +253,12 @@
         </div>
     </section>
 
- <!-- Könyvtárak betöltése -->
-  <script src="main.js"></script>
- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
- 
+    <!-- Könyvtárak betöltése -->
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <!-- Footer -->
     <footer>
         <div class="container text-center">
@@ -265,9 +279,11 @@
             <p>&copy; 2024 EgyNaposFestés. Minden jog fenntartva.</p>
             <p>Weboldalt tervezte: <a href="https://www.example.com"><span id="specialis-szoveg"
                         style="color: #9c9a22;">Kovács Roland</span></a></p>
-            <p style="font-size: 8pt;">Logók készítője: <a href="https://www.freepik.com" style="font-size: 8pt;">Designed by
+            <p style="font-size: 8pt;">Logók készítője: <a href="https://www.freepik.com"
+                    style="font-size: 8pt;">Designed by
                     BiZkettE1 / Freepik</a></p>
         </div>
     </footer>
 </body>
+
 </html>
