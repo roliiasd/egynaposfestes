@@ -161,6 +161,22 @@ tr:hover td {
     border: 1px solid #ccc;
 }
 
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse {
+    animation: pulse 1.65s infinite;
+}
+
 /* Reszponzív táblázat stílusok - fejlécek megőrzése mobil nézetben */
 @media (max-width: 768px) {
     .table thead {
