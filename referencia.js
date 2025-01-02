@@ -1,18 +1,4 @@
 
-//galeria
-//galeria
-//galeria
-//galeria
-//galeria
-
-$('.carousel').carousel({
-    interval: 10000, // 5 másodpercenként vált
-    ride: 'carousel',
-    pause: 'hover',
-    wrap: true
-});
-
-
 //Lenyilo menu atalakito
 
 document.addEventListener('DOMContentLoaded', function () {
