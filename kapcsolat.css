@@ -28,3 +28,12 @@ section {
     font-weight: bold;
     padding: 3rem 0;
 }
+
+a{
+    color: #459a55;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #459a55;
+}
