@@ -1,31 +1,30 @@
 <!DOCTYPE html>
-<html lang="hu-HU">
+<html lang="hu">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ár Kalkulátor</title>
+    <title>EgyNaposFestés - Árak</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="ar-kalkulator.min.css">
-
+    <link rel="stylesheet" href="arak.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y51M4FZ529"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-        gtag('config', 'G-Y51M4FZ529');
+    gtag('config', 'G-Y51M4FZ529');
     </script>
 </head>
 
-<body>
-    <!-- Navigacios szekcio -->
-    <nav class="navbar navbar-expand-lg" style="background-color: #532727;">
+<body style="background-color: #f0f0f0;">
+
+    <!-- Navigációs szekció -->
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a href="index.html" id="vissza">
-                <i class="bi bi-box-arrow-left"></i> Vissza
+            <a class="navbar-brand" href="index.html">
+                <img src="https://roliiasd.github.io/egynaposfestes/kepek/logo.svg" alt="EgyNaposFestés logó">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,1758 +33,1055 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#Alapmunkak" style="color: wheat; font-weight: bold;">Alapmunkák
-                            Árai</a>
+                        <a class="nav-link" href="index.html">Szobafestés</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#Festes" style="color: wheat; font-weight: bold;">Festés árai</a>
+                        <a class="nav-link" href="arak.html">Árak</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#Mazolas" style="color: wheat; font-weight: bold;">Mázolás árai</a>
+                        <a class="nav-link" href="referenciak.html">Referenciák</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#Tapetazas" style="color: wheat; font-weight: bold;">Tapétázás
-                            árai</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#Egyeb" style="color: wheat; font-weight: bold;">Egyéb Munkák árai</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#Gipszkarton" style="color: wheat; font-weight: bold;">Gipszkartonozás
-                            árai</a>
+                        <a class="nav-link" href="kapcsolat.html">Kapcsolat</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4" style="color: wheat; font-weight: bold;">Szolgáltatások Árai</h2>
+
+
+            <!-- Gomb a kalkulátor oldalra -->
+            <div class="text-center mt-4 pulse-button">
+                <a href="/ar-kalkulator.html" target="_blank" class="btn btn-primary btn-lg"
+                    style="background-color: #2c3e50; border: 2pt solid; border-color: #f5deb3; border-radius: 10pt; font-weight: 500;">
+                    Ár kalkulátor
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
     <!-- Alapmunkák árai -->
-    <div class="container">
-        <div class="py-5">
-            <h2 class="text-center mb-4 title" style="font-weight: bold; color: wheat;" id="Alapmunkak">Alapmunkák Árai
-            </h2>
-            <div class="d-flex flex-column flex-md-row flex-wrap">
-                <!-- Pár-container 1 -->
-                <div class="pair-container">
-                    <!-- Bal oldali oszlop: Munkafolyamatok -->
-                    <div class="work-item">
-                        <h3>Padló takarása fóliával, szegélyek maszkolása krepp ragasztószalaggal</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 550 Ft/m², <strong>Anyagdíj:</strong> 300
-                            Ft/m²</p>
-                    </div>
-
-                    <!-- Jobb oldali oszlop: Kalkulátor -->
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area1">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area1" data-munkadij="550"
-                                data-anyagdij="300" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost1">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 2 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Laminált padló takarása fóliával, szegélyek maszkolása szenzitív krepp ragasztószalaggal
-                        </h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 550 Ft/m², <strong>Anyagdíj:</strong> 400
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area2">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area2" data-munkadij="550"
-                                data-anyagdij="400" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost2">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 3 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Padló és bútorok takarása fóliával, szegélyek maszkolása krepp ragasztószalaggal</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 750 Ft/m², <strong>Anyagdíj:</strong> 350
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area3">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area3" data-munkadij="750"
-                                data-anyagdij="350" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost3">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 4 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Padló takarása fóliával és hullámpapírral</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 850 Ft/m², <strong>Anyagdíj:</strong> 550
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area4">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area4" data-munkadij="850"
-                                data-anyagdij="550" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost4">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 5 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Falkaparás (Régi, laza bevonat eltávolítása 3rtg-ig)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 1 900 Ft/m², <strong>Anyagdíj:</strong> N/A
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area5">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area5" data-munkadij="1900"
-                                data-anyagdij="0" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost5">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 6 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Laza műanyag alapú festék eltávolítása kaparással</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 1 900 Ft/m², <strong>Anyagdíj:</strong> N/A
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area6">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area6" data-munkadij="1900"
-                                data-anyagdij="0" placeholder="Adja meg a területet">
-                        </div>
-                        <p style="color: white;"><strong>Összesen:</strong> <span id="totalCost6">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 7 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Tapéta bontása (Tapétaleoldó szerrel)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 1 300 Ft/m², <strong>Anyagdíj:</strong> 100
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area7">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area7" data-munkadij="1300"
-                                data-anyagdij="100" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost7">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 8 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Falfelület mélyalapozása (impregnálás)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 500 Ft/m², <strong>Anyagdíj:</strong> 200
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area8">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area8" data-munkadij="500"
-                                data-anyagdij="200" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost8">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 9 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Glettelés egy rétegben, sima felületen</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 1 250 Ft/m², <strong>Anyagdíj:</strong> 300
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area9">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area9" data-munkadij="1250"
-                                data-anyagdij="300" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost9">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 10 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Glettelés két rétegben régi lekapart felületen vagy új vakolaton</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 2 250 Ft/m², <strong>Anyagdíj:</strong> 500
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area10">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area10" data-munkadij="2250"
-                                data-anyagdij="500" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost10">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 11 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Glettelés három rétegben gipszes alapú glettanyaggal</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 3 100 Ft/m², <strong>Anyagdíj:</strong> 750
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area11">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area11" data-munkadij="3100"
-                                data-anyagdij="750" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost11">0 Ft</span></p>
-                    </div>
-                </div>
-                <!-- Pár-container 12 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Gipszkarton glettelése Q1-as minőségben</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 3 100 Ft/m², <strong>Anyagdíj:</strong> 750
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area12">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area12" data-munkadij="3100"
-                                data-anyagdij="750" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost11">0 Ft</span></p>
-                    </div>
-                </div>
-                <!-- Pár-container 13 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Gipszkarton glettelése Q2-as minőségben</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 3 100 Ft/m², <strong>Anyagdíj:</strong> 750
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area13">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area13" data-munkadij="3100"
-                                data-anyagdij="750" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost11">0 Ft</span></p>
-                    </div>
-                </div>
-                <!-- Pár-container 14 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Gipszkarton glettelése Q3-as minőségben</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 3 100 Ft/m², <strong>Anyagdíj:</strong> 750
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area14">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area14" data-munkadij="3100"
-                                data-anyagdij="750" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost11">0 Ft</span></p>
-                    </div>
-                </div>
-                <!-- Pár-container 15 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Gipszkarton glettelése Q3-as minőségben (utolsó réteg teljes felületen telibe glettelve)
-                        </h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 3 100 Ft/m², <strong>Anyagdíj:</strong> 750
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area15">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area15" data-munkadij="3100"
-                                data-anyagdij="750" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost11">0 Ft</span></p>
-                    </div>
-                </div>
-                <!-- Pár-container 16 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Gipszkarton glettelése Q4-as minőségben (utolsó réteg teljes felületen telibe glettelve)
-                        </h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 3 100 Ft/m², <strong>Anyagdíj:</strong> 750
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area16">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area16" data-munkadij="3100"
-                                data-anyagdij="750" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost11">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 17 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Glettelt felület csiszolása</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 400 Ft/m², <strong>Anyagdíj:</strong> 50
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area17">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area17" data-munkadij="400"
-                                data-anyagdij="50" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost12">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 18 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Felület erősítő üvegfátyol ragasztása</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 1 850 Ft/m², <strong>Anyagdíj:</strong> 650
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area18">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area18" data-munkadij="1850"
-                                data-anyagdij="650" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost13">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 19 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Alumínium élvédő felhelyezése (Ft/m)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 700 Ft/m, <strong>Anyagdíj:</strong> 350
-                            Ft/m</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area19">Adja meg a területet (m):</label>
-                            <input type="number" class="form-control area-input" id="area19" data-munkadij="700"
-                                data-anyagdij="350" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost14">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 20 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Alumínium élvédő felhelyezése görbe, nem függő élekre</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 2 000 Ft/m, <strong>Anyagdíj:</strong> 700
-                            Ft/m</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area20">Adja meg a területet (m):</label>
-                            <input type="number" class="form-control area-input" id="area20" data-munkadij="2000"
-                                data-anyagdij="700" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost15">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 21 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Műanyag flexibilis élvédő felhelyezése glettbe ágyazva (Ft/m)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 900 Ft/m, <strong>Anyagdíj:</strong> 650
-                            Ft/m</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area21">Adja meg a területet (m):</label>
-                            <input type="number" class="form-control area-input" id="area21" data-munkadij="900"
-                                data-anyagdij="650" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost16">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 17 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Strait-Flex papír-üvegszál élvédő felrakása (Ft/m)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 700 Ft/m, <strong>Anyagdíj:</strong> 800
-                            Ft/m</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area23">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area23" data-munkadij="700"
-                                data-anyagdij="800" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost17">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 18 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Vezetékhorony javítása 5 cm szélességig és 5 cm mélységig</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 1 500 Ft/m, <strong>Anyagdíj:</strong> 600
-                            Ft/m</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area24">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area18" data-munkadij="1500"
-                                data-anyagdij="600" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost18">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 19 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Vezetékhorony javítása 5-10 cm szélességig és 5 cm mélységig</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 2 500 Ft/m, <strong>Anyagdíj:</strong> 1 200
-                            Ft/m</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area19">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area19" data-munkadij="2500"
-                                data-anyagdij="1200" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost19">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 20 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Akriltömítés max. 2 mm-ig (Ft/m)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 220 Ft/m, <strong>Anyagdíj:</strong> 110
-                            Ft/m</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area20">Adja meg a területet (m):</label>
-                            <input type="number" class="form-control area-input" id="area20" data-munkadij="220"
-                                data-anyagdij="110" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost20">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 21 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Penészes felület kezelése HÉRA penészgátló lemosóoldattal</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 500 Ft/m², <strong>Anyagdíj:</strong> 320
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area21">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area21" data-munkadij="500"
-                                data-anyagdij="320" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost21">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 22 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Diletáció, repedések javítása 3 mm szélességig</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 300 Ft/m, <strong>Anyagdíj:</strong> 100
-                            Ft/m</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area22">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area22" data-munkadij="300"
-                                data-anyagdij="100" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost22">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 23 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Villanyszerelési kötődobozok elfedése 100x100 mm-es gipszkarton javító lappal</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 500 Ft/m², <strong>Anyagdíj:</strong> 800
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area23">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area23" data-munkadij="500"
-                                data-anyagdij="800" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost23">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 24 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Szerelvénydoboz vakolófedél elhelyezése (gépi glettelés esetén)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 150 Ft/m, <strong>Anyagdíj:</strong> 100
-                            Ft/m</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area24">Adja meg a területet (m):</label>
-                            <input type="number" class="form-control area-input" id="area24" data-munkadij="150"
-                                data-anyagdij="100" placeholder="Adja meg a területet">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost24">0 Ft</span></p>
-                    </div>
-                </div>
+    <section class="py-5">
+        <div class="container">
+            <div class="table-wrapper">
+                <h2 class="text-center mb-4" style="color: #2c3e50; font-weight: bold;">Alapmunkák Árai 2025</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Munkafolyamat</th>
+                            <th>Munkadíj (Ft/m²)</th>
+                            <th>Anyagdíj (Ft/m²)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Alapmunkák -->
+                        <tr>
+                            <td>Padló takarása fóliával, <br>szegélyek maszkolása krepp ragasztószalaggal
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A festési munkálatok
+                                    során védelmet biztosít a nem kívánt festékcseppek ellen.</div>
+                            </td>
+                            <td>550 Ft</td>
+                            <td>300 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Laminált padló takarása fóliával, <br>szegélyek maszkolása szenzitív krepp ragasztó
+                                szalaggal
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Javasolt a szenzitív
+                                    szalag használata, mert a hagyományos ragasztószalag eltávolítása során a modern,
+                                    papírvékony bevonatú szegélyek hajlamosabbak a sérülésekre.</div>
+                            </td>
+                            <td>550 Ft</td>
+                            <td>400 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Padló és bútorok takarása fóliával, <br>szegélyek maszkolása krepp ragasztószalaggal
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A festési munkálatok
+                                    során védelmet biztosít a nem kívánt festékcseppek ellen bútorozott helyiségben.
+                                </div>
+                            </td>
+                            <td>750 Ft</td>
+                            <td>350 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Padló takarása fóliával és hullámpapírral
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Nagyobb bontási munkák
+                                    esetén a padló teljes védelme érdekében javasolt a levédés fóliával és
+                                    hullámpapírral.</div>
+                            </td>
+                            <td>850 Ft</td>
+                            <td>550 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Falkaparás (Régi, laza bevonat eltávolítása 3rtg-ig)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A falkaparás a régi,
+                                    laza bevonat eltávolítását jelenti a falakról. Ez a lépés előkészíti a felületet a
+                                    további munkálatokhoz, mint mélyalapozás és glettelés.</div>
+                            </td>
+                            <td>1900 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Laza műanyag alapú festék eltávolítása kaparással
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Műanyag alapú festékkel
+                                    festett felületek laza festékrétegeinek eltávolítása. Ez a lépés előkészíti a
+                                    felületet a további munkálatokhoz, mint mélyalapozás és glettelés.</div>
+                            </td>
+                            <td>1900 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Tapéta bontása (Tapétaleoldó szerrel)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A tapétaleoldó szerrel
+                                    történő tapéta bontás során a tapétaréteget áztatjuk és fellazítjuk a felületén,
+                                    hogy könnyen eltávolítható legyen.</div>
+                            </td>
+                            <td>1300 Ft</td>
+                            <td>100 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Falfelület mélyalapozása (impregnálás)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A falfelület
+                                    mélyalapozása javítja a glett és a festék tapadását, elősegítve a tartós bevonat
+                                    kialakítását.</div>
+                            </td>
+                            <td>500 Ft</td>
+                            <td>200 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Glettelés egy rétegben, sima felületen
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A glettelés egy rétegben
+                                    alkalmazása során a cél az egyenetlenségek, repedések vagy más kisebb felületi hibák
+                                    kitöltése és simává tétele egyetlen glettelő réteg segítségével.</div>
+                            </td>
+                            <td>1250 Ft</td>
+                            <td>300 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Glettelés két rétegben régi lekapart felületen vagy új vakolaton
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A felújítási munkák
+                                    során a glettelés két rétegben történiok, az első réteg a felület egyenetlenségeinek
+                                    és hibáinak kitöltését szolgálja, míg a második réteg a simább és kifinomultabb
+                                    felület elérésére szolgál.</div>
+                            </td>
+                            <td>2250 Ft</td>
+                            <td>500 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Glettelés három rétegben gipszes alapú glettanyaggal
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Romosabb, durvább
+                                    felületek esetén szükséges a három rétgeg glettelés a szebb és simább felület
+                                    érdekében.</div>
+                            </td>
+                            <td>3100 Ft</td>
+                            <td>750 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Gipszkarton glettelése Q1-as minőségben
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A hézagolás során a
+                                    gipszkarton lapok közötti hézagokat kell kitöltjük glettanyaggal, majd ezt követően
+                                    a bandázsszalagot beágyazzuk a glettanyagba, és további glettanyaggal fedjük le.
+                                </div>
+                            </td>
+                            <td>3100 Ft</td>
+                            <td>750 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Gipszkarton glettelése Q2-as minőségben
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A Q2-es minőségű
+                                    gipszkarton glettelés magában foglalja a Q1 minőségi osztályt, valamint további
+                                    rétegként a hézagok szélesebb sávban történő glettelését.</div>
+                            </td>
+                            <td>3100 Ft</td>
+                            <td>750 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Gipszkarton glettelése Q3-as minőségben
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A gipszkarton glettelése
+                                    Q3-as minőségben magába foglalja a Q2 minőségi osztályt, továbbá a hézagok még
+                                    szélesebb sávban történő glettelését, de továbbra sem teljes felületen.</div>
+                            </td>
+                            <td>3100 Ft</td>
+                            <td>750 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Gipszkarton glettelése Q3-as minőségben (utolsó réteg teljes felületen telibe glettelve)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A gipszkarton glettelése
+                                    Q3-as minőségben magába foglalja a Q2 minőségi osztályt, valamint a teljes felületen
+                                    történő glettelést.</div>
+                            </td>
+                            <td>3100 Ft</td>
+                            <td>750 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Gipszkarton glettelése Q4-as minőségben (utolsó réteg teljes felületen telibe glettelve)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A gipszkarton glettelése
+                                    a legmagasabb Q4-es minőségi osztályban tartalmazza a Q3 minőségi osztályt is,
+                                    továbbá a teljes felületen történő glettelést a lehető legtökéletesebb eredmény
+                                    eléréséért.</div>
+                            </td>
+                            <td>3100 Ft</td>
+                            <td>750 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Glettelt felület csiszolása
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A készrelgettelt falat
+                                    átcsiszoljuk porelszívós falcsiszolóval, hogy egyenletes és sima felületet érjünk
+                                    el.</div>
+                            </td>
+                            <td>400 Ft</td>
+                            <td>50 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Glettelt felület csiszolása
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A készrelgettelt falat
+                                    átcsiszoljuk porelszívós falcsiszolóval, hogy egyenletes és sima felületet érjünk
+                                    el.</div>
+                            </td>
+                            <td>400 Ft</td>
+                            <td>50 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Felület erősítő üvegfátyol ragasztása
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Az üvegfátyol gyakran
+                                    alkalmazzuk sűrűn repedezett falak és mennyezetek megerősítésére. Az üvegszálas
+                                    szerkezet segít átfedni és stabilizálni a repedéseket, hozzájárulva a falak és
+                                    mennyezetek erősségének és tartósságának növeléséhez.</div>
+                            </td>
+                            <td>1850 Ft</td>
+                            <td>650 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Alumínium élvédő felhelyezése (Ft/m)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Az alumínium élvédő
+                                    segít kiegyenlíteni a pozitív sarkok esetleges kisebb egyenetlenségeit, valamint
+                                    megvédi azokat a sérülésektől és kopástól.</div>
+                            </td>
+                            <td>700 Ft</td>
+                            <td>350 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Alumínium élvédő felhelyezése görbe, nem függő élekre
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Nem függő, görbe pozitív
+                                    élek kiegyenesítése alumínium élvédővel.</div>
+                            </td>
+                            <td>2000 Ft</td>
+                            <td>700 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Műanyag flexibilis élvédő felhelyezése glettbe ágyazva (Ft/m)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Műanyag flexibilis
+                                    élvédőket alkalmazzuk az íves, pozitív élek mentén, hogy azokat kiegyenlítsük,
+                                    védelmet nyújtsunk sérülések és kopás ellen.</div>
+                            </td>
+                            <td>900 Ft</td>
+                            <td>650 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Strait-Flex papír-üvegszál élvédő felrakása (Ft/m)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A Strait-Flex
+                                    papír-üvegszál kompozit élvédő egy nagyon erős bandázst biztosít az éleknek,
+                                    megakadályozva a repedések vagy törések kialakulását.</div>
+                            </td>
+                            <td>1200 Ft</td>
+                            <td>750 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Vezetékhorony javítása 5 cm széleségig és 5 cm mélységig
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Villanyszerelési
+                                    munkálatok után a vezetékhornyok kitöltése 6-30-as vakológipsszel</div>
+                            </td>
+                            <td>1500 Ft</td>
+                            <td>600 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Vezetékhorony javítása 5-10 cm széleségig és 5 cm mélységig
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Villanyszerelési
+                                    munkálatok után a vezetékhornyok kitöltése 6-30-as vakológipsszel</div>
+                            </td>
+                            <td>2500 Ft</td>
+                            <td>1200 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Penészes felület kezelése HÉRA penészgátló lemosóoldattal
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A HÉRA penészgátló
+                                    lemosóoldat segítségével hatékonyan kezelhető a penészes felületek, biztosítva a
+                                    hatékony penészmentesítést és megelőzve annak visszatérését</div>
+                            </td>
+                            <td>500 Ft</td>
+                            <td>320 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Akriltömítés max. 2 mm-ig (Ft/m)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Falak negatív sarkainál
+                                    a repedések, ajtó és ablak tokok fallal való találkozásai pontjainak kitöltése
+                                    festhető akriltömítővel.</div>
+                            </td>
+                            <td>220 Ft</td>
+                            <td>110 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Diletáció, repedések javítása 3 mm szélességig
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A falak dilatációs
+                                    repedéseinek hatékony javításához megfelelő szélességű dilatációs szalagot és
+                                    rugalmas kitöltőanyagot használunk.</div>
+                            </td>
+                            <td>300 Ft</td>
+                            <td>100 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Villanyszerelési kötődobozok elfedése 100x100 mm-es gipszkarton javító lappal
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Az optikailag zavaró
+                                    kötödoboz fedeleket eltávolítjuk, és a helyükre 100x100 mm-es gipszkarton javító
+                                    lapokat helyezünk el, majd ezeket síkba gletteljük.</div>
+                            </td>
+                            <td>500 Ft</td>
+                            <td>800 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Szerelvénydoboz vakolófedél elhelyezése (gépi glettelés esetén)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A célja az, hogy
+                                    megakadályozza a glettszórás során felhasznált anyag bejutását a szerelvénydobozba.
+                                </div>
+                            </td>
+                            <td>150 Ft</td>
+                            <td>100 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Kiemelt ragasztott élvédő alkalmazása
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A kiemelt ragasztott
+                                    élvédő esetén az élvédőt alapos ragasztóval erősítjük a felületre, hogy hosszú távú
+                                    tartós védelmet nyújtson a különféle külső hatásokkal szemben.</div>
+                            </td>
+                            <td>1500 Ft</td>
+                            <td>800 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Felület tisztítása
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Az előkészítő munkálatok
+                                    során a felületeket alaposan megtisztítjuk a portól, szennyeződésektől és egyéb
+                                    akadályoktól, hogy a festék vagy tapéta tartósan jól tapadjon a falakra.</div>
+                            </td>
+                            <td>500 Ft</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Festés árai -->
-    <div class="container">
-        <div class="py-5"></div>
-        <h2 class="text-center mb-4" style="font-weight: bold; color: wheat;" id="Festes">Festés Árai</h2>
 
-        <!-- Új Pár-container elemek a második kódból -->
-        <div class="d-flex flex-column flex-md-row flex-wrap">
-            <!-- Pár-container 25 -->
-            <div class="pair-container">
-                <div class="work-item">
-                    <h3>Festés két rétegben fehér színben, előkészített falfelületen</h3>
-                    <p style="color: white;"><strong>Munkadíj:</strong> 1650 Ft/m², <strong>Anyagdíj:</strong> 200 Ft/m²
-                    </p>
-                </div>
-                <div class="calculator-item">
-                    <div class="form-group">
-                        <label for="area25">Adja meg a területet (m²):</label>
-                        <input type="number" class="form-control area-input" id="area25" data-munkadij="1650"
-                            data-anyagdij="200" placeholder="Adja meg a területet">
-                    </div>
-                    <p><strong>Összesen:</strong> <span id="totalCost25">0 Ft</span></p>
-                </div>
+    <section class="py-5">
+        <div class="container">
+            <div class="table-wrapper">
+                <h2 class="text-center mb-4" style="color: #2c3e50; font-weight: bold;">Festés Árak 2025</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Munkafolyamat</th>
+                            <th>Munkadíj (Ft/m²)</th>
+                            <th>Anyagdíj (Ft/m²)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Festés két rétegben fehér színben, előkészített falfelületen
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Glettelt, mélyalapozott
+                                    felület festése két rétegben</div>
+                            </td>
+                            <td>1650 Ft</td>
+                            <td>200 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Festés három rétegben fehér színben, előkészített falfelületen
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Glettelt, mélyalapozott
+                                    felület festése három rétegben</div>
+                            </td>
+                            <td>2300 Ft</td>
+                            <td>280 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Festés két rétegben helyszínen színezett festékkel, előkészített falfelületen
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A festéket helyszínen
+                                    szinezőpaszta segítségével keverjük be a kívánt pasztelszínű árnyalat eléréséhez.
+                                </div>
+                            </td>
+                            <td>1750 Ft</td>
+                            <td>300 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Festés két rétegben gyárilag vagy színkártya alapján színezett festékkel, előkészített
+                                falfelületen
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A festéket színkártya
+                                    segítségével festékeverőgépen keverjük be a kívánt szín eléréséhez, vagy
+                                    választhatjuk a gyárilag kész színes festékeket.</div>
+                            </td>
+                            <td>1800 Ft</td>
+                            <td>550 Ft</td>
+                        </tr>
+                        <tr>
+                            <td><a href="szobafestes.html">Tisztasági festés</a> egy rétegben fehér színben, falhibák
+                                javításával
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Tisztasági festésről
+                                    akkor beszélünk, amikor a falak jól állapotban vannak és csak egy felfrissítő
+                                    festésre van szükség azonos színben.</div>
+                            </td>
+                            <td>1150 Ft</td>
+                            <td>200 Ft</td>
+                        </tr>
+                        <tr>
+                            <td><a href="tisztasagi-festes.html">Tisztasági festés</a> két rétegben fehér színben,
+                                falhibák javításával
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Tisztasági festésről
+                                    akkor beszélünk, amikor a falak jól állapotban vannak és csak egy felfrissítő
+                                    festésre van szükség azonos színben.</div>
+                            </td>
+                            <td>1750 Ft</td>
+                            <td>250 Ft</td>
+                        </tr>
+                        <tr>
+                            <td><a href="iroda-festes.html">Iroda tisztasági festése</a> két rétegben fehér színben,
+                                falhibák javításával
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Az iroda tisztasági
+                                    festése során a cél általában az iroda környezetének frissítése és kellemesebbé
+                                    tétele. </div>
+                            </td>
+                            <td>1750 Ft</td>
+                            <td>250 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Lépcsőház tisztasági festése két rétegben fehér színben, falhibák javításával
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Lépcsőház tisztasági
+                                    festése során az a cél, hogy a közös terület friss és rendezett megjelenést kapjon.
+                                </div>
+                            </td>
+                            <td>1900 Ft-tól</td>
+                            <td>250 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Tisztasági <a href="gepi-festes.html">gépi festés</a> (gépi festékszórás) egy rétegben
+                                fehér színben, falhibák javításával
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A tisztasági festés
+                                    során a festékszóró gép használata hatékony módszer lehet, különösen nagyobb
+                                    felületek festésére. A festékszóró géppel való festés számos előnnyel járhat,
+                                    beleértve a gyorsabb munkavégzést és az egyenletes festék eloszlást. </div>
+                            </td>
+                            <td>1150 Ft</td>
+                            <td>200 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Tisztasági gépi festés (gépi festékszórás) két rétegben fehér színben, falhibák
+                                javításával
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A tisztasági festés
+                                    során a festékszóró gép használata hatékony módszer lehet, különösen nagyobb
+                                    felületek festésére. A festékszóró géppel való festés számos előnnyel járhat,
+                                    beleértve a gyorsabb munkavégzést és az egyenletes festék eloszlást. </div>
+                            </td>
+                            <td>1750 Ft</td>
+                            <td>250 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Festés penészedés gátló falfestékkel két rétegben, fehér színben
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A penész elleni
+                                    falfesték speciális összetevőkkel rendelkezik, amelyek gátolják a penész
+                                    kialakulását és terjedését a falon.</div>
+                            </td>
+                            <td>1750 Ft</td>
+                            <td>420 Ft</td>
+                        </tr>
+                        <tr>
+                            <td><a href="szobafestes.html#image1-33">Homlokzatfestés</a> két rétegben (sima, tagolatlan
+                                felületen)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A homlokzatfesték
+                                    felhordása sima vakolt vagy korábban festett, tagolatlan felületre történik.</div>
+                            </td>
+                            <td>2850 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Homlokzatfestés két rétegben (durva, tagolatlan felületen)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A homlokzatfesték
+                                    felhordása kapart vagy dörzsölt vakoltra, tagolatlan felületre történik.</div>
+                            </td>
+                            <td>5000 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Színhatár képzés (Ft/m)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A "színhatár képzés" egy
+                                    festési technika vagy eljárás, amely során két különböző szín vagy színezett terület
+                                    közötti határ jön létre.</div>
+                            </td>
+                            <td>400 Ft</td>
+                            <td>80 Ft</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-
-            <!-- Pár-container 26 -->
-            <div class="pair-container">
-                <div class="work-item">
-                    <h3>Festés három rétegben fehér színben, előkészített falfelületen</h3>
-                    <p style="color: white;"><strong>Munkadíj:</strong> 2300 Ft/m², <strong>Anyagdíj:</strong> 280 Ft/m²
-                    </p>
-                </div>
-                <div class="calculator-item">
-                    <div class="form-group">
-                        <label for="area26">Adja meg a területet (m²):</label>
-                        <input type="number" class="form-control area-input" id="area26" data-munkadij="2300"
-                            data-anyagdij="280" placeholder="Adja meg a területet">
-                    </div>
-                    <p><strong>Összesen:</strong> <span id="totalCost26">0 Ft</span></p>
-                </div>
-            </div>
-
-            <!-- Pár-container 27 -->
-            <div class="pair-container">
-                <div class="work-item">
-                    <h3>Festés két rétegben helyszínen színezett festékkel, előkészített falfelületen</h3>
-                    <p style="color: white;"><strong>Munkadíj:</strong> 1750 Ft/m², <strong>Anyagdíj:</strong> 300 Ft/m²
-                    </p>
-                </div>
-                <div class="calculator-item">
-                    <div class="form-group">
-                        <label for="area27">Adja meg a területet (m²):</label>
-                        <input type="number" class="form-control area-input" id="area27" data-munkadij="1750"
-                            data-anyagdij="300" placeholder="Adja meg a területet">
-                    </div>
-                    <p><strong>Összesen:</strong> <span id="totalCost27">0 Ft</span></p>
-                </div>
-            </div>
-
-            <!-- Pár-container 28 -->
-            <div class="pair-container">
-                <div class="work-item">
-                    <h3>Festés két rétegben gyárilag vagy színkártya alapján színezett festékkel, előkészített
-                        falfelületen
-                    </h3>
-                    <p style="color: white;"><strong>Munkadíj:</strong> 1800 Ft/m², <strong>Anyagdíj:</strong> 550 Ft/m²
-                    </p>
-                </div>
-                <div class="calculator-item">
-                    <div class="form-group">
-                        <label for="area28">Adja meg a területet (m²):</label>
-                        <input type="number" class="form-control area-input" id="area28" data-munkadij="1800"
-                            data-anyagdij="550" placeholder="Adja meg a területet">
-                    </div>
-                    <p><strong>Összesen:</strong> <span id="totalCost28">0 Ft</span></p>
-                </div>
-            </div>
-
-            <!-- Pár-container 29 -->
-            <div class="pair-container">
-                <div class="work-item">
-                    <h3>Tisztasági festés egy rétegben fehér színben, falhibák javításával</h3>
-                    <p style="color: white;"><strong>Munkadíj:</strong> 1150 Ft/m², <strong>Anyagdíj:</strong> 200 Ft/m²
-                    </p>
-                </div>
-                <div class="calculator-item">
-                    <div class="form-group">
-                        <label for="area29">Adja meg a területet (m²):</label>
-                        <input type="number" class="form-control area-input" id="area29" data-munkadij="1150"
-                            data-anyagdij="200" placeholder="Adja meg a területet">
-                    </div>
-                    <p><strong>Összesen:</strong> <span id="totalCost29">0 Ft</span></p>
-                </div>
-            </div>
-
-            <!-- Pár-container 30 -->
-            <div class="pair-container">
-                <div class="work-item">
-                    <h3>Tisztasági festés két rétegben fehér színben, falhibák javításával</h3>
-                    <p style="color: white;"><strong>Munkadíj:</strong> 1750 Ft/m², <strong>Anyagdíj:</strong> 250 Ft/m²
-                    </p>
-                </div>
-                <div class="calculator-item">
-                    <div class="form-group">
-                        <label for="area30">Adja meg a területet (m²):</label>
-                        <input type="number" class="form-control area-input" id="area30" data-munkadij="1750"
-                            data-anyagdij="250" placeholder="Adja meg a területet">
-                    </div>
-                    <p><strong>Összesen:</strong> <span id="totalCost30">0 Ft</span></p>
-                </div>
-            </div>
-
-            <!-- Pár-container 31 -->
-            <div class="pair-container">
-                <div class="work-item">
-                    <h3>Iroda tisztasági festése két rétegben fehér színben, falhibák javításával</h3>
-                    <p style="color: white;"><strong>Munkadíj:</strong> 1750 Ft/m², <strong>Anyagdíj:</strong> 250 Ft/m²
-                    </p>
-                </div>
-                <div class="calculator-item">
-                    <div class="form-group">
-                        <label for="area31">Adja meg a területet (m²):</label>
-                        <input type="number" class="form-control area-input" id="area31" data-munkadij="1750"
-                            data-anyagdij="250" placeholder="Adja meg a területet">
-                    </div>
-                    <p><strong>Összesen:</strong> <span id="totalCost31">0 Ft</span></p>
-                </div>
-            </div>
-
-            <!-- Pár-container 32 -->
-            <div class="pair-container">
-                <div class="work-item">
-                    <h3>Lépcsőház tisztasági festése két rétegben fehér színben, falhibák javításával</h3>
-                    <p style="color: white;"><strong>Munkadíj:</strong> 1900 Ft-tól/m², <strong>Anyagdíj:</strong> 250
-                        Ft/m²
-                    </p>
-                </div>
-                <div class="calculator-item">
-                    <div class="form-group">
-                        <label for="area32">Adja meg a területet (m²):</label>
-                        <input type="number" class="form-control area-input" id="area32" data-munkadij="1900"
-                            data-anyagdij="250" placeholder="Adja meg a területet">
-                    </div>
-                    <p><strong>Összesen:</strong> <span id="totalCost32">0 Ft</span></p>
-                </div>
-            </div>
-
-            <!-- Pár-container 33 -->
-            <div class="pair-container">
-                <div class="work-item">
-                    <h3>Tisztasági gépi festés (gépi festékszórás) egy rétegben fehér színben, falhibák javításával</h3>
-                    <p style="color: white;"><strong>Munkadíj:</strong> 1150 Ft/m², <strong>Anyagdíj:</strong> 200 Ft/m²
-                    </p>
-                </div>
-                <div class="calculator-item">
-                    <div class="form-group">
-                        <label for="area33">Adja meg a területet (m²):</label>
-                        <input type="number" class="form-control area-input" id="area33" data-munkadij="1150"
-                            data-anyagdij="200" placeholder="Adja meg a területet">
-                    </div>
-                    <p><strong>Összesen:</strong> <span id="totalCost33">0 Ft</span></p>
-                </div>
-            </div>
-
-            <!-- Pár-container 34 -->
-            <div class="pair-container">
-                <div class="work-item">
-                    <h3>Tisztasági gépi festés két rétegben fehér színben, falhibák javításával</h3>
-                    <p style="color: white;"><strong>Munkadíj:</strong> 1750 Ft/m², <strong>Anyagdíj:</strong> 250 Ft/m²
-                    </p>
-                </div>
-                <div class="calculator-item">
-                    <div class="form-group">
-                        <label for="area34">Adja meg a területet (m²):</label>
-                        <input type="number" class="form-control area-input" id="area34" data-munkadij="1750"
-                            data-anyagdij="250" placeholder="Adja meg a területet">
-                    </div>
-                    <p><strong>Összesen:</strong> <span id="totalCost34">0 Ft</span></p>
-                </div>
-            </div>
-
-            <!-- Pár-container 35 -->
-            <div class="pair-container">
-                <div class="work-item">
-                    <h3>Festés penészedés gátló falfestékkel két rétegben, fehér színben</h3>
-                    <p style="color: white;"><strong>Munkadíj:</strong> 1750 Ft/m², <strong>Anyagdíj:</strong> 420 Ft/m²
-                    </p>
-                </div>
-                <div class="calculator-item">
-                    <div class="form-group">
-                        <label for="area35">Adja meg a területet (m²):</label>
-                        <input type="number" class="form-control area-input" id="area35" data-munkadij="1750"
-                            data-anyagdij="420" placeholder="Adja meg a területet">
-                    </div>
-                    <p><strong>Összesen:</strong> <span id="totalCost35">0 Ft</span></p>
-                </div>
-            </div>
-
-            <!-- Pár-container 36 -->
-            <div class="pair-container">
-                <div class="work-item">
-                    <h3>Homlokzatfestés két rétegben (sima, tagolatlan felületen)</h3>
-                    <p style="color: white;"><strong>Munkadíj:</strong> 2850 Ft/m², <strong>Anyagdíj:</strong> -</p>
-                </div>
-                <div class="calculator-item">
-                    <div class="form-group">
-                        <label for="area36">Adja meg a területet (m²):</label>
-                        <input type="number" class="form-control area-input" id="area36" data-munkadij="2850"
-                            data-anyagdij="0" placeholder="Adja meg a területet">
-                    </div>
-                    <p><strong>Összesen:</strong> <span id="totalCost36">0 Ft</span></p>
-                </div>
-            </div>
-
-            <!-- Pár-container 37 -->
-            <div class="pair-container">
-                <div class="work-item">
-                    <h3>Homlokzatfestés két rétegben (durva, tagolatlan felületen)</h3>
-                    <p style="color: white;"><strong>Munkadíj:</strong> 5000 Ft/m², <strong>Anyagdíj:</strong> -</p>
-                </div>
-                <div class="calculator-item">
-                    <div class="form-group">
-                        <label for="area37">Adja meg a területet (m²):</label>
-                        <input type="number" class="form-control area-input" id="area37" data-munkadij="5000"
-                            data-anyagdij="0" placeholder="Adja meg a területet">
-                    </div>
-                    <p><strong>Összesen:</strong> <span id="totalCost37">0 Ft</span></p>
-                </div>
-            </div>
-
-            <!-- Pár-container 38 -->
-            <div class="pair-container">
-                <div class="work-item">
-                    <h3>Színhatár képzés (Ft/m)</h3>
-                    <p style="color: white;"><strong>Munkadíj:</strong> 400 Ft/m, <strong>Anyagdíj:</strong> -</p>
-                </div>
-                <div class="calculator-item">
-                    <div class="form-group">
-                        <label for="area38">Adja meg a hosszúságot (m):</label>
-                        <input type="number" class="form-control area-input" id="area38" data-munkadij="400"
-                            data-anyagdij="0" placeholder="Adja meg a hosszúságot">
-                    </div>
-                    <p><strong>Összesen:</strong> <span id="totalCost38">0 Ft</span></p>
-                </div>
-            </div>
-
         </div>
-    </div>
-    </div>
+    </section>
+
     <!-- Mázolás árai -->
-    <div class="container">
-        <div class="py-5">
-            <h2 class="text-center mb-4" style="font-weight: bold; color: wheat;" id="Mazolas">Mázolás Árai</h2>
-            <div class="d-flex flex-column flex-md-row flex-wrap">
-                <!-- Pár-container 1 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Új fa nyílászáró mázolása vizes bázisú bevonatrendszerrel, nagyobb felületi hibák
-                            tapaszolásával</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 9900 Ft/m², <strong>Anyagdíj:</strong> 3250
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area39">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area39" data-munkadij="9900"
-                                data-anyagdij="3250" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost39">0 Ft</span></p>
-                    </div>
-                </div>
 
-                <!-- Pár-container 2 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Régi fa nyílászáró mázolása Trinát vizes bázisú bevonatrendszerrel, nagyobb felületi hibák
-                            tapaszolásával</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 9900 Ft/m², <strong>Anyagdíj:</strong> 3000
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area40">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area40" data-munkadij="9900"
-                                data-anyagdij="3000" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost40">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 3 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Nyílászárók égetése</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 10 000 Ft, <strong>Anyagdíj:</strong> 500 Ft
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area41">Adja meg a darabszámot:</label>
-                            <input type="number" class="form-control area-input" id="area41" data-munkadij="10000"
-                                data-anyagdij="500" placeholder="Adja meg a darabszámot" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost41">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 4 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Széldeszka, oromdeszka mázolása 2 rétegben, 3m magasságig</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 6500 Ft/m, <strong>Anyagdíj:</strong> -</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area42">Adja meg a hosszúságot (m):</label>
-                            <input type="number" class="form-control area-input" id="area42" data-munkadij="6500"
-                                data-anyagdij="0" placeholder="Adja meg a hosszúságot" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost42">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 5 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Széldeszka, oromdeszka mázolása 2 rétegben, 3m - 7m magasság között</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 7500 Ft/m, <strong>Anyagdíj:</strong> -</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area43">Adja meg a hosszúságot (m):</label>
-                            <input type="number" class="form-control area-input" id="area43" data-munkadij="7500"
-                                data-anyagdij="0" placeholder="Adja meg a hosszúságot" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost43">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 6 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Széldeszka, oromdeszka lazúrozása 2 rétegben 3m magasságig</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 5500 Ft/m, <strong>Anyagdíj:</strong> -</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area44">Adja meg a hosszúságot (m):</label>
-                            <input type="number" class="form-control area-input" id="area44" data-munkadij="5500"
-                                data-anyagdij="0" placeholder="Adja meg a hosszúságot" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost44">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 7 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Széldeszka, oromdeszka lazúrozása 2 rétegben, 3m - 7m magasság között</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 6500 Ft/m, <strong>Anyagdíj:</strong> -</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area45">Adja meg a hosszúságot (m):</label>
-                            <input type="number" class="form-control area-input" id="area45" data-munkadij="6500"
-                                data-anyagdij="0" placeholder="Adja meg a hosszúságot" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost45">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 8 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Mázolás fém felületen (radiátor, rács stb.)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 7500 Ft/m, <strong>Anyagdíj:</strong> 2000
-                            Ft/m</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area46">Adja meg a hosszúságot (m):</label>
-                            <input type="number" class="form-control area-input" id="area46" data-munkadij="7500"
-                                data-anyagdij="2000" placeholder="Adja meg a hosszúságot" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost46">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 9 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Cső mázolás (Na80-ig) (Ft/m)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 850 Ft/m, <strong>Anyagdíj:</strong> 250
-                            Ft/m</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area47">Adja meg a hosszúságot (m):</label>
-                            <input type="number" class="form-control area-input" id="area47" data-munkadij="850"
-                                data-anyagdij="250" placeholder="Adja meg a hosszúságot" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost47">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 10 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Kerítésfestés, kerítés mázolás</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 6500 Ft/m²-tól, <strong>Anyagdíj:</strong> -
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area48">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area48" data-munkadij="6500"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost48">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 11 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Lazúrozás 1 rétegben</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 3000 Ft/m², <strong>Anyagdíj:</strong> -</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area49">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area49" data-munkadij="3000"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost49">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 12 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Lakkozás felújítása 1 rétegben</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 3000 Ft/m², <strong>Anyagdíj:</strong> -</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area50">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area50" data-munkadij="3000"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost50">0 Ft</span></p>
-                    </div>
-                </div>
+    <section class="py-5">
+        <div class="container">
+            <div class="table-wrapper">
+                <h2 class="text-center mb-4" style="color: #2c3e50; font-weight: bold;">Mázolás Árak 2025</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Munkafolyamat</th>
+                            <th>Munkadíj (Ft/m²)</th>
+                            <th>Anyagdíj (Ft/m²)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Új fa nyílászáró mázolása vizes bázisú bevonatrendszerrel, nagyobb felületi hibák
+                                tapaszolásával
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Ez a szolgáltatás a fa
+                                    nyílászárók felújítását és tisztítását is magában foglalja a felületi hibák
+                                    kijavításával együtt.</div>
+                            </td>
+                            <td>9900 Ft</td>
+                            <td>3250 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Régi fa nyílászáró mázolása Trinát vizes bázisú bevonatrendszerrel, nagyobb felületi
+                                hibák tapaszolásával
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Régi fa nyílászárók
+                                    felújítása vizes bázisú festékkel a felületi hibák kijavításával.</div>
+                            </td>
+                            <td>9900 Ft</td>
+                            <td>3000 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Nyílászárók égetése
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Ez a szolgáltatás
+                                    magában foglalja a nyílászárók égetését, amely során a festék eltávolítása történik.
+                                </div>
+                            </td>
+                            <td>10 000 Ft</td>
+                            <td>500 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Széldeszka, oromdeszka mázolása 2 rétegben, 3m magasságig
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Ezen szolgáltatás
+                                    keretében a széldeszkák és oromdeszkák festése történik, két rétegben, 3 méteres
+                                    magasságig.</div>
+                            </td>
+                            <td>6500 Ft-tól</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Széldeszka, oromdeszka mázolása 2 rétegben, 3m - 7m magasság között
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A festés ezen változata
+                                    a magasabb széldeszkák és oromdeszkák festését tartalmazza, 3 és 7 méter közötti
+                                    magasságig.</div>
+                            </td>
+                            <td>7500 Ft-tól</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Széldeszka, oromdeszka lazúrozása 2 rétegben 3m magasságig
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Lazúros festék
+                                    használata a széldeszkák és oromdeszkák felületén, két rétegben, 3 méteres
+                                    magasságig.</div>
+                            </td>
+                            <td>5500 Ft-tól</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Széldeszka, oromdeszka lazúrozása 2 rétegben, 3m - 7m magasság között
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Lazúros festék
+                                    használata a magasabb széldeszkák és oromdeszkák felületén, két rétegben, 3 és 7
+                                    méter közötti magasságban.</div>
+                            </td>
+                            <td>6500 Ft-tól</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><a href="mazolas.html">Mázolás</a> fém felületen (radiátor, rács stb.)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Fémfelületek festése,
+                                    mint radiátorok vagy rácsok, speciális festékkel történik.</div>
+                            </td>
+                            <td>7500 Ft</td>
+                            <td>2000 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Cső mázolás: (Na80-ig) (Ft/m)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Csövek festése méretük
+                                    alapján, Ft/m árakkal.</div>
+                            </td>
+                            <td>850 Ft</td>
+                            <td>250 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Kerítésfestés, kerítés mázolás
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Kerítések festése,
+                                    felületük előkészítése és mázolása, az árak felület méretétől függnek.</div>
+                            </td>
+                            <td>6500 Ft-tól</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Lazúrozás 1 rétegben
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A lazúrozás egy átlátszó
+                                    festékréteg, amely megőrzi a fa természetes kinézetét, miközben védi azt.</div>
+                            </td>
+                            <td>3000 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Lakkozás felújítása 1 rétegben
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A lakkozás felújítása
+                                    révén megújítjuk a felületek fényét és védelmét, egy rétegben történő felhordással.
+                                </div>
+                            </td>
+                            <td>3000 Ft</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Tapétázás Árak 2024 -->
-    <!-- Tapétázás Árak 2024 -->
+    <!-- Tapétázás árai -->
 
-    <div class="container">
-        <div class="py-5">
-            <h2 class="text-center mb-4" style="font-weight: bold; color: wheat;" id="Tapetazas">Tapétázás Árak</h2>
-            <div class="d-flex flex-column flex-md-row flex-wrap">
-                <!-- Pár-container 1 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Makulatúra ragasztás</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 1 500 Ft/m², <strong>Anyagdíj:</strong> 300
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area51">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area51" data-munkadij="1500"
-                                data-anyagdij="300" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost51">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 2 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Makulatúra csíkragasztás</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 1 000 Ft/m², <strong>Anyagdíj:</strong> 200
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area52">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area52" data-munkadij="1000"
-                                data-anyagdij="200" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost52">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 3 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Folyékony makulatúra felhordása</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 1 000 Ft/m², <strong>Anyagdíj:</strong> 300
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area53">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area53" data-munkadij="1000"
-                                data-anyagdij="300" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost53">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 4 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Tapétázás könnyű tapétával (pl. fűrészporos)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 3 500 Ft/m², <strong>Anyagdíj:</strong> 300
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area54">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area54" data-munkadij="3500"
-                                data-anyagdij="300" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost54">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 5 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Tapétázás tagolt felületen, könnyű tapétával (pl. fűrészporos)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 6 000 Ft/m², <strong>Anyagdíj:</strong> 300
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area55">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area55" data-munkadij="6000"
-                                data-anyagdij="300" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost55">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 6 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Tapétázás középnehéz tapétával (habosított, vlies)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 4 200 Ft/m², <strong>Anyagdíj:</strong> 350
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area56">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area56" data-munkadij="4200"
-                                data-anyagdij="350" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost56">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 7 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Tapétázás tagolt felületen, középnehéz tapétával (habosított, vlies)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 8 000 Ft/m², <strong>Anyagdíj:</strong> 350
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area57">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area57" data-munkadij="8000"
-                                data-anyagdij="350" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost57">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 8 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Tapétázás nehéz tapétával (textil, vinyl)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 4 700 Ft/m², <strong>Anyagdíj:</strong> 400
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area58">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area58" data-munkadij="4700"
-                                data-anyagdij="400" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost58">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 9 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Tapétázás tagolt felületen, nehéz tapétával (textil, vinyl)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 9 000 Ft/m², <strong>Anyagdíj:</strong> 400
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area59">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area59" data-munkadij="9000"
-                                data-anyagdij="400" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost59">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 10 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Poszter vagy fotótapéta ragasztása</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 6 900 Ft/m², <strong>Anyagdíj:</strong> 450
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area60">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area60" data-munkadij="6900"
-                                data-anyagdij="450" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost60">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 11 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Üvegszálas tapétaragasztás</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 2 700 Ft/m², <strong>Anyagdíj:</strong> 300
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area61">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area61" data-munkadij="2700"
-                                data-anyagdij="300" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost61">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 12 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Bordűr felragasztása</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 1 000 Ft/m², <strong>Anyagdíj:</strong> 200
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area62">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area62" data-munkadij="1000"
-                                data-anyagdij="200" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost62">0 Ft</span></p>
-                    </div>
-                </div>
+    <section class="py-5">
+        <div class="container">
+            <div class="table-wrapper">
+                <h2 class="text-center mb-4" style="color: #2c3e50; font-weight: bold;">Tapétázás Árak 2025</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Munkafolyamat</th>
+                            <th>Munkadíj (Ft/m²)</th>
+                            <th>Anyagdíj (Ft/m²)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Makulatúra ragasztás
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Ez a szolgáltatás a
+                                    makulatúra ragasztására vonatkozik, amely egy alapozó rétegként szolgál a tapétázás
+                                    előtt.</div>
+                            </td>
+                            <td>1 500 Ft</td>
+                            <td>300 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Makulatúra csíkragasztás
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Ez a szolgáltatás
+                                    makulatúra csíkragasztását foglalja magában, különböző felületeken.</div>
+                            </td>
+                            <td>1 000 Ft</td>
+                            <td>200 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Folyékony makulatúra felhordása
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A folyékony makulatúra
+                                    felhordása biztosítja a sima és egyenletes alapot a tapétázás előtt.</div>
+                            </td>
+                            <td>1 000 Ft</td>
+                            <td>300 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Tapétázás könnyű tapétával (pl. fűrészporos)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Könnyű tapéta
+                                    alkalmazása, például fűrészporos tapéta használata.</div>
+                            </td>
+                            <td>3 500 Ft</td>
+                            <td>300 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Tapétázás tagolt felületen, könnyű tapétával (pl. fűrészporos)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Ez a szolgáltatás könnyű
+                                    tapéta felragasztását tartalmazza tagolt felületeken.</div>
+                            </td>
+                            <td>6 000 Ft</td>
+                            <td>300 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Tapétázás középnehéz tapétával (habosított, vlies)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Középnehéz tapéta
+                                    használata, mint a habosított vagy vlies tapéták.</div>
+                            </td>
+                            <td>4 200 Ft</td>
+                            <td>350 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Tapétázás tagolt felületen, középnehéz tapétával (habosított, vlies)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Ez a szolgáltatás
+                                    középnehéz tapéták felragasztását tartalmazza tagolt felületeken.</div>
+                            </td>
+                            <td>8 000 Ft</td>
+                            <td>350 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Tapétázás nehéz tapétával (textil, vinyl)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Nehéz tapéták
+                                    alkalmazása, mint a textil vagy vinyl tapéták.</div>
+                            </td>
+                            <td>4 700 Ft</td>
+                            <td>400 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Tapétázás tagolt felületen, nehéz tapétával (textil, vinyl)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Ez a szolgáltatás nehéz
+                                    tapéták felragasztását tartalmazza tagolt felületeken.</div>
+                            </td>
+                            <td>9 000 Ft</td>
+                            <td>400 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Poszter vagy fotótapéta ragasztása
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Poszterek vagy
+                                    fotótapéták felragasztása, egyedi designokkal.</div>
+                            </td>
+                            <td>6 900 Ft</td>
+                            <td>450 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Üvegszálas tapétaragasztás
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Üvegszálas tapéta
+                                    felragasztása, amely erős és tartós felületet biztosít.</div>
+                            </td>
+                            <td>2 700 Ft</td>
+                            <td>300 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Bordűr felragasztása
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Bordűrök felragasztása,
+                                    dekoratív kiegészítők a falak díszítésére.</div>
+                            </td>
+                            <td>1 000 Ft</td>
+                            <td>200 Ft</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Egyéb Munkák Árai 2024 -->
-    <!-- Egyéb Munkák Árai 2024 -->
 
-    <div class="container">
-        <div class="py-5">
-            <h2 class="text-center mb-4" style="font-weight: bold; color: wheat;" id="Egyeb">Egyéb Munkák Árai</h2>
-            <div class="d-flex flex-column flex-md-row flex-wrap">
-                <!-- Pár-container 1 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Polisztirol díszléc ragasztása (50mm-ig)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 1 000 Ft/m², <strong>Anyagdíj:</strong> 250
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area63">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area63" data-munkadij="1000"
-                                data-anyagdij="250" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost63">0 Ft</span></p>
-                    </div>
-                </div>
+    <!-- egyéb munkák -->
 
-                <!-- Pár-container 2 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Polisztirol díszléc ragasztása tetőtérben vagy tagolt felületeken (50mm-ig)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 1 200 Ft/m², <strong>Anyagdíj:</strong> 250
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area64">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area64" data-munkadij="1200"
-                                data-anyagdij="250" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost64">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 3 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Polisztirol díszléc ragasztása (55mm-110mm-ig)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 1 400 Ft/m², <strong>Anyagdíj:</strong> 300
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area65">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area65" data-munkadij="1400"
-                                data-anyagdij="300" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost65">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 4 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Polisztirol díszléc ragasztása tetőtérben vagy tagolt felületeken (55mm-110mm-ig)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 1 600 Ft/m², <strong>Anyagdíj:</strong> 300
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area66">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area66" data-munkadij="1600"
-                                data-anyagdij="300" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost66">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 5 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Rozetták ragasztása, festése 40cm átmérőig</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 3 000 Ft/m², <strong>Anyagdíj:</strong> 0
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area67">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area67" data-munkadij="3000"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost67">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 6 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Rozetták ragasztása, festése 70cm átmérőig</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 4 500 Ft/m², <strong>Anyagdíj:</strong> 0
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area68">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area68" data-munkadij="4500"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost68">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 7 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Díszítő festés (foltos fal, egyszerűbb dekor festékek, antikolás stb...)</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 6 000 Ft/m², <strong>Anyagdíj:</strong> 0
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area69">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area69" data-munkadij="6000"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost69">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 8 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Betonhatás dekorfal készítése Jub Beton Lookkal</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 12 000 Ft/m², <strong>Anyagdíj:</strong> 0
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area70">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area70" data-munkadij="12000"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost70">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 9 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Kapcsolók, konnektorok fedelének le és felszerelése</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 300 Ft/m², <strong>Anyagdíj:</strong> 0
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area71">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area71" data-munkadij="300"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost71">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 10 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Radiátor le és felszerelése</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 5 000 Ft/m², <strong>Anyagdíj:</strong> 0
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area72">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area72" data-munkadij="5000"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost72">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pár-container 11 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Lámpa, falikar le és felszerelése</h3>
-                        <p style="color: white;"><strong>Munkadíj:</strong> 3 000 Ft/m², <strong>Anyagdíj:</strong> 0
-                            Ft/m²</p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area73">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area73" data-munkadij="3000"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost73">0 Ft</span></p>
-                    </div>
-                </div>
+    <section class="py-5">
+        <div class="container">
+            <div class="table-wrapper">
+                <h2 class="text-center mb-4" style="color: #2c3e50; font-weight: bold;">Egyéb Munkák Árai</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Munkafolyamat</th>
+                            <th>Munkadíj (Ft/m²)</th>
+                            <th>Anyagdíj (Ft/m²)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Polisztirol díszléc ragasztása (50mm-ig)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Ez a szolgáltatás
+                                    polisztirol díszléc ragasztására vonatkozik, 50mm-es vastagságig.</div>
+                            </td>
+                            <td>1 000 Ft</td>
+                            <td>250 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Polisztirol díszléc ragasztása tetőtérben vagy tagolt felületeken (50mm-ig)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Ez a szolgáltatás
+                                    polisztirol díszléc ragasztására vonatkozik tetőtérben vagy tagolt felületeken,
+                                    50mm-es vastagságig.</div>
+                            </td>
+                            <td>1 200 Ft</td>
+                            <td>250 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Polisztirol díszléc ragasztása (55mm-110mm-ig)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Ez a szolgáltatás
+                                    polisztirol díszléc ragasztására vonatkozik, 55mm-110mm-es vastagságig.</div>
+                            </td>
+                            <td>1 400 Ft</td>
+                            <td>300 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Homlokzat tisztítás
+                                <div style="margin-top: 10px; font-style: italic; color: #555;"></div>
+                            </td>
+                            <td>1 500 Ft</td>
+                            <td>- </td>
+                        </tr>
+                        <tr>
+                            <td>Polisztirol díszléc ragasztása tetőtérben vagy tagolt felületeken (55mm-110mm-ig)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Ez a szolgáltatás
+                                    polisztirol díszléc ragasztására vonatkozik tetőtérben vagy tagolt felületeken,
+                                    55mm-110mm-es vastagságig.</div>
+                            </td>
+                            <td>1 600 Ft</td>
+                            <td>300 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Rozetták ragasztása, festése 40cm átmérőig
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Rozetták ragasztása és
+                                    festése 40cm átmérőig.</div>
+                            </td>
+                            <td>3 000 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Rozetták ragasztása, festése 70cm átmérőig
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Rozetták ragasztása és
+                                    festése 70cm átmérőig.</div>
+                            </td>
+                            <td>4 500 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Díszítő festés (foltos fal, egyszerűbb dekor festékek, antikolás stb...)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Dekor festés, például
+                                    foltos fal, egyszerűbb dekor festékek, antikolás stb.</div>
+                            </td>
+                            <td>6 000 Ft-tól</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Betonhatás dekorfal készítése Jub Beton Lookkal
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Betonhatású dekorfal
+                                    készítése Jub Beton Lookkal.</div>
+                            </td>
+                            <td>12 000 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Kapcsolók, konnektorok fedelének le és felszerelése
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Kapcsolók, konnektorok
+                                    fedelének le és felszerelése.</div>
+                            </td>
+                            <td>300 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Radiátor le és felszerelése
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Radiátorok leszerelése
+                                    és visszaszerelése.</div>
+                            </td>
+                            <td>5 000 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Lámpa, falikar le és felszerelése
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Lámpák, falikarszerelés.
+                                </div>
+                            </td>
+                            <td>3 000 Ft</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Gipszkartonozás Árak 2024 -->
-    <!-- Gipszkartonozás Árak 2024 -->
 
-    <div class="container">
-        <div class="table-wrapper">
-            <h2 class="text-center mb-4" style="font-weight: bold; color: wheat;" id="Gipszkarton">Gipszkartonozás Árai
-            </h2>
-            <h6 class="text-center mb-4" style="color: #ff0000; font-weight: bold;">
-                (Az árak <span style="font-size: larger;">100 m²</span> feletti mennyiségre értendők)
-            </h6>
-            <div class="d-flex flex-column flex-md-row flex-wrap">
-                <!-- Pair-container 1 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Gipszkarton válaszfal építése 2x1 réteg gipszkartonnal</h3>
-                        <p style="color: white;">
-                            <strong>Munkadíj:</strong> 6 000 Ft/m², <strong>Anyagdíj:</strong> 700 Ft/m²
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area74">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area74" data-munkadij="6000"
-                                data-anyagdij="700" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost74">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pair-container 2 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Gipszkarton válaszfal építése 2x2 réteg gipszkartonnal</h3>
-                        <p style="color: white;">
-                            <strong>Munkadíj:</strong> 7 000 Ft/m², <strong>Anyagdíj:</strong> 800 Ft/m²
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area75">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area75" data-munkadij="7000"
-                                data-anyagdij="800" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost75">0 Ft</span></p>
-                    </div>
-                </div>
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Gipszkarton válaszfal építése, egyik oldalt 1 réteg, másik oldalt 2 réteg gipszkartonnal
-                        </h3>
-                        <p style="color: white;">
-                            <strong>Munkadíj:</strong> 6 500 Ft/m², <strong>Anyagdíj:</strong> 0 Ft/m²
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area75">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area75" data-munkadij="6500"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost75">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pair-container 3 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Válaszfal szigetelése 5-10 cm-ig</h3>
-                        <p style="color: white;">
-                            <strong>Munkadíj:</strong> 500 Ft/m², <strong>Anyagdíj:</strong> 0 Ft/m²
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area76">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area76" data-munkadij="500"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost76">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pair-container 4 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Válaszfal szigetelése 15 cm</h3>
-                        <p style="color: white;">
-                            <strong>Munkadíj:</strong> 700 Ft/m², <strong>Anyagdíj:</strong> 0 Ft/m²
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area77">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area77" data-munkadij="700"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost77">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pair-container 5 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Gipszkarton álmennyezet építése direktfüggesztővel, 1 réteg gipszkartonnal
-                        </h3>
-                        <p style="color: white;">
-                            <strong>Munkadíj:</strong> 6 000 Ft/m², <strong>Anyagdíj:</strong> 0 Ft/m²
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area78">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area78" data-munkadij="6000"
-                                data-anyagdij="500" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost78">0 Ft</span></p>
-                    </div>
-                </div>
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Gipszkarton álmennyezet építése direktfüggesztővel, 2 réteg gipszkartonnal
-
-                        </h3>
-                        <p style="color: white;">
-                            <strong>Munkadíj:</strong> 7 000 Ft/m², <strong>Anyagdíj:</strong> 0 Ft/m²
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area78">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area78" data-munkadij="7000"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost78">0 Ft</span></p>
-                    </div>
-                </div>
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Duplaszerkezetű függesztett álmennyezet építése, 1 réteg gipszkartonnal
-                        </h3>
-                        <p style="color: white;">
-                            <strong>Munkadíj:</strong> 7 000 Ft/m², <strong>Anyagdíj:</strong> 0 Ft/m²
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area78">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area78" data-munkadij="7000"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost78">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pair-container 6 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Álmennyezet szigetelése 5-10cm-ig</h3>
-                        <p style="color: white;">
-                            <strong>Munkadíj:</strong> 1 000 Ft/m², <strong>Anyagdíj:</strong> 0 Ft/m²
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area79">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area79" data-munkadij="1000"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost79">0 Ft</span></p>
-                    </div>
-                </div>
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Álmennyezet szigetelése 15cm</h3>
-                        <p style="color: white;">
-                            <strong>Munkadíj:</strong> 1 500 Ft/m², <strong>Anyagdíj:</strong> 0 Ft/m²
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area79">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area79" data-munkadij="1500"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost79">0 Ft</span></p>
-                    </div>
-                </div>
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Álmennyezet szigetelése 20cm</h3>
-                        <p style="color: white;">
-                            <strong>Munkadíj:</strong> 1 800 Ft/m², <strong>Anyagdíj:</strong> 0 Ft/m²
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area79">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area79" data-munkadij="1800"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost79">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pair-container 7 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Előtéfal építése 1 réteg gipszkartonnal</h3>
-                        <p style="color: white;">
-                            <strong>Munkadíj:</strong> 1 800 Ft/m², <strong>Anyagdíj:</strong> 500 Ft/m²
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area80">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area80" data-munkadij="1800"
-                                data-anyagdij="500" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost80">0 Ft</span></p>
-                    </div>
-                </div>
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Előtéfal építése 2 réteg gipszkartonnal</h3>
-                        <p style="color: white;">
-                            <strong>Munkadíj:</strong> 4 500 Ft/m², <strong>Anyagdíj:</strong> 0 Ft/m²
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area80">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area80" data-munkadij="4500"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost80">0 Ft</span></p>
-                    </div>
-                </div>
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Válaszfalba ajtó kialakítás + beépítés</h3>
-                        <p style="color: white;">
-                            <strong>Munkadíj:</strong> 20 000 Ft/m², <strong>Anyagdíj:</strong> 0 Ft/m²
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area80">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area80" data-munkadij="20000"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost80">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pair-container 8 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Hőtükörfólia felhelyezése</h3>
-                        <p style="color: white;">
-                            <strong>Munkadíj:</strong> 500 Ft/m², <strong>Anyagdíj:</strong> 0 Ft/m²
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area81">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area81" data-munkadij="500"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost81">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Ablakkáva gipszkartonozása (Ft/m)</h3>
-                        <p style="color: white;">
-                            <strong>Munkadíj:</strong> 7 000 Ft/m², <strong>Anyagdíj:</strong> 0 Ft/m²
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area80">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area80" data-munkadij="7000"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost80">0 Ft</span></p>
-                    </div>
-                </div>
-
-                <!-- Pair-container 9 -->
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Íves fal készítése</h3>
-                        <p style="color: white;">
-                            <strong>Munkadíj:</strong> 25 000 Ft/m², <strong>Anyagdíj:</strong> 0 Ft/m²
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area82">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area82" data-munkadij="25000"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost82">0 Ft</span></p>
-                    </div>
-                </div>
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Dobozolás</h3>
-                        <p style="color: white;">
-                            <strong>Munkadíj:</strong> 5 000 Ft/m², <strong>Anyagdíj:</strong> 0 Ft/m²
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area80">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area80" data-munkadij="5000"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost80">0 Ft</span></p>
-                    </div>
-                </div>
-                <div class="pair-container">
-                    <div class="work-item">
-                        <h3>Gipszkarton ragasztás / szárazvakolat</h3>
-                        <p style="color: white;">
-                            <strong>Munkadíj:</strong> 2 500 Ft/m², <strong>Anyagdíj:</strong> 0 Ft/m²
-                        </p>
-                    </div>
-                    <div class="calculator-item">
-                        <div class="form-group">
-                            <label for="area80">Adja meg a területet (m²):</label>
-                            <input type="number" class="form-control area-input" id="area80" data-munkadij="2500"
-                                data-anyagdij="0" placeholder="Adja meg a területet" min="0">
-                        </div>
-                        <p><strong>Összesen:</strong> <span id="totalCost80">0 Ft</span></p>
-                    </div>
-                </div>
+    <!-- gipszkarton árak -->
+    <section class="py-5">
+        <div class="container">
+            <div class="table-wrapper">
+                <h2 class="text-center mb-4" style="color: #2c3e50; font-weight: bold;">Gipszkartonozás Árak 2025</h2>
+                <h6 class="text-center mb-4" style="color: #ff0000; font-weight: bold;">(Az árak <span
+                        style="font-size: larger;">100 m²</span> feletti mennyiségre értendők)</h6>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Munkafolyamat</th>
+                            <th>Munkadíj (Ft/m²)</th>
+                            <th>Anyagdíj (Ft/m²)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gipszkarton válaszfal építése 2x1 réteg gipszkartonnal
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Két rétegben, egy
+                                    oldalon 1 réteg gipszkarton alkalmazásával válaszfal építése.</div>
+                            </td>
+                            <td>6 000 Ft</td>
+                            <td>700 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Gipszkarton válaszfal építése 2x2 réteg gipszkartonnal
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Két rétegben, mindkét
+                                    oldalon 2 réteg gipszkarton alkalmazásával válaszfal építése.</div>
+                            </td>
+                            <td>7 000 Ft</td>
+                            <td>800 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Gipszkarton válaszfal építése, egyik oldalt 1 réteg, másik oldalt 2 réteg gipszkartonnal
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A válaszfal építése
+                                    egyik oldalon 1 réteg, másik oldalon 2 réteg gipszkartonnal.</div>
+                            </td>
+                            <td>6 500 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Válaszfal szigetelése 5-10 cm-ig
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A válaszfal szigetelése
+                                    5-10 cm vastagságig, jobb hő- és hangszigetelés biztosítása érdekében.</div>
+                            </td>
+                            <td>500 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Válaszfal szigetelése 15 cm
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">A válaszfal szigetelése
+                                    15 cm vastagságig, fokozott hőszigetelési igényekhez.</div>
+                            </td>
+                            <td>700 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Gipszkarton álmennyezet építése direktfüggesztővel, 1 réteg gipszkartonnal
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Álmennyezet építése
+                                    direktfüggesztőkkel, 1 réteg gipszkartonnal a kívánt magasságban.</div>
+                            </td>
+                            <td>6 000 Ft</td>
+                            <td>500 Ft</td>
+                        </tr>
+                        <tr>
+                            <td>Gipszkarton álmennyezet építése direktfüggesztővel, 2 réteg gipszkartonnal
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Álmennyezet építése
+                                    direktfüggesztőkkel, két réteg gipszkartonnal a stabilitás növelése érdekében.</div>
+                            </td>
+                            <td>7 000 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Duplaszerkezetű függesztett álmennyezet építése, 1 réteg gipszkartonnal
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Duplaszerkezetű
+                                    álmennyezet építése, 1 réteg gipszkartonnal, nagyobb teherbírású felületekhez.</div>
+                            </td>
+                            <td>7 000 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Álmennyezet szigetelése 5-10 cm-ig
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Álmennyezet szigetelése
+                                    5-10 cm vastagságig, jobb hang- és hőszigetelés érdekében.</div>
+                            </td>
+                            <td>1 000 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Álmennyezet szigetelése 15 cm
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Álmennyezet szigetelése
+                                    15 cm vastagságig, különösen nagyobb hangszigetelési és hőszigetelési igényekhez.
+                                </div>
+                            </td>
+                            <td>1 500 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Álmennyezet szigetelése 20 cm
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Álmennyezet szigetelése
+                                    20 cm vastagságig, maximális hang- és hőszigetelés biztosítása érdekében.</div>
+                            </td>
+                            <td>1 800 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Előtétfal építése 1 réteg gipszkartonnal
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Előtétfal építése 1
+                                    réteg gipszkartonnal, gyors és költséghatékony megoldás.</div>
+                            </td>
+                            <td>4 500 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Előtétfal építése 2 réteg gipszkartonnal
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Előtétfal építése 2
+                                    réteg gipszkartonnal a fokozott stabilitás érdekében.</div>
+                            </td>
+                            <td>5 000 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Hőtükörfólia felhelyezése
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Hőtükörfólia
+                                    alkalmazása, hogy javítsuk a hőszigetelést és csökkentsük az energiafogyasztást.
+                                </div>
+                            </td>
+                            <td>500 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Válaszfalba ajtó kialakítás + beépítés
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Ajtó kialakítása és
+                                    beépítése válaszfalba, minden szükséges kiegészítővel.</div>
+                            </td>
+                            <td>20 000 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Ablakkáva gipszkartonozása (Ft/m)
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Ablakkáva
+                                    gipszkartonozása, a nyílászárók körüli szép és tartós kialakításhoz.</div>
+                            </td>
+                            <td>7 000 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Dobozolás
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Különböző szerelvények,
+                                    csövek vagy vezetékek dobozolása, hogy esztétikus és rendezettséget biztosítson a
+                                    helyiségben.</div>
+                            </td>
+                            <td>5 000 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Gipszkarton ragasztása / szárazvakolat
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Gipszkarton ragasztása
+                                    vagy szárazvakolása, egyszerű és gyors megoldás belső felületekhez.</div>
+                            </td>
+                            <td>2 500 Ft</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Íves fal készítése
+                                <div style="margin-top: 10px; font-style: italic; color: #555;">Íves falak kialakítása,
+                                    egyedi, dizájnos megoldásokhoz.</div>
+                            </td>
+                            <td>25 000 Ft</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+            <p style="color: white; font-size: 1.2rem;">A 2025-es szobafestés áraink tájékoztató jellegűek, nem minősül
+                ajánlattételnek! Az árak a mindenkori
+                anyagárak és az elvégzendő munka tagoltsága és mennyisége szerint módosulhatnak! Pontos árajánlathoz
+                helyszíni felmérés szükséges!
+            <p style="color: white;">A feltüntetet árak bruttó alanyi adómentes árak!</p>
+            <p style="color: white; font-size: 1.5rem;"><strong>Az áraink 2025 január 01.-től érvényesek.</strong></p>
+            </p>
         </div>
-        <!-- Total Cost Section -->
-        <div class="result-container">
-            <h3 style="color: wheat;">Vegösszeg: <span id="totalSum">0 Ft</span></h3>
-        </div>
-    </div>
-    <!-- Vissza a tetejére gomb -->
-    <button id="tetejereGomb" onclick="scrollToTop()"><i class="bi bi-arrow-up-circle-fill"></i></button>
-    </div>
+
+    </section>
 
 
-    <script src="ar-kalkulator.js"></script>
-    <!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<!-- Popper.js -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-<!-- Bootstrap JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <!-- Könyvtárak betöltése -->
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
