@@ -1,143 +1,164 @@
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector('.navbar-toggler').addEventListener('click', function () {
-        const icon = document.getElementById('menu-icon');
-        const navbarCollapse = document.getElementById('navbarNav');
+/* Általános alapok */
+html, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden; /* Megakadályozza a kilógást */
+}
 
-        if (navbarCollapse.classList.contains('show')) {
-            icon.classList.remove('fa-caret-up');
-            icon.classList.add('fa-bars');
-        } else {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-caret-up');
-        }
-    });
-});
+body {
+    background-color: #2e2e2e;
+    color: #ecf0f1;
+    font-family: Arial, sans-serif;
+}
 
+/* Navbar stílus */
+.navbar {
+    background-color: #532727;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
 
+.nav-link {
+    color: wheat !important;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 10px;
+}
 
-// Görgetés figyelése
-window.addEventListener('scroll', toggleBackToTopButton);
+.nav-link:hover {
+    color: #ff6600;
+}
 
-function toggleBackToTopButton() {
-    const backToTopButton = document.getElementById("tetejereGomb");
-    if (!backToTopButton) {
-        console.error("A 'backToTop' elem nem található a DOM-ban.");
-        return;
+/* Pair-container */
+.pair-container {
+    display: flex;
+    flex-direction: row; /* Alapértelmezett: sorirány */
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    background-color: #4a4a4a;
+    gap: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.work-item, .calculator-item {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #4a4a4a;
+    color: #ecf0f1;
+    max-width: 100%;
+}
+
+/* Szövegek stílusa */
+.work-item h3 {
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.work-item p, .calculator-item p {
+    color: #ecf0f1;
+}
+
+/* Result stílus */
+.result {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: wheat;
+}
+.result-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: wheat;
+    padding: 10px;
+    display: none; /* Initially hidden */
+    border-radius: 10px;
+    z-index: 100;
+}
+
+/* "Tetejére" és "Vissza" gomb */
+#tetejereGomb {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 28pt;
+    z-index: 1000;
+}
+
+#tetejereGomb:hover {
+    color: #b8860b;
+    transform: scale(1.15);
+}
+
+#vissza {
+    color: white;
+    font-weight: bold;
+    background-color: #5c5c5c;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    margin-right: 15px;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#vissza:hover {
+    background-color: #b8860b;
+    transform: scale(1.05);
+}
+
+/* Reszponzív nézet kisebb képernyőkre */
+@media (max-width: 768px) {
+    .pair-container {
+        flex-direction: column;
+        padding: 10px;
     }
 
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-
-    // Debug üzenet a konzolban
-    //console.log(`Görgetési pozíció: ${scrollPosition}`);
-
-    if (scrollPosition > 400) {
-        backToTopButton.style.display = "block";
-        //console.log("Megjelenik a gomb"); // Naplózás: Gomb megjelenik
-    } else {
-        backToTopButton.style.display = "none";
-        //console.log("Eltűnik a gomb"); // Naplózás: Gomb eltűnik
+    .work-item, .calculator-item {
+        width: 100%;
     }
 }
 
-// Visszagörgetés a tetejére
-function scrollToTop() {
-    //console.log("Visszagörgetés a tetejére indult"); // Naplózás: Visszagörgetés indult
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-
-
-//automata vegosszeg szamitas
-//automata vegosszeg szamitas
-//automata vegosszeg szamitas
-//automata vegosszeg szamitas
-
-
-
-// Function to calculate the total cost based on input values
-function updateTotalCost(id) {
-    let area = document.getElementById(id).value;
-    let munkadij = document.getElementById(id).dataset.munkadij;
-    let anyagdij = document.getElementById(id).dataset.anyagdij;
-
-    if (area >= 0) {
-        let total = (area * munkadij) + (area * anyagdij);
-        document.getElementById("totalCost" + id.slice(-2)).textContent = total + " Ft";
-        saveData(id, area);  // Save the data to localStorage
-        updateOverallTotal();
+@media (max-width: 480px) {
+    .work-item h3 {
+        font-size: 1rem;
     }
-}
 
-// Function to save data to localStorage
-function saveData(id, area) {
-    localStorage.setItem(id, area);
-}
-
-// Function to load data from localStorage and set the values
-function loadData() {
-    const inputs = document.querySelectorAll('.area-input');
-    inputs.forEach(input => {
-        let savedValue = localStorage.getItem(input.id);
-        if (savedValue) {
-            input.value = savedValue;
-            updateTotalCost(input.id);  // Recalculate the total for each field on page load
-        }
-    });
-}
-window.onload = function() {
-    // A DOM elemek teljes betöltése után fut le
-    const inputs = document.querySelectorAll('.area-input');
-    inputs.forEach(input => {
-        input.addEventListener('input', function() {
-            updateTotalCost(input.id);
-        });
-    });
-
-    // Az összes összesített költség frissítése a betöltéskor
-    updateOverallTotal();
-};
-
-// Function to calculate the total cost based on input values
-function updateTotalCost(id) {
-    let area = document.getElementById(id).value;
-    let munkadij = document.getElementById(id).dataset.munkadij;
-    let anyagdij = document.getElementById(id).dataset.anyagdij;
-
-    if (area >= 0) {
-        let total = (area * munkadij) + (area * anyagdij);
-
-        // Check if the element with the corresponding totalCost id exists
-        const totalCostElement = document.getElementById("totalCost" + id.slice(-2));
-        if (totalCostElement) {
-            totalCostElement.textContent = total + " Ft";  // Update the total cost display
-        }
-
-        updateOverallTotal();  // Recalculate and update the overall total cost
+    .form-group label {
+        font-size: 0.9rem;
     }
-}
 
-// Function to update the overall total cost
-function updateOverallTotal() {
-    let total = 0;
-    const inputs = document.querySelectorAll('.area-input');
-    let anyInput = false; // Flag to check if any input was filled
+    .form-control {
+        padding: 8px;
+    }
 
-    inputs.forEach(input => {
-        let area = input.value || 0;
-        let munkadij = input.dataset.munkadij;
-        let anyagdij = input.dataset.anyagdij;
-        if (area > 0) {
-            anyInput = true;
-        }
-        total += (area * munkadij) + (area * anyagdij);
-    });
-
-    // Show or hide the result container based on if any input is filled
-    const resultContainer = document.querySelector('.result-container');
-    if (anyInput) {
-        resultContainer.style.display = 'block';
-        document.getElementById('totalSum').textContent = total + " Ft";
-    } else {
-        resultContainer.style.display = 'none';
+    #tetejereGomb {
+        font-size: 24px;
+        bottom: 15px;
+        right: 15px;
     }
 }
