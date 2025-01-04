@@ -1,11 +1,12 @@
+/* Általános alapok */
 html, body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden; /* Megakadályozza a kilógást */
 }
 
-
-/* Általános beállítások a testreszabott háttérszínhez */
 body {
     background-color: #2e2e2e;
     color: #ecf0f1;
@@ -15,186 +16,66 @@ body {
 /* Navbar stílus */
 .navbar {
     background-color: #532727;
-}
-
-.navbar-toggler-icon {
-    width: 30px;
-    height: 30px;
-    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 }
 
 .nav-link {
     color: wheat !important;
     font-weight: bold;
-}
-
-a[nav-link]:hover {
-    color: #521d11;
+    text-decoration: none;
+    margin: 0 10px;
 }
 
 .nav-link:hover {
     color: #ff6600;
 }
 
-#tetejereGomb {
-    display: none;
-    /* Alapértelmezés szerint rejtett */
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: transparent;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    right: 20px;
-    cursor: pointer;
-    font-size: 28pt;
-    text-align: center;
-    z-index: 1000;
-    /* Biztosítja, hogy a gomb felül legyen minden más elemhez képest */
-}
-
-#tetejereGomb:hover {
-    background-color: transparent;
-    color: #b8860b;
-    transform: scale(1.15);
-}
-
-/* "Vissza" gomb stílusok - Módosított verzió */
-#vissza {
-    color: white;
-    /* Világos szín a kontraszthoz */
-    font-weight: bold;
-    position:static;
-    margin-top: auto;
-    margin-bottom: auto;
-    background-color: #5c5c5c;
-    /* Világosszürke háttér */
-    padding: 10px 15px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    font-size: 18px;
-    display: flex;
-    /* Flexbox a jobb igazításhoz */
-    align-items: center;
-    /* Középre igazítás függőlegesen */
-    gap: 10px;
-    /* Távolság az ikon és a szöveg között */
-    cursor: pointer;
-    z-index: 1000;
-    text-decoration: none;
-    /* Eltávolítjuk az esetleges aláhúzást */
-    min-width: 25px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-#vissza:hover {
-    background-color: #b8860b;
-    /* Már meglévő szín */
-    transform: scale(1.05);
-    /* Kicsit nagyít a hover során */
-}
-
-#vissza i {
-    margin: 0;
-    /* Eltávolítjuk a felesleges margót */
-}
-
-a#vissza {
-    margin-right: 15px;
-}
-
-
-/* Flexbox elrendezés a pair-container használatával */
+/* Pair-container */
 .pair-container {
     display: flex;
-    margin: auto;
-    flex-direction: row;
+    flex-direction: row; /* Alapértelmezett: sorirány */
     justify-content: space-between;
     align-items: flex-start;
-    /* Felülre igazítás, hogy egyvonalban legyenek */
-    border: 1px solid #d4af37;
-    /* Lágy szürke szegély */
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 20px;
-    min-width: 1000px;
+    width: 100%;
     max-width: 1000px;
-    background-color: #4a4a4a;
-    /* Fehér háttérszín a konténernek */
-    gap: 15px;
-    /* Távolság a leírás és kalkulátor között */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    /* Árnyék a konténerhez */
-    /* Eltávolítjuk a pair-container alján lévő fekete szegélyt */
-}
-
-/* Munkafolyamat és kalkulátor szélesség és szegély */
-.work-item,
-.calculator-item {
-    flex: 1;
-    text-wrap: break-word;
-    /* Egyenlő arányban oszlik meg a hely */
-    max-width: 100%;
-    /* Biztosítjuk, hogy a gyermekek ne lépjék túl a konténer szélességét */
-    background-color: #4a4a4a;
-    /* Világos szürke háttér a munkafolyamatoknak */
-    padding: 20px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #d4af37;
     border-radius: 8px;
-    color: #ecf0f1;
-    /* Sötétebb szövegszín a jobb olvashatóság érdekében */
+    background-color: #4a4a4a;
+    gap: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Egyenlő szélesség biztosítása és szöveg tördelése */
-.pair-container .work-item,
-.pair-container .calculator-item {
+.work-item, .calculator-item {
     flex: 1;
-    min-width: 250px;
-    /* Minimális szélesség biztosítása */
-    word-wrap: break-word;
-    /* Szöveg tördelése */
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #4a4a4a;
+    color: #ecf0f1;
+    max-width: 100%;
 }
 
-/* Címek és szövegek stílusai */
+/* Szövegek stílusa */
 .work-item h3 {
     color: #d4af37;
     font-weight: bold;
 }
 
-.work-item p,
-.calculator-item p {
+.work-item p, .calculator-item p {
     color: #ecf0f1;
 }
 
-/* Form stílusok */
-.form-group label {
-    font-weight: bold;
-    color: #ecf0f1;
-}
-
-.form-control {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    border: 1px solid #7f8c8d;
-    background-color: #555555;
-    color: #ecf0f1;
-}
-
+/* Result stílus */
 .result {
     margin-top: 10px;
     font-size: 1.1rem;
     font-weight: bold;
     color: wheat;
 }
-
-.form-control::placeholder {
-    color: #bdc3c7;
-    /* Placeholder szöveg színe */
-}
-
 .result-container {
     position: fixed;
     bottom: 20px;
@@ -208,36 +89,61 @@ a#vissza {
     z-index: 100;
 }
 
-/* Reszponzív beállítások kisebb képernyőre */
+/* "Tetejére" és "Vissza" gomb */
+#tetejereGomb {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 28pt;
+    z-index: 1000;
+}
+
+#tetejereGomb:hover {
+    color: #b8860b;
+    transform: scale(1.15);
+}
+
+#vissza {
+    color: white;
+    font-weight: bold;
+    background-color: #5c5c5c;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    margin-right: 15px;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#vissza:hover {
+    background-color: #b8860b;
+    transform: scale(1.05);
+}
+
+/* Reszponzív nézet kisebb képernyőkre */
 @media (max-width: 768px) {
     .pair-container {
         flex-direction: column;
-        /* Ha a képernyő kisebb, akkor a leírás és a kalkulátor egymás alá kerül */
-    }
-    .work-item,
-    .calculator-item {
-        max-width: 100%;
+        padding: 10px;
     }
 
-    .calculator-item {
-        margin-top: 15px;
-    }
-        .result-container {
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
+    .work-item, .calculator-item {
+        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    #vissza {
-        top: 10px;
-        left: 10px;
-        padding: 8px 12px;
-        font-size: 16px;
-    }
-
     .work-item h3 {
         font-size: 1rem;
     }
@@ -250,7 +156,9 @@ a#vissza {
         padding: 8px;
     }
 
-    .calculator-item p {
-        font-size: 1rem;
+    #tetejereGomb {
+        font-size: 24px;
+        bottom: 15px;
+        right: 15px;
     }
 }
