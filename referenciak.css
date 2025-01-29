@@ -1,216 +1,217 @@
 /* Alapértelmezett reszponzív beállítások */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    min-height: 100vh;
-    display: grid;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
-    background-color: #4a4a4a;
+  min-height: 100vh;
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  background-color: #4a4a4a;
 }
 
 /* Fejléc */
 h1 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-style: italic;
-    color: white;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-style: italic;
+  color: white;
 }
 
 /* Navigációs sáv */
 .navbar {
-    width: 100%;
-    background-color: #532727;
+  width: 100%;
+  background-color: #532727;
 }
 
 .navbar-brand img {
-    width: 150px;
-    max-width: 100%;
-    height: auto;
+  width: 150px;
+  max-width: 100%;
+  height: auto;
 }
 
 .nav-link {
-    color: wheat !important;
-    font-weight: bold;
+  color: wheat !important;
+  font-weight: bold;
 }
 
-    .nav-link.active {
-        color: #9c9a22 !important;
-    }
+.nav-link.active {
+  color: #9c9a22 !important;
+}
 
 /* Carousel stílusok */
 .carousel-container {
-    min-width: 400px;
-    max-width: 1200px;
-    border-radius: 20px;
-    overflow: visible;
+  min-width: 400px;
+  max-width: 1200px;
+  border-radius: 20px;
+  overflow: visible;
 }
 
 .carousel-item img {
-    height: 370px;
-    object-fit: cover;
-    border-radius: 20px;
-    filter: saturate(100%);
-    transition: filter 0.3s ease;
-    width: 100%;
+  height: 370px;
+  object-fit: cover;
+  border-radius: 20px;
+  filter: saturate(100%);
+  transition: filter 0.3s ease;
+  width: 100%;
 }
 
-    .carousel-item img:hover {
-        filter: saturate(110%);
-    }
+.carousel-item img:hover {
+  filter: saturate(110%);
+}
 
 .carousel-caption {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px 15px;
-    border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+  border-radius: 5px;
 }
 
 /* Lábléc */
 footer {
-    width: 100%;
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    position: relative;
-    bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
 }
 
 .social-icons a {
-    color: #fff;
-    margin: 0 10px;
-    font-size: 20px;
-    transition: color 0.3s;
+  color: #fff;
+  margin: 0 10px;
+  font-size: 20px;
+  transition: color 0.3s;
 }
 
-    .social-icons a:hover {
-        color: #9c9a22;
-    }
+.social-icons a:hover {
+  color: #9c9a22;
+}
 
 .list-unstyled li a {
-    color: #fff;
-    transition: color 0.3s;
+  color: #fff;
+  transition: color 0.3s;
 }
 
-    .list-unstyled li a:hover {
-        color: #9c9a22;
-    }
+.list-unstyled li a:hover {
+  color: #9c9a22;
+}
 
 /* Kiemelt szöveg */
 #specialis-szoveg {
-    color: #9c9a22;
+  color: #9c9a22;
 }
 
 .logok-link {
-    font-size: 8pt;
-    color: #fff;
+  font-size: 8pt;
+  color: #fff;
 }
 
-    .logok-link a {
-        color: #fff;
-        text-decoration: underline;
-    }
+.logok-link a {
+  color: #fff;
+  text-decoration: underline;
+}
 
-        .logok-link a:hover {
-            color: #9c9a22;
-        }
+.logok-link a:hover {
+  color: #9c9a22;
+}
 
 /* Tab navigáció */
 .tab-navigation {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .tab-btn {
-    padding: 0.75rem 1.5rem;
-    background-color: rgb(104, 51, 51);
-    color: wheat;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  background-color: rgb(104, 51, 51);
+  color: wheat;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
-    .tab-btn:hover {
-        background: #e9ecef;
-        color: #000;
-    }
+.tab-btn:hover {
+  background: #e9ecef;
+  color: #000;
+}
 
-    .tab-btn.active {
-        background: rgb(61, 3, 37);
-        color: white;
-    }
+.tab-btn.active {
+  background: rgb(61, 3, 37);
+  color: white;
+}
 
 .tab-content {
-    visibility: hidden;
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    transition: opacity 0.5s ease, height 0.3s ease;
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, height 0.3s ease;
 }
 
-    .tab-content:after {
-        content: "";
-        min-height: 1000px;
-    }
+.tab-content:after {
+  content: "";
+  min-height: 1000px;
+}
 
-    .tab-content.active {
-        visibility: visible;
-        opacity: 1;
-        height: auto;
-    }
+.tab-content.active {
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+}
 
 /* Grid elrendezés */
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    min-height: 400px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  min-height: 400px;
 }
 
 .grid-item {
-    border-radius: 12px;
-    overflow: hidden;
-    position: relative;
-    aspect-ratio: 1/1;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-    .grid-item:hover {
-        transform: translateY(-5px);
-    }
+.grid-item:hover {
+  transform: translateY(-5px);
+}
 
-    .grid-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-    }
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
 
-    .grid-item:hover img {
-        transform: scale(1.1);
-    }
+.grid-item:hover img {
+  transform: scale(1.1);
+}
 
 #Tuzvedelmi_festes {
-    opacity: 30%;
-    background: rgb(255, 0, 0);
-    color: white;
+  opacity: 30%;
+  background: rgb(255, 0, 0);
+  color: white;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
+  from {
+    opacity: 0;
+  }
 
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
+
