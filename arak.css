@@ -1,0 +1,109 @@
+body {
+    background-color: #323232;
+}
+
+h2 {
+    color: #532727;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.25);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse-button {
+    animation: pulse 2.25s infinite;
+}
+section {
+    background-color: #323232;
+}
+
+.text-white {
+    color: #fff;
+}
+
+/* Navbar stílus */
+.navbar {
+    background-color: #532727;
+}
+
+.navbar-toggler-icon {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+}
+
+.navbar-brand img {
+    width: 150px;
+}
+
+.nav-link {
+    color: wheat !important;
+    font-weight: bold;
+}
+
+a[nav-link]:hover {
+    color: #521d11;
+}
+
+.nav-link:hover {
+    color: #ff6600;
+}
+
+/* Kizárólag a munkafolyamat táblázat stílusai */
+.table-wrapper {
+    width: 100%;
+    border-collapse: collapse;
+    /* Szegélyek összemosása */
+    background-color: #ffffff;
+    /* Fehér háttér kizárólag a táblázatnak */
+    color: #333;
+    /* Fekete betűszín az olvashatóság érdekében */
+    margin-bottom: 20px;
+    border-radius: 5pt;
+}
+
+/* Táblázat fejléc (`th`) stílusai */
+.table-wrapper th {
+    background-color: #818181;
+    /* Világos szürke háttér a fejléceknek */
+    color: #f0f0f0;
+    /* Fekete betűszín az olvashatóság érdekében */
+    font-weight: bold;
+    padding: 12px;
+    border: 1px solid #ccc;
+    /* Vékony szegély a fejléc körül */
+}
+
+/* Táblázat cellák (`td`) stílusai */
+.table-wrapper td {
+    padding: 12px;
+    /* Belépő tér */
+    text-align: left;
+    /* Balra igazítás */
+    border: 1px solid #ccc;
+    /* Vékony szegély a cellák körül */
+    background-color: #ffffff;
+    /* Fehér háttér a celláknak */
+    color: #333;
+    /* Fekete betűszín */
+    font-weight: bold;
+}
+
+/* Táblázat külső szegélye */
+.table-wrapper {
+    border: 1px solid #ccc;
+    /* Vékony szegély az egész táblázat körül */
+}
+
+/* Alternáló sorok kiemelése */
+.table-wrapper tr:nth-child(even) td {
+    background-color: #f9f9f9;
+    /* Minden második sor világosabb háttérrel */
+}

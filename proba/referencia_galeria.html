@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container py-5">
+        <h2 class="text-center mb-4">Image Gallery</h2>
+
+        <!-- Tab Navigation -->
+        <div class="tab-navigation justify-content-center">
+            <button class="tab-btn active" data-tab="nature">Nature</button>
+            <button class="tab-btn" data-tab="architecture">Architecture</button>
+            <button class="tab-btn" data-tab="interior">Interior</button>
+        </div>
+
+        <!-- Nature Tab -->
+        <div class="tab-content active" id="nature">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img
+                        src="https://roliiasd.github.io/egynaposfestes/kepek/Emelokosaras/WhatsApp%20Image%202024-12-31%20at%2011.14.18%20(2).jpeg">
+                </div>
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e" alt="Forest">
+                </div>
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" alt="Mountains">
+                </div>
+            </div>
+        </div>
+
+        <!-- Architecture Tab -->
+        <div class="tab-content" id="architecture">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2" alt="Modern Building">
+                </div>
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a" alt="City Architecture">
+                </div>
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8" alt="Historic Building">
+                </div>
+            </div>
+        </div>
+
+        <!-- Interior Tab -->
+        <div class="tab-content" id="interior">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6" alt="Modern Interior">
+                </div>
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace" alt="Minimalist Room">
+                </div>
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1616137466211-f939a420be84" alt="Cozy Space">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
