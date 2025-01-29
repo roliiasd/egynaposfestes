@@ -88,11 +88,11 @@ function loadData() {
         }
     });
 }
-window.onload = function() {
+window.onload = function () {
     // A DOM elemek teljes betöltése után fut le
     const inputs = document.querySelectorAll('.area-input');
     inputs.forEach(input => {
-        input.addEventListener('input', function() {
+        input.addEventListener('input', function () {
             updateTotalCost(input.id);
         });
     });

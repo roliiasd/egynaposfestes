@@ -29,9 +29,9 @@ body {
     margin: 0 10px;
 }
 
-.nav-link:hover {
-    color: #ff6600;
-}
+    .nav-link:hover {
+        color: #ff6600;
+    }
 
 /* Pair-container */
 .pair-container {
@@ -59,15 +59,15 @@ body {
     max-width: 100%;
 }
 
-/* Szövegek stílusa */
-.work-item h3 {
-    color: #d4af37;
-    font-weight: bold;
-}
+    /* Szövegek stílusa */
+    .work-item h3 {
+        color: #d4af37;
+        font-weight: bold;
+    }
 
-.work-item p, .calculator-item p {
-    color: #ecf0f1;
-}
+    .work-item p, .calculator-item p {
+        color: #ecf0f1;
+    }
 
 /* Result stílus */
 .result {
@@ -76,6 +76,7 @@ body {
     font-weight: bold;
     color: wheat;
 }
+
 .result-container {
     position: fixed;
     bottom: 20px;
@@ -103,10 +104,10 @@ body {
     z-index: 1000;
 }
 
-#tetejereGomb:hover {
-    color: #b8860b;
-    transform: scale(1.15);
-}
+    #tetejereGomb:hover {
+        color: #b8860b;
+        transform: scale(1.15);
+    }
 
 #vissza {
     color: white;
@@ -126,10 +127,10 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#vissza:hover {
-    background-color: #b8860b;
-    transform: scale(1.05);
-}
+    #vissza:hover {
+        background-color: #b8860b;
+        transform: scale(1.05);
+    }
 
 /* Reszponzív nézet kisebb képernyőkre */
 @media (max-width: 768px) {

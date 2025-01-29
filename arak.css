@@ -5,13 +5,16 @@ body {
 h2 {
     color: #532727;
 }
+
 @keyframes pulse {
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.25);
     }
+
     100% {
         transform: scale(1);
     }
@@ -20,6 +23,7 @@ h2 {
 .pulse-button {
     animation: pulse 2.25s infinite;
 }
+
 section {
     background-color: #323232;
 }
@@ -69,32 +73,32 @@ a[nav-link]:hover {
     border-radius: 5pt;
 }
 
-/* Táblázat fejléc (`th`) stílusai */
-.table-wrapper th {
-    background-color: #818181;
-    /* Világos szürke háttér a fejléceknek */
-    color: #f0f0f0;
-    /* Fekete betűszín az olvashatóság érdekében */
-    font-weight: bold;
-    padding: 12px;
-    border: 1px solid #ccc;
-    /* Vékony szegély a fejléc körül */
-}
+    /* Táblázat fejléc (`th`) stílusai */
+    .table-wrapper th {
+        background-color: #818181;
+        /* Világos szürke háttér a fejléceknek */
+        color: #f0f0f0;
+        /* Fekete betűszín az olvashatóság érdekében */
+        font-weight: bold;
+        padding: 12px;
+        border: 1px solid #ccc;
+        /* Vékony szegély a fejléc körül */
+    }
 
-/* Táblázat cellák (`td`) stílusai */
-.table-wrapper td {
-    padding: 12px;
-    /* Belépő tér */
-    text-align: left;
-    /* Balra igazítás */
-    border: 1px solid #ccc;
-    /* Vékony szegély a cellák körül */
-    background-color: #ffffff;
-    /* Fehér háttér a celláknak */
-    color: #333;
-    /* Fekete betűszín */
-    font-weight: bold;
-}
+    /* Táblázat cellák (`td`) stílusai */
+    .table-wrapper td {
+        padding: 12px;
+        /* Belépő tér */
+        text-align: left;
+        /* Balra igazítás */
+        border: 1px solid #ccc;
+        /* Vékony szegély a cellák körül */
+        background-color: #ffffff;
+        /* Fehér háttér a celláknak */
+        color: #333;
+        /* Fekete betűszín */
+        font-weight: bold;
+    }
 
 /* Táblázat külső szegélye */
 .table-wrapper {
@@ -102,8 +106,8 @@ a[nav-link]:hover {
     /* Vékony szegély az egész táblázat körül */
 }
 
-/* Alternáló sorok kiemelése */
-.table-wrapper tr:nth-child(even) td {
-    background-color: #f9f9f9;
-    /* Minden második sor világosabb háttérrel */
-}
+    /* Alternáló sorok kiemelése */
+    .table-wrapper tr:nth-child(even) td {
+        background-color: #f9f9f9;
+        /* Minden második sor világosabb háttérrel */
+    }

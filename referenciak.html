@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EgyNaposFestés - Referenciák</title>
     <!-- Bootstrap CSS -->
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Lightbox CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
@@ -14,6 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Egyéni CSS -->
     <link rel="stylesheet" href="referenciak.css">
+    <!-- jQuery 1.8 or later, 33 KB -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y51M4FZ529"></script>
     <script>
@@ -23,6 +24,7 @@
 
         gtag('config', 'G-Y51M4FZ529');
     </script>
+
 </head>
 
 <body>
@@ -31,12 +33,11 @@
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <img src="https://roliiasd.github.io/egynaposfestes/kepek/logo.svg" alt="EgyNaposFestés logó"
-                    style="width:150px;">
+                     style="width:150px;">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <i id="menu-icon" class="fas fa-bars" style="color:wheat;"></i>
-            </button>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
@@ -48,7 +49,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="referenciak.html"
-                            style="color: wheat; font-weight: bold;">Referenciák</a>
+                           style="color: wheat; font-weight: bold;">Referenciák</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="kapcsolat.html" style="color: wheat; font-weight: bold;">Kapcsolat</a>
@@ -59,408 +60,345 @@
     </nav>
 
     <!-- Referenciák szekció -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Referenciák</h2>
-            <div class="container">
-                <div class="row">
-                    <!-- Emelőkosaras Section -->
-                    <div class="col-12">
-                        <h3 id="Emelokosar">Emelőkosaras</h3>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <a href="https://roliiasd.github.io/egynaposfestes/kepek/Emelokosaras/WhatsApp%20Image%202024-12-31%20at%2011.14.18%20(2).jpeg"
-                            data-lightbox="emelokosaras" data-title="Emelőkosaras 1">
-                            <img src="https://roliiasd.github.io/egynaposfestes/kepek/Emelokosaras/WhatsApp%20Image%202024-12-31%20at%2011.14.18%20(2).jpeg"
-                                class="img-fluid" alt="Emelőkosaras 1">
-                        </a>
+    <div class="container py-4">
+        <h1 class="text-center mb-5">Referenciák</h1>
 
-                        <a href="https://roliiasd.github.io/egynaposfestes/kepek/Emelokosaras/WhatsApp%20Image%202024-12-31%20at%2011.21.49%20(1).jpeg"
-                            data-lightbox="emelokosaras" data-title="Emelőkosaras 2">
-                            <img src="https://roliiasd.github.io/egynaposfestes/kepek/Emelokosaras/WhatsApp%20Image%202024-12-31%20at%2011.21.49%20(1).jpeg"
-                                class="img-fluid" alt="Emelőkosaras 2">
-                        </a>
+        <!-- Munka tipusok kozti navigacio -->
+        <div class="tab-navigation justify-content-center">
+            <button class="tab-btn active" data-tab="Emelokosaras">Emelőkosaras</button>
+            <button class="tab-btn" data-tab="Gepi_Festes">Gépi Festés</button>
+            <button class="tab-btn" data-tab="Gepi_Gletteles">Gépi Glettelés</button>
+            <button class="tab-btn" data-tab="Gipszkarton">Gipszkartonozás</button>
+            <button class="tab-btn" data-tab="Homlokzat_Festes">Homlokzat Festés</button>
+            <button class="tab-btn" data-tab="Homlokzat_Tisztitas">Homlokzat Tisztítás</button>
+            <button class="tab-btn" data-tab="Ipari_Munkak">Ipari munkák</button>
+            <button class="tab-btn" data-tab="Kerites_Festes">Kerítés festés</button>
+            <button class="tab-btn" data-tab="Komplett_Felujitas">Komplett felújítás</button>
+            <button class="tab-btn" data-tab="Lazurozas">Lazúrozás</button>
+            <button class="tab-btn" data-tab="Mazolas">Mázolás</button>
+            <button class="tab-btn" data-tab="Szobafestes">Szobafestés</button>
+            <button class="tab-btn" data-tab="Tapetazas">Tapétázás</button>
+            <button class="tab-btn" data-tab="Tuzvedelmi_festes" disabled id="Tuzvedelmi_festes">Tűzvédelmi festés</button>
+        </div>
 
-                        <a href="https://roliiasd.github.io/egynaposfestes/kepek/Emelokosaras/WhatsApp%20Image%202024-12-31%20at%2011.21.49%20(2).jpeg"
-                            data-lightbox="emelokosaras" data-title="Emelőkosaras 3">
-                            <img src="https://roliiasd.github.io/egynaposfestes/kepek/Emelokosaras/WhatsApp%20Image%202024-12-31%20at%2011.21.49%20(2).jpeg"
-                                class="img-fluid" alt="Emelőkosaras 3">
-                        </a>
+        <!-- Emelőkosaras Section -->
+        <div class=" tab-content active" id="Emelokosaras">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Emelokosaras/WhatsApp%20Image%202024-12-31%20at%2011.14.18%20(2).jpeg"
+                         alt="Emelőkosaras 1">
+                </div>
 
-                        <a href="https://roliiasd.github.io/egynaposfestes/kepek/Emelokosaras/WhatsApp%20Image%202024-12-31%20at%2011.21.49%20(3).jpeg"
-                            data-lightbox="emelokosaras" data-title="Emelőkosaras 4">
-                            <img src="https://roliiasd.github.io/egynaposfestes/kepek/Emelokosaras/WhatsApp%20Image%202024-12-31%20at%2011.21.49%20(3).jpeg"
-                                class="img-fluid" alt="Emelőkosaras 4">
-                        </a>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Emelokosaras/WhatsApp%20Image%202024-12-31%20at%2011.21.49%20(1).jpeg"
+                         alt="Emelőkosaras 2">
+                </div>
 
-                        <a href="https://roliiasd.github.io/egynaposfestes/kepek/Emelokosaras/WhatsApp%20Image%202024-12-31%20at%2011.21.49%20(4).jpeg"
-                            data-lightbox="emelokosaras" data-title="Emelőkosaras 5">
-                            <img src="https://roliiasd.github.io/egynaposfestes/kepek/Emelokosaras/WhatsApp%20Image%202024-12-31%20at%2011.21.49%20(4).jpeg"
-                                class="img-fluid" alt="Emelőkosaras 5">
-                        </a>
-                    </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Emelokosaras/WhatsApp%20Image%202024-12-31%20at%2011.21.49%20(2).jpeg"
+                         alt="Emelőkosaras 3">
+                </div>
 
-                    <!-- Gépi Festés Section -->
-                    <div class="col-12">
-                        <h3 id="GepiFestes">Gépi Festés</h3>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <a href="kepek/gepi_festes/WhatsApp%20Video%202025-01-02%20at%2016.07.20.mp4"
-                            data-lightbox="gepi_festes" data-title="Gépi Festés 1">
-                            <video src="kepek/gepi_festes/WhatsApp Video 2025-01-02 at 16.07.20.mp4" width="640"
-                                height="360" controls loop muted class="img-fluid" alt="Gépi Festés 1"></video>
-                        </a>
-                    </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Emelokosaras/WhatsApp%20Image%202024-12-31%20at%2011.21.49%20(3).jpeg"
+                         alt="Emelőkosaras 4">
+                </div>
 
-                    <!-- Gépi Glettelés Section -->
-                    <div class="col-12">
-                        <h3 id="GepiGletteles">Gépi Glettelés</h3>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <a href="kepek/Gipszkartonozas/7e188024-6116-499b-acaf-046a001e7680.jfif"
-                            data-lightbox="gepi_gletteles" data-title="Gépi Glettelés 1">
-                            <img src="kepek/Gipszkartonozas/7e188024-6116-499b-acaf-046a001e7680.jfif" class="img-fluid"
-                                alt="Gépi Glettelés 1">
-                        </a>
-
-                        <a href="kepek/Gipszkartonozas/a7cd674a-5646-4997-a53d-8f051182ee2f.jfif"
-                            data-lightbox="gepi_gletteles" data-title="Gépi Glettelés 2">
-                            <img src="kepek/Gipszkartonozas/a7cd674a-5646-4997-a53d-8f051182ee2f.jfif" class="img-fluid"
-                                alt="Gépi Glettelés 2">
-                        </a>
-                    </div>
-
-                    <!-- Gipszkartonozás Section -->
-                    <div class="col-12">
-                        <h3 id="Gipszkarton">Gipszkartonozás</h3>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <a href="kepek/Gipszkartonozas/066deb3d-c8a9-4bf9-badc-82d43c88ca3e.jfif"
-                            data-lightbox="gipszkartonozas" data-title="Gipszkartonozás 1">
-                            <img src="kepek/Gipszkartonozas/066deb3d-c8a9-4bf9-badc-82d43c88ca3e.jfif" class="img-fluid"
-                                alt="Gipszkartonozás 1">
-                        </a>
-
-                        <a href="kepek/Gipszkartonozas/3b48af25-178e-4227-8bb1-f5d2856d8258.jfif"
-                            data-lightbox="gipszkartonozas" data-title="Gipszkartonozás 2">
-                            <img src="kepek/Gipszkartonozas/3b48af25-178e-4227-8bb1-f5d2856d8258.jfif" class="img-fluid"
-                                alt="Gipszkartonozás 2">
-                        </a>
-
-                        <a href="kepek/Gipszkartonozas/50f73e55-6c40-4bb2-8c8a-5e439825e369.jfif"
-                            data-lightbox="gipszkartonozas" data-title="Gipszkartonozás 3">
-                            <img src="kepek/Gipszkartonozas/50f73e55-6c40-4bb2-8c8a-5e439825e369.jfif" class="img-fluid"
-                                alt="Gipszkartonozás 3">
-                        </a>
-                    </div>
-
-                    <!-- Homlokzat Festés Section -->
-                    <div class="col-12">
-                        <h3 id="Homlokzat">Homlokzat Festés</h3>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <a href="kepek/Homlokzat_festes/WhatsApp%20Image%202024-12-31%20at%2011.14.17%20(1).jpeg"
-                            data-lightbox="homlokzat_festes" data-title="Homlokzat Festés 1">
-                            <img src="kepek/Homlokzat_festes/WhatsApp%20Image%202024-12-31%20at%2011.14.17%20(1).jpeg"
-                                class="img-fluid" alt="Homlokzat Festés 1">
-                        </a>
-
-                        <a href="kepek/Homlokzat_festes/WhatsApp%20Image%202024-12-31%20at%2011.14.17%20(3).jpeg"
-                            data-lightbox="homlokzat_festes" data-title="Homlokzat Festés 3">
-                            <img src="kepek/Homlokzat_festes/WhatsApp%20Image%202024-12-31%20at%2011.14.17%20(3).jpeg"
-                                class="img-fluid" alt="Homlokzat Festés 3">
-                        </a>
-
-                        <a href="kepek/Homlokzat_festes/WhatsApp%20Image%202024-12-31%20at%2011.14.17%20(4).jpeg"
-                            data-lightbox="homlokzat_festes" data-title="Homlokzat Festés 4">
-                            <img src="kepek/Homlokzat_festes/WhatsApp%20Image%202024-12-31%20at%2011.14.17%20(4).jpeg"
-                                class="img-fluid" alt="Homlokzat Festés 4">
-                        </a>
-
-                        <a href="kepek/Homlokzat_festes/WhatsApp%20Image%202024-12-31%20at%2011.14.17%20(5).jpeg"
-                            data-lightbox="homlokzat_festes" data-title="Homlokzat Festés 5">
-                            <img src="kepek/Homlokzat_festes/WhatsApp%20Image%202024-12-31%20at%2011.14.17%20(5).jpeg"
-                                class="img-fluid" alt="Homlokzat Festés 5">
-                        </a>
-                    </div>
-                    <!-- Homlokzat Tisztítás Section -->
-                    <div class="col-12">
-                        <h3 id="HomlokzatTisztitas">Homlokzat Tisztítás</h3>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <a href="kepek/Homlokzat_tisztitas/Névtelen.png"
-                            data-lightbox="homlokzat_tisztitas" data-title="Homlokzat Tisztítás 1">
-                            <img src="kepek/Homlokzat_tisztitas/Névtelen.png"
-                                class="img-fluid" alt="Homlokzat Tisztítás 1">
-                        </a>
-
-                        <a href="kepek/Homlokzat_tisztitas/WhatsApp Image 2024-12-31 at 12.32.51 (1).jpeg"
-                            data-lightbox="homlokzat_tisztitas" data-title="Homlokzat Tisztítás 2">
-                            <img src="kepek/Homlokzat_tisztitas/WhatsApp Image 2024-12-31 at 12.32.51 (1).jpeg"
-                                class="img-fluid" alt="Homlokzat Tisztítás 2">
-                        </a>
-
-                        <a href="kepek/Homlokzat_tisztitas/WhatsApp Image 2024-12-31 at 12.32.51 (2).jpeg"
-                            data-lightbox="homlokzat_tisztitas" data-title="Homlokzat Tisztítás 3">
-                            <img src="kepek/Homlokzat_tisztitas/WhatsApp Image 2024-12-31 at 12.32.51 (2).jpeg"
-                                class="img-fluid" alt="Homlokzat Tisztítás 3">
-                        </a>
-
-                        <a href="kepek/Homlokzat_tisztitas/WhatsApp Image 2024-12-31 at 12.32.51.jpeg"
-                            data-lightbox="homlokzat_tisztitas" data-title="Homlokzat Tisztítás 4">
-                            <img src="kepek/Homlokzat_tisztitas/WhatsApp Image 2024-12-31 at 12.32.51.jpeg"
-                                class="img-fluid" alt="Homlokzat Tisztítás 4">
-                        </a>
-                    </div>
-                    <!-- Ipari Munkák -->
-                    <div class="col-12">
-                        <h3 id="IpariMunkak">Ipari Munkák</h3>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <a href="kepek/Ipari_munkak/405206466_244816945106124_848592044615722397_n.jpg"
-                            data-lightbox="ipari_munkak" data-title="Ipari Munkák 1">
-                            <img src="kepek/Ipari_munkak/405206466_244816945106124_848592044615722397_n.jpg"
-                                class="img-fluid" alt="Ipari Munkák 1">
-                        </a>
-
-                        <a href="kepek/Ipari_munkak/406011328_384064357378415_6185050444535895453_n.jpg"
-                            data-lightbox="ipari_munkak" data-title="Ipari Munkák 1">
-                            <img src="kepek/Ipari_munkak/406011328_384064357378415_6185050444535895453_n.jpg"
-                                class="img-fluid" alt="Ipari Munkák 1">
-                        </a>
-
-                        <a href="kepek/Ipari_munkak/406433053_666192018831583_8230495978086346978_n.jpg"
-                            data-lightbox="ipari_munkak" data-title="Ipari Munkák 1">
-                            <img src="kepek/Ipari_munkak/406433053_666192018831583_8230495978086346978_n.jpg"
-                                class="img-fluid" alt="Ipari Munkák 1">
-                        </a>
-
-                        <a href="kepek/Ipari_munkak/406713013_375762944904738_7391965037080771725_n.jpg"
-                            data-lightbox="ipari_munkak" data-title="Ipari Munkák 1">
-                            <img src="kepek/Ipari_munkak/406713013_375762944904738_7391965037080771725_n.jpg"
-                                class="img-fluid" alt="Ipari Munkák 1">
-                        </a>
-
-                        <a href="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.14.19 (4).jpeg"
-                            data-lightbox="ipari_munkak" data-title="Ipari Munkák 1">
-                            <img src="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.14.19 (4).jpeg"
-                                class="img-fluid" alt="Ipari Munkák 1">
-                        </a>
-
-                        <a href="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.14.19 (5).jpeg"
-                            data-lightbox="ipari_munkak" data-title="Ipari Munkák 1">
-                            <img src="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.14.19 (5).jpeg"
-                                class="img-fluid" alt="Ipari Munkák 1">
-                        </a>
-
-                        <a href="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.14.20 (6).jpeg"
-                            data-lightbox="ipari_munkak" data-title="Ipari Munkák 1">
-                            <img src="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.14.20 (6).jpeg"
-                                class="img-fluid" alt="Ipari Munkák 1">
-                        </a>
-
-                        <a href="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.47 (3).jpeg"
-                            data-lightbox="ipari_munkak" data-title="Ipari Munkák 1">
-                            <img src="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.47 (3).jpeg"
-                                class="img-fluid" alt="Ipari Munkák 1">
-                        </a>
-
-                        <a href="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.47 (4).jpeg"
-                            data-lightbox="ipari_munkak" data-title="Ipari Munkák 1">
-                            <img src="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.47 (4).jpeg"
-                                class="img-fluid" alt="Ipari Munkák 1">
-                        </a>
-
-                        <a href="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.47.jpeg"
-                            data-lightbox="ipari_munkak" data-title="Ipari Munkák 1">
-                            <img src="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.47.jpeg" class="img-fluid"
-                                alt="Ipari Munkák 1">
-                        </a>
-
-                        <a href="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.49 (5).jpeg"
-                            data-lightbox="ipari_munkak" data-title="Ipari Munkák 1">
-                            <img src="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.49 (5).jpeg"
-                                class="img-fluid" alt="Ipari Munkák 1">
-                        </a>
-
-                        <a href="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.50 (1).jpeg"
-                            data-lightbox="ipari_munkak" data-title="Ipari Munkák 1">
-                            <img src="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.50 (1).jpeg"
-                                class="img-fluid" alt="Ipari Munkák 1">
-                        </a>
-
-                        <a href="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.50 (2).jpeg"
-                            data-lightbox="ipari_munkak" data-title="Ipari Munkák 1">
-                            <img src="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.50 (2).jpeg"
-                                class="img-fluid" alt="Ipari Munkák 1">
-                        </a>
-
-                        <a href="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.50.jpeg"
-                            data-lightbox="ipari_munkak" data-title="Ipari Munkák 1">
-                            <img src="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.50.jpeg" class="img-fluid"
-                                alt="Ipari Munkák 1">
-                        </a>
-
-                        <a href="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.51 (1).jpeg"
-                            data-lightbox="ipari_munkak" data-title="Ipari Munkák 1">
-                            <img src="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.51 (1).jpeg"
-                                class="img-fluid" alt="Ipari Munkák 1">
-                        </a>
-
-                        <a href="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.51.jpeg"
-                            data-lightbox="ipari_munkak" data-title="Ipari Munkák 1">
-                            <img src="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.51.jpeg" class="img-fluid"
-                                alt="Ipari Munkák 1">
-                        </a>
-
-                        <a href="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.52 (1).jpeg"
-                            data-lightbox="ipari_munkak" data-title="Ipari Munkák 1">
-                            <img src="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.52 (1).jpeg"
-                                class="img-fluid" alt="Ipari Munkák 1">
-                        </a>
-
-                        <a href="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.52 (2).jpeg"
-                            data-lightbox="ipari_munkak" data-title="Ipari Munkák 1">
-                            <img src="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.52 (2).jpeg"
-                                class="img-fluid" alt="Ipari Munkák 1">
-                        </a>
-
-                        <a href="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.52.jpeg"
-                            data-lightbox="ipari_munkak" data-title="Ipari Munkák 1">
-                            <img src="kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.52.jpeg" class="img-fluid"
-                                alt="Ipari Munkák 1">
-                        </a>
-                    </div>
-                    <!-- Kerítés Festés -->
-                    <div class="col-12">
-                        <h3 id="KeritesFestes">Kerítés Festés</h3>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <a href="/kepek/kerites_festes/WhatsApp Image 2024-12-31 at 11.14.19 (1).jpeg"
-                            data-lightbox="kerites_festes" data-title="Kerítés Festés 1">
-                            <img src="/kepek/kerites_festes/WhatsApp Image 2024-12-31 at 11.14.19 (1).jpeg"
-                                class="img-fluid" alt="Minőségi kerítés festés modern technológiával Debrecen árak">
-                        </a>
-                        <a href="/kepek/kerites_festes/WhatsApp Image 2024-12-31 at 11.14.19 (2).jpeg"
-                            data-lightbox="kerites_festes" data-title="Kerítés Festés 2">
-                            <img src="/kepek/kerites_festes/WhatsApp Image 2024-12-31 at 11.14.19 (2).jpeg"
-                                class="img-fluid" alt="Gyors és esztétikus kerítés festés szolgáltatás Debrecen árak">
-                        </a>
-                        <a href="/kepek/kerites_festes/WhatsApp Image 2024-12-31 at 11.14.19 (3).jpeg"
-                            data-lightbox="kerites_festes" data-title="Kerítés Festés 3">
-                            <img src="/kepek/kerites_festes/WhatsApp Image 2024-12-31 at 11.14.19 (3).jpeg"
-                                class="img-fluid" alt="Kerítés festés precíz kivitelezéssel Debrecen árak">
-                        </a>
-                        <a href="/kepek/kerites_festes/WhatsApp Image 2024-12-31 at 11.14.20 (1).jpeg"
-                            data-lightbox="kerites_festes" data-title="Kerítés Festés 4">
-                            <img src="/kepek/kerites_festes/WhatsApp Image 2024-12-31 at 11.14.20 (1).jpeg"
-                                class="img-fluid" alt="Kerítés festés szakértelemmel Budapesten Debrecen árak">
-                        </a>
-                    </div>
-
-                    <!-- Komplett Felújítás -->
-                    <div class="col-12">
-                        <h3 id="KomplettFelujitas">Komplett Felújítás</h3>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <a href="kepek/Komplett felujitas/WhatsApp Image 2024-12-31 at 11.14.18 (4).jpeg"
-                            data-lightbox="komplett_felujitas" data-title="Komplett Felújítás 1">
-                            <img src="kepek/Komplett felujitas/WhatsApp Image 2024-12-31 at 11.14.18 (4).jpeg"
-                                class="img-fluid" alt="Komplett lakásfelújítás kedvező árakon Debrecen">
-                        </a>
-                        <a href="kepek/Komplett felujitas/WhatsApp Image 2024-12-31 at 11.14.19.jpeg"
-                            data-lightbox="komplett_felujitas" data-title="Komplett Felújítás 2">
-                            <img src="kepek/Komplett felujitas/WhatsApp Image 2024-12-31 at 11.14.19.jpeg"
-                                class="img-fluid" alt="Professzionális lakásfelújítás Budapesten Debrecen árak">
-                        </a>
-                    </div>
-
-                    <!-- Lazúrozás -->
-                    <div class="col-12">
-                        <h3 id="Lazurozas">Lazúrozás</h3>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <a href="kepek/Lazurozas/WhatsApp Image 2024-12-31 at 11.14.17 (2).jpeg"
-                            data-lightbox="lazurozas" data-title="Lazúrozás 1">
-                            <img src="kepek/Lazurozas/WhatsApp Image 2024-12-31 at 11.14.17 (2).jpeg" class="img-fluid"
-                                alt="Fafelületek lazúrozása tartós védelemmel Debrecen árak">
-                        </a>
-                    </div>
-
-                    <!-- Mázolás -->
-                    <div class="col-12">
-                        <h3 id="Mazolas">Mázolás</h3>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <a href="kepek/Mazolas/WhatsApp Image 2024-12-31 at 11.14.20 (7).jpeg" data-lightbox="mazolas"
-                            data-title="Mázolás 1">
-                            <img src="kepek/Mazolas/WhatsApp Image 2024-12-31 at 11.14.20 (7).jpeg" class="img-fluid"
-                                alt="Mázolás Debrecen árak">
-                        </a>
-                    </div>
-
-                    <!-- Szobafestés -->
-                    <div class="col-12">
-                        <h3 id="Szobafestes">Szobafestés</h3>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <a href="kepek/Szobafestes/WhatsApp Image 2024-12-31 at 11.14.20 (5).jpeg"
-                            data-lightbox="szobafestes" data-title="Szobafestés 1">
-                            <img src="kepek/Szobafestes/WhatsApp Image 2024-12-31 at 11.14.20 (5).jpeg"
-                                class="img-fluid" alt="Szobafestés gyors határidővel Debrecen árak">
-                        </a>
-                    </div>
-
-                    <!-- Tapétázás -->
-                    <div class="col-12">
-                        <h3 id="Tapetazas">Tapétázás</h3>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <a href="kepek/Tapetazas/WhatsApp Image 2024-12-31 at 11.14.20 (4).jpeg"
-                            data-lightbox="tapetazas" data-title="Tapétázás 1">
-                            <img src="kepek/Tapetazas/WhatsApp Image 2024-12-31 at 11.14.20 (4).jpeg" class="img-fluid"
-                                alt="Tapétázás különleges mintákkal Debrecen árak">
-                        </a>
-                    </div>
-
-                    <!-- Tűzvédelmi Festés -->
-                    <div class="col-12">
-                        <h3 id="TuzvedelmiFestes">Tűzvédelmi Festés</h3>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <a href="kepek/Tuzvedelmei_festes/#" data-lightbox="tuzvedelmi_festes"
-                            data-title="Tűzvédelmi Festés 1">
-                            <img src="kepek/Tuzvedelmei_festes/#" class="img-fluid"
-                                alt="Tűzvédelmi festés szabványok szerint Debrecen árak">
-                        </a>
-                    </div>
-
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Emelokosaras/WhatsApp%20Image%202024-12-31%20at%2011.21.49%20(4).jpeg"
+                         alt="Emelőkosaras 5">
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- Gépi Festés Section -->
+        <div class="tab-content active" id="Gepi_Festes">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <video src="https://roliiasd.github.io/egynaposfestes/kepek/gepi_festes/WhatsApp Video 2025-01-02 at 16.07.20.mp4"
+                           alt="Gépi Festés 1"></video>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gépi Glettelés Section -->
+        <div class="tab-content active" id="Gepi_Gletteles">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Gipszkartonozas/a7cd674a-5646-4997-a53d-8f051182ee2f.jfif" class="img-fluid"
+                         alt="Gépi Glettelés 2">
+                </div>
+            </div>
+        </div>
+
+        <!-- Gipszkartonozás Section -->
+        <div class="tab-content active" id="Gipszkarton">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Gipszkartonozas/066deb3d-c8a9-4bf9-badc-82d43c88ca3e.jfif" class="img-fluid"
+                         alt="Gipszkartonozás 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Gipszkartonozas/3b48af25-178e-4227-8bb1-f5d2856d8258.jfif" class="img-fluid"
+                         alt="Gipszkartonozás 2">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Gipszkartonozas/50f73e55-6c40-4bb2-8c8a-5e439825e369.jfif" class="img-fluid"
+                         alt="Gipszkartonozás 3">
+                </div>
+            </div>
+        </div>
+
+        <!-- Homlokzat Festés Section -->
+        <div class="tab-content active" id="Homlokzat_Festes">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Homlokzat_festes/WhatsApp%20Image%202024-12-31%20at%2011.14.17%20(1).jpeg"
+                         class="img-fluid" alt="Homlokzat Festés 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Homlokzat_festes/WhatsApp%20Image%202024-12-31%20at%2011.14.17%20(3).jpeg"
+                         class="img-fluid" alt="Homlokzat Festés 3">
+                </div>
+                <div class="grid-item">
+
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Homlokzat_festes/WhatsApp%20Image%202024-12-31%20at%2011.14.17%20(4).jpeg"
+                         class="img-fluid" alt="Homlokzat Festés 4">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Homlokzat_festes/WhatsApp%20Image%202024-12-31%20at%2011.14.17%20(5).jpeg"
+                         class="img-fluid" alt="Homlokzat Festés 5">
+                </div>
+            </div>
+        </div>
+
+        <!-- Homlokzat Tisztitas Section -->
+        <div class="tab-content active" id="Homlokzat_Tisztitas">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Homlokzat_tisztitas/Névtelen.png" class="img-fluid" alt="Homlokzat Tisztítás 1">
+                </div>
+                <div class="grid-item">
+
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Homlokzat_tisztitas/WhatsApp Image 2024-12-31 at 12.32.51 (1).jpeg"
+                         class="img-fluid" alt="Homlokzat Tisztítás 2">
+                </div>
+                <div class="grid-item">
+
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Homlokzat_tisztitas/WhatsApp Image 2024-12-31 at 12.32.51 (2).jpeg"
+                         class="img-fluid" alt="Homlokzat Tisztítás 3">
+                </div>
+                <div class="grid-item">
+
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Homlokzat_tisztitas/WhatsApp Image 2024-12-31 at 12.32.51.jpeg" class="img-fluid"
+                         alt="Homlokzat Tisztítás 4">
+                </div>
+            </div>
+        </div>
+
+        <!-- Ipari munkák section -->
+        <div class="tab-content active" id="Ipari_Munkak">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Ipari_munkak/405206466_244816945106124_848592044615722397_n.jpg" class="img-fluid"
+                         alt="Ipari Munkák 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Ipari_munkak/406011328_384064357378415_6185050444535895453_n.jpg" class="img-fluid"
+                         alt="Ipari Munkák 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Ipari_munkak/406433053_666192018831583_8230495978086346978_n.jpg" class="img-fluid"
+                         alt="Ipari Munkák 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Ipari_munkak/406713013_375762944904738_7391965037080771725_n.jpg" class="img-fluid"
+                         alt="Ipari Munkák 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.14.19 (4).jpeg" class="img-fluid"
+                         alt="Ipari Munkák 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.14.19 (5).jpeg" class="img-fluid"
+                         alt="Ipari Munkák 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.14.20 (6).jpeg" class="img-fluid"
+                         alt="Ipari Munkák 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.47 (3).jpeg" class="img-fluid"
+                         alt="Ipari Munkák 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.47 (4).jpeg" class="img-fluid"
+                         alt="Ipari Munkák 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.47.jpeg" class="img-fluid"
+                         alt="Ipari Munkák 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.49 (5).jpeg" class="img-fluid"
+                         alt="Ipari Munkák 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.50 (1).jpeg" class="img-fluid"
+                         alt="Ipari Munkák 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.50 (2).jpeg" class="img-fluid"
+                         alt="Ipari Munkák 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.50.jpeg" class="img-fluid"
+                         alt="Ipari Munkák 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.51 (1).jpeg" class="img-fluid"
+                         alt="Ipari Munkák 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.51.jpeg" class="img-fluid"
+                         alt="Ipari Munkák 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.52 (1).jpeg" class="img-fluid"
+                         alt="Ipari Munkák 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.52 (2).jpeg" class="img-fluid"
+                         alt="Ipari Munkák 1">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Ipari_munkak/WhatsApp Image 2024-12-31 at 11.21.52.jpeg" class="img-fluid"
+                         alt="Ipari Munkák 1">
+                </div>
+            </div>
+        </div>
+
+        <!-- Kerites festés section -->
+        <div class="tab-content active" id="Kerites_Festes">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="/kepek/kerites_festes/WhatsApp Image 2024-12-31 at 11.14.19 (1).jpeg" class="img-fluid"
+                         alt="Minőségi kerítés festés modern technológiával Debrecen árak">
+                </div>
+                <div class="grid-item">
+                    <img src="/kepek/kerites_festes/WhatsApp Image 2024-12-31 at 11.14.19 (2).jpeg" class="img-fluid"
+                         alt="Gyors és esztétikus kerítés festés szolgáltatás Debrecen árak">
+                </div>
+                <div class="grid-item">
+                    <img src="/kepek/kerites_festes/WhatsApp Image 2024-12-31 at 11.14.19 (3).jpeg" class="img-fluid"
+                         alt="Kerítés festés precíz kivitelezéssel Debrecen árak">
+                </div>
+                <div class="grid-item">
+                    <img src="/kepek/kerites_festes/WhatsApp Image 2024-12-31 at 11.14.20 (1).jpeg" class="img-fluid"
+                         alt="Kerítés festés szakértelemmel Budapesten Debrecen árak">
+                </div>
+            </div>
+        </div>
+
+        <!-- Komplett felujitás section -->
+        <div class="tab-content active" id="Komplett_Felujitas">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Komplett felujitas/WhatsApp Image 2024-12-31 at 11.14.18 (4).jpeg" class="img-fluid"
+                         alt="Komplett lakásfelújítás kedvező árakon Debrecen">
+                </div>
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Komplett felujitas/WhatsApp Image 2024-12-31 at 11.14.19.jpeg" class="img-fluid"
+                         alt="Professzionális lakásfelújítás Budapesten Debrecen árak">
+                </div>
+            </div>
+        </div>
+
+        <!-- Lazurozás section -->
+        <div class="tab-content active" id="Lazurozas">
+            <div class="grid-container">
+                <div class="grid-item">
+
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Lazurozas/WhatsApp Image 2024-12-31 at 11.14.17 (2).jpeg" class="img-fluid"
+                         alt="Fafelületek lazúrozása tartós védelemmel Debrecen árak">
+                </div>
+            </div>
+        </div>
+
+        <!-- Mázolás section -->
+        <div class="tab-content active" id="Mazolas">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Mazolas/WhatsApp%20Image%202024-12-31%20at%2011.14.20%20(7).jpeg" class="img-fluid"
+                         alt="Mázolás szakértővel Debrecen árak">
+                </div>
+            </div>
+        </div>
+
+        <!-- Szobafestés section -->
+        <div class="tab-content active" id="Szobafestes">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Szobafestes/WhatsApp Image 2024-12-31 at 11.14.20 (5).jpeg" class="img-fluid"
+                         alt="Szobafestés gyors határidővel Debrecen árak">
+                </div>
+            </div>
+        </div>
+
+        <!-- Tapétázás -->
+        <div class="tab-content active" id="Tapetazas">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Tapetazas/WhatsApp Image 2024-12-31 at 11.14.20 (4).jpeg" class="img-fluid"
+                         alt="Tapétázás különleges mintákkal Debrecen árak">
+                </div>
+            </div>
+        </div>
+
+        <!-- Tűzvédelemi festés section -->
+        <div class="tab-content" id="Tuzvedelmi_Festes">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="https://roliiasd.github.io/egynaposfestes/kepek/Tuzvedelmei_festes/#" class="img-fluid"
+                         alt="Tűzvédelmi festés szabványok szerint Debrecen árak">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Lábléc -->
     <footer>
         <div class="container text-center">
             <!-- Navigációs linkek -->
-            <ul class="list-unstyled d-flex justify-content-center gap-3 mb-3">
+            <ul class="list-unstyled"
+                style="padding: 0; display: flex; justify-content: center; gap: 20px; margin-bottom: 10px;">
                 <li><a href="referenciak.html">Referenciák</a></li>
                 <li><a href="kapcsolat.html">Kapcsolat</a></li>
                 <li><a href="arak.html">Szobafestés árak</a></li>
+
             </ul>
             <!-- Közösségi média ikonok -->
-            <div class="social-icons mb-3">
+            <!-- <div class="social-icons">
                 <a href="https://www.facebook.com/Egynaposfestes/"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/egynaposfestes.hu/"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.tiktok.com/@egynaposfestes.hu"><i class="fab fa-tiktok"></i></a>
-            </div>
+            </div> -->
             <!-- Copyright -->
             <p>&copy; 2024 EgyNaposFestés. Minden jog fenntartva.</p>
-            <p>Weboldalt tervezte: <a href="https://www.example.com"><span id="specialis-szoveg">Kovács
-                        Roland</span></a></p>
-            <p class="logok-link">Logók készítője: <a href="https://www.freepik.com">Designed by BiZkettE1 / Freepik</a>
+
+            <p style="font-size: 8pt;">
+                Logók készítője: <a href="https://www.freepik.com"
+                                    style="font-size: 8pt;">Designed by BiZkettE1 / Freepik</a>
             </p>
+            <p style="font-size: .85rem;">
+                Weboldalt tervezte: <a href="donacio.html">
+                    <span id="specialis-szoveg"
+                          style="color: #ec4559;">
+                        Kovács
+                        Roland
+                    </span>
+                </a>
+            </p>
+
         </div>
     </footer>
 

@@ -4,23 +4,23 @@ footer {
     padding: 20px 0;
 }
 
-footer a {
-    color: #929292;
-    font-weight: bold;
-    text-decoration: none;
-}
+    footer a {
+        color: #929292;
+        font-weight: bold;
+        text-decoration: none;
+    }
 
-footer a:hover {
-    color: #d3d3d3;
-}
+        footer a:hover {
+            color: #d3d3d3;
+        }
 
 #specialis-szoveg {
     color: #9c9a22;
 }
 
-#specialis-szoveg:hover {
-    color: #ff00d4;
-}
+    #specialis-szoveg:hover {
+        color: #ff00d4;
+    }
 
 /* Szekció háttér */
 section {
@@ -29,11 +29,11 @@ section {
     padding: 3rem 0;
 }
 
-a{
+a {
     color: #459a55;
     text-decoration: none;
 }
 
-a:hover{
-    color: #459a55;
-}
+    a:hover {
+        color: #459a55;
+    }

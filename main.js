@@ -1,8 +1,7 @@
 //Lenyilo menu atalakito
 
-
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.navbar-toggler').addEventListener('click', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.navbar-toggler').addEventListener('click', function () {
         const icon = document.getElementById('menu-icon');
         const navbarCollapse = document.getElementById('navbarNav');
 
@@ -16,26 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Modal megjelenítése
+document.getElementById('privacy-button').onclick = function () {
+    document.getElementById('privacy-modal').style.display = 'block';
+};
 
-//Ar kalkulator
-//Ar kalkulator
-//Ar kalkulator
-//Ar kalkulator
-//Ar kalkulator
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    const areaInputs = document.querySelectorAll('.area-input');
-
-    areaInputs.forEach(function(input) {
-        input.addEventListener('input', function() {
-            const munkadij = parseFloat(this.getAttribute('data-munkadij')) || 0;
-            const anyagdij = parseFloat(this.getAttribute('data-anyagdij')) || 0;
-            const terulet = parseFloat(this.value) || 0;
-            const total = (munkadij + anyagdij) * terulet;
-            const totalCostId = this.id.replace('area', 'totalCost');
-            document.getElementById(totalCostId).textContent = total.toLocaleString('hu-HU') + ' Ft';
-        });
-    });
-});
+// Modal bezárása
+document.getElementById('privacy-close').onclick = function () {
+    document.getElementById('privacy-modal').style.display = 'none';
+};
