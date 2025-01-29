@@ -45,29 +45,29 @@ footer {
     padding: 20px 0;
 }
 
-    footer a {
-        color: #929292;
-        font-weight: bold;
-        text-decoration: none;
-    }
+footer a {
+    color: #929292;
+    font-weight: bold;
+    text-decoration: none;
+}
 
-        footer a:hover {
-            color: #d3d3d3;
-        }
+footer a:hover {
+    color: #d3d3d3;
+}
 /* Adatvédelmi gomb stílusa */
 #privacy-button {
     background-color: #333333;
     color: #929292;
     font-weight: bold;
-    border: none;
+    border: none;;
     font-size: 16px;
     cursor: pointer;
 }
 
-    #privacy-button:hover {
-        background-color: transparent;
-        border: 3px solid #ff6600;
-    }
+#privacy-button:hover {
+    background-color: transparent;
+    border: 3px solid #ff6600;
+}
 
 /* Felugró ablak stílusa */
 #privacy-modal {
@@ -122,9 +122,9 @@ footer {
     margin-top: 20px;
 }
 
-    #privacy-close:hover {
-        background-color: #d14e00;
-    }
+#privacy-close:hover {
+    background-color: #d14e00;
+}
 
 h4, h3 {
     font-weight: bold;
@@ -134,9 +134,9 @@ h4, h3 {
     color: #9c9a22;
 }
 
-    #specialis-szoveg:hover {
-        color: #ff00d4;
-    }
+#specialis-szoveg:hover {
+    color: #ff00d4;
+}
 
 /* Szekció háttér */
 section {
@@ -200,12 +200,12 @@ section {
     table-layout: auto;
 }
 
-    .table td, .table th {
-        white-space: normal;
-        word-wrap: break-word;
-        padding: 12px;
-        text-align: left;
-    }
+.table td, .table th {
+    white-space: normal;
+    word-wrap: break-word;
+    padding: 12px;
+    text-align: left;
+}
 
 th {
     background-color: #727272;
@@ -237,11 +237,9 @@ tr:hover td {
     0% {
         transform: scale(1);
     }
-
     50% {
         transform: scale(1.5);
     }
-
     100% {
         transform: scale(1);
     }
@@ -264,23 +262,23 @@ tr:hover td {
         margin-bottom: 10px;
     }
 
-        .table tr {
-            margin-bottom: 15px;
-        }
+    .table tr {
+        margin-bottom: 15px;
+    }
 
-        .table td {
-            position: relative;
-            padding-left: 12px;
-            text-align: left;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
+    .table td {
+        position: relative;
+        padding-left: 12px;
+        text-align: left;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 
-        .table th {
-            text-align: left;
-        }
+    .table th {
+        text-align: left;
+    }
 
-        .table td:before {
-            content: none;
-        }
+    .table td:before {
+        content: none;
+    }
 }
