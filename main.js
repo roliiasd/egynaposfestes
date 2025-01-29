@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Modal megjelenÌtÈse
+// Modal megjelen√≠t√©se
 document.getElementById('privacy-button').onclick = function () {
     document.getElementById('privacy-modal').style.display = 'block';
 };
 
-// Modal bez·r·sa
+// Modal bez√°r√°sa
 document.getElementById('privacy-close').onclick = function () {
     document.getElementById('privacy-modal').style.display = 'none';
 };
