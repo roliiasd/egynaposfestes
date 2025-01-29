@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
 
@@ -37,12 +37,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     const hash = window.location.hash.replace("#", ""); // Pl. "Szobafestes"
-
+    
     if (hash) {
         const tabButton = document.querySelector(`.tab-btn[data-tab="${hash}"]`);
-
+        
         if (tabButton) {
-            tabButton.click(); // Automatikusan aktiv·lja a megfelelı f¸let
+            tabButton.click(); // Automatikusan aktiv√°lja a megfelel≈ë f√ºlet
         }
     }
 });
