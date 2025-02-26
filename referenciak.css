@@ -143,37 +143,27 @@ footer a:hover {
   color: #9c9a22;
 }
 
-/* Modál stílusok */
+/* The Modal (background) */
 .modal {
-  display: none; /* Kezdetben elrejtve */
-  position: fixed;
-  z-index: 1;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Fekete háttér */
-  overflow: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 
-/* Modál tartalmának stílusai - kisebb és középre igazított */
+/* Modal Content (image) */
 .modal-content {
-  width: 60%;  /* A modális tartalom szélessége 60% */
-  max-width: 800px;  /* A modális tartalom maximum szélessége 800px */
-  max-height: 80%;  /* A modális tartalom maximum magassága 80% */
   margin: auto;
-  transition: all 0.3s ease-in-out;
-}
-
-/* A kép viselkedése a modálban */
-.modal-content img {
-  width: 100%;  /* A kép maximális szélessége a modálhoz */
-  height: auto;  /* Magasság automatikusan illeszkedjen a szélességhez */
-  object-fit: contain; /* A kép arányainak megőrzése */
-  border-radius: 8px; /* Opcionális, hogy kerekebb sarkai legyenek */
+  display: block;
+  width: 80%;
+  max-width: 700px;
 }
 
 /* A modal-video stílusok */
@@ -182,26 +172,56 @@ footer a:hover {
   margin: auto;
   max-width: 100%;
   max-height: 100%;
-  padding-top: 120px; /* 16:9 arányos videó megjelenítés */
+  padding-top: 10px; /* 16:9 arányos videó megjelenítés */
 }
 
-/* Bezáró gomb stílusai */
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
 .close {
   position: absolute;
   top: 15px;
   right: 35px;
-  color: #fff;
+  color: #f1f1f1;
   font-size: 40px;
   font-weight: bold;
-  cursor: pointer;
+  transition: 0.3s;
 }
 
 .close:hover,
 .close:focus {
-  color: #f1f1f1;
+  color: #bbb;
   text-decoration: none;
   cursor: pointer;
 }
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+
+
+
 
 
 /* Tab navigáció */

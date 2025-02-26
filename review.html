@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="review.min.css">
+</head>
+<body>
+    <!-- Add Review Button -->
+    <button id="addReviewBtn" class="add-review-btn">
+        <i class="fas fa-plus"></i> Vélemény írása
+    </button>
+
+    <!-- Review Form Popup -->
+    <div id="reviewFormPopup" class="popup-overlay">
+        <div class="popup-content">
+            <section class="review-form">
+                <h2>Irj egy véleményt</h2>
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Név" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="star-rating">
+                            <i class="far fa-star" data-rating="1"></i>
+                            <i class="far fa-star" data-rating="2"></i>
+                            <i class="far fa-star" data-rating="3"></i>
+                            <i class="far fa-star" data-rating="4"></i>
+                            <i class="far fa-star" data-rating="5"></i>
+                        </div>
+                        <input type="hidden" id="rating" required value="0">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="review" placeholder="Ide írhatod a véleményed..." required></textarea>
+                    </div>
+                    <button type="submit">Küldés</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="reviews-container" id="reviewsContainer">
+            <!-- Reviews will be dynamically added here -->
+        </section>
+    </div>
+    <script src="review.js"></script>
+</body>
+</html>

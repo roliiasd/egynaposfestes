@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    background-color:rgb(29, 28, 28);
+    color: white;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.review-form {
+    margin-bottom: 60px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 40px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: 400;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #333;
+    font-size: 16px;
+    transition: border 0.3s ease;
+    background: #111;
+    color: white;
+    border-radius: 8px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #666;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: white;
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+button {
+    background-color: white;
+    color: block;
+    font-weight: 600;
+    padding: 12px 24px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+    transform: scale(1.05);
+}
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.review-card {
+    position: relative;
+    padding: 20px;
+    border: 1px solid #333;
+    background-color:rgb(90, 74, 74);
+    transition: all 0.3s ease;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 8px 8px;
+}
+
+.review-card:hover {
+    border-color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.1);
+    background: transparent;
+}
+
+.review-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: white;
+    order: -1;
+}
+
+.review-card p {
+    color: #ccc;
+    margin-top: 15px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    overflow: auto;
+    max-height: 150px;
+    padding-right: 10px;
+}
+
+.review-card p::-webkit-scrollbar {
+    width: 8px;
+}
+
+.review-card p::-webkit-scrollbar-track {
+    background: #111;
+    border-radius: 4px;
+}
+
+.review-card p::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+.review-card p::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
+
+/* Star Rating Styles */
+.star-rating {
+    font-size: 24px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.star-rating i {
+    margin-right: 5px;
+    transition: all 0.2s ease;
+}
+
+.star-rating i:hover,
+.star-rating i.fas {
+    color: #ffd700;
+}
+
+.star-rating i.far {
+    color: #666;
+}
+
+.review-stars {
+    margin: 10px 0;
+    order: 0;
+}
+
+.review-stars i.fas {
+    color: #ffd700;
+}
+
+.review-stars i.far {
+    color: #666;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: none;
+    border: none;
+    padding: 5px;
+    opacity: 0;
+}
+
+.review-card:hover .delete-btn {
+    opacity: 1;
+}
+
+.delete-btn:hover {
+    color: #ff6b6b;
+    transform: scale(1.1);
+}
+
+.user-indicator {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 14px;
+    padding: 8px;
+    border: 1px solid #333;
+    display: inline-block;
+    border-radius: 8px;
+    background-color: #111;
+}
+
+/* Add these new styles to your existing CSS */
+
+/* Popup Overlay */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-overlay.active {
+    display: flex;
+}
+
+/* Popup Content */
+.popup-content {
+    background-color: #111;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    border: 1px solid #333;
+}
+
+/* Add Review Button */
+.add-review-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #fff;
+    color: black;
+    border: 1px solid #333;
+    padding: 15px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.add-review-btn:hover {
+    background-color: #222;
+    border-color: white;
+    transform: translateY(-2px);
+}
+
+.add-review-btn i {
+    font-size: 18px;
+}
+
+/* Modify existing review form styles */
+.review-form {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Animation for popup */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.popup-content {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .add-review-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+    }
+
+    .popup-content {
+        width: 95%;
+        margin: 20px;
+        padding: 20px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    .reviews-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .review-form {
+        margin-bottom: 40px;
+    }
+}

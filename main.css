@@ -1,6 +1,8 @@
 body {
     background-color: #f8f9fa;
+    font-family: 'Work Sans', sans-serif;
 }
+
 
 h2 {
     color: #532727;
@@ -37,6 +39,10 @@ a[nav-link]:hover {
 .nav-link:hover {
     color: #ff6600;
 }
+
+//sutik
+
+
 
 
 /* Footer stílus */
