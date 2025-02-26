@@ -139,6 +139,54 @@ button:hover {
     background: #444;
 }
 
+/* Add these image upload styles */
+.image-upload-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #111;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.image-upload-label:hover {
+    background: #222;
+    border-color: white;
+}
+
+.image-upload-label i {
+    margin-right: 8px;
+}
+
+.image-input {
+    display: none;
+}
+
+.image-preview {
+    margin-top: 10px;
+    max-width: 200px;
+    max-height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.image-preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.review-card-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+
 /* Star Rating Styles */
 .star-rating {
     font-size: 24px;

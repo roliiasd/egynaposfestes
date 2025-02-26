@@ -8,19 +8,17 @@
     <link rel="stylesheet" href="review.min.css">
 </head>
 <body>
-    <!-- Add Review Button -->
     <button id="addReviewBtn" class="add-review-btn">
-        <i class="fas fa-plus"></i> Vélemény írása
+        <i class="fas fa-plus"></i> Add Review
     </button>
-<!--  asdasdasd-->
-    <!-- Review Form Popup -->
+
     <div id="reviewFormPopup" class="popup-overlay">
         <div class="popup-content">
             <section class="review-form">
-                <h2>Irj egy véleményt</h2>
+                <h2>Write a Review</h2>
                 <form id="reviewForm">
                     <div class="form-group">
-                        <input type="text" id="name" placeholder="Név" required>
+                        <input type="text" id="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
                         <div class="star-rating">
@@ -33,9 +31,16 @@
                         <input type="hidden" id="rating" required value="0">
                     </div>
                     <div class="form-group">
-                        <textarea id="review" placeholder="Ide írhatod a véleményed..." required></textarea>
+                        <textarea id="review" placeholder="Your Review" required></textarea>
                     </div>
-                    <button type="submit">Küldés</button>
+                    <div class="form-group">
+                        <label for="reviewImage" class="image-upload-label">
+                            <i class="fas fa-camera"></i> Add Photo
+                            <input type="file" id="reviewImage" accept="image/*" class="image-input">
+                        </label>
+                        <div id="imagePreview" class="image-preview"></div>
+                    </div>
+                    <button type="submit">Submit</button>
                 </form>
             </section>
         </div>
@@ -43,7 +48,6 @@
 
     <div class="container">
         <section class="reviews-container" id="reviewsContainer">
-            <!-- Reviews will be dynamically added here -->
         </section>
     </div>
     <script src="review.js"></script>

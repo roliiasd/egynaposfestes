@@ -1,2 +1,6 @@
 {
+    "liveServer.settings.cors": {
+        "enable": true,
+        "allowOrigin": ["*"]
+    }
 }
