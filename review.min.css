@@ -82,7 +82,7 @@ button:hover {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
 }
-<!--  asdasdasd-->
+
 .review-card {
     position: relative;
     padding: 20px;
