@@ -200,7 +200,7 @@ function clearAllReviews() {
     reviews = [];
     displayReviews();
 }
-
+//asd
 // Initialize the application
 initStarRating();
 displayReviews();

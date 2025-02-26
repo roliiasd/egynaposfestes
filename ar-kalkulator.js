@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Navbar toggler clicked');
         const icon = document.getElementById('menu-icon');
         const navbarCollapse = document.getElementById('navbarNav');
-
+//asdas
         if (navbarCollapse.classList.contains('show')) {
             //console.log('Collapse is open');
             icon.classList.remove('fa-caret-up');

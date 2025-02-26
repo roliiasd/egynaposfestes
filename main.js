@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
+//asdasd
 // Modal megjelenítése
 document.getElementById('privacy-button').onclick = function () {
     document.getElementById('privacy-modal').style.display = 'block';

@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
+//asdasd
 document.addEventListener('DOMContentLoaded', function() {
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
