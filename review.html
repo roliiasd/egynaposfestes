@@ -10,16 +10,16 @@
 </head>
 <body>
     <button id="addReviewBtn" class="add-review-btn">
-        <i class="fas fa-plus"></i> Add Review
+        <i class="fas fa-plus"></i> Vélemény írása
     </button>
 
     <div id="reviewFormPopup" class="popup-overlay">
         <div class="popup-content">
             <section class="review-form">
-                <h2>Write a Review</h2>
+                <h2>Írj egy véleményt.</h2>
                 <form id="reviewForm">
                     <div class="form-group">
-                        <input type="text" id="name" placeholder="Your Name" required>
+                        <input type="text" id="name" placeholder="Név" required>
                     </div>
                     <div class="form-group">
                         <div class="star-rating">
@@ -32,16 +32,16 @@
                         <input type="hidden" id="rating" required value="0">
                     </div>
                     <div class="form-group">
-                        <textarea id="review" placeholder="Your Review" required></textarea>
+                        <textarea id="review" placeholder="Ide írhatod a véleményt..." required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="reviewImage" class="image-upload-label">
-                            <i class="fas fa-camera"></i> Add Photo
+                            <i class="fas fa-camera"></i> Adj hozzá képet
                             <input type="file" id="reviewImage" accept="image/*" class="image-input">
                         </label>
                         <div id="imagePreview" class="image-preview"></div>
                     </div>
-                    <button type="submit">Submit</button>
+                    <button type="submit">Küldés</button>
                 </form>
             </section>
         </div>
