@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vélemények
-    </title>
+    <title>Reviews</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="review.min.css">
     <link rel="shortcut icon" href="https://roliiasd.github.io/egynaposfestes/kepek/logo.svg" type="image/x-icon">
 </head>
 <body>
     <button id="addReviewBtn" class="add-review-btn">
-        <i class="fas fa-plus"></i> Vélemény írása
+        <i class="fas fa-plus"></i> Add Review
     </button>
 
     <div id="reviewFormPopup" class="popup-overlay">
         <div class="popup-content">
             <section class="review-form">
-                <h2>Írj egy véleményt.</h2>
+                <h2>Write a Review</h2>
                 <form id="reviewForm">
                     <div class="form-group">
-                        <input type="text" id="name" placeholder="Név" required>
+                        <input type="text" id="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
                         <div class="star-rating">
@@ -33,16 +32,16 @@
                         <input type="hidden" id="rating" required value="0">
                     </div>
                     <div class="form-group">
-                        <textarea id="review" placeholder="Ide írhatod a véleményt..." required></textarea>
+                        <textarea id="review" placeholder="Your Review" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="reviewImage" class="image-upload-label">
-                            <i class="fas fa-camera"></i> Adj hozzá képet
+                            <i class="fas fa-camera"></i> Add Photo
                             <input type="file" id="reviewImage" accept="image/*" class="image-input">
                         </label>
                         <div id="imagePreview" class="image-preview"></div>
                     </div>
-                    <button type="submit">Küldés</button>
+                    <button type="submit">Submit</button>
                 </form>
             </section>
         </div>

@@ -1,0 +1,86 @@
+[
+  {
+    "nev": "Festés két rétegben fehér színben, előkészített falfelületen",
+    "leiras": "Glettelt, mélyalapozott felület festése két rétegben",
+    "munkadij": 1650,
+    "anyagdij": 200
+  },
+  {
+    "nev": "Festés három rétegben fehér színben, előkészített falfelületen",
+    "leiras": "Glettelt, mélyalapozott felület festése három rétegben",
+    "munkadij": 2300,
+    "anyagdij": 280
+  },
+  {
+    "nev": "Festés két rétegben helyszínen színezett festékkel, előkészített falfelületen",
+    "leiras": "A festéket helyszínen szinezőpaszta segítségével keverjük be a kívánt pasztelszínű árnyalat eléréséhez.",
+    "munkadij": 1750,
+    "anyagdij": 300
+  },
+  {
+    "nev": "Festés két rétegben gyárilag vagy színkártya alapján színezett festékkel, előkészített falfelületen",
+    "leiras": "A festéket színkártya segítségével festékeverőgépen keverjük be a kívánt szín eléréséhez, vagy választhatjuk a gyárilag kész színes festékeket.",
+    "munkadij": 1800,
+    "anyagdij": 550
+  },
+  {
+    "nev": "Tisztasági festés egy rétegben fehér színben, falhibák javításával",
+    "leiras": "Tisztasági festésről akkor beszélünk, amikor a falak jól állapotban vannak és csak egy felfrissítő festésre van szükség azonos színben.",
+    "munkadij": 1150,
+    "anyagdij": 200
+  },
+  {
+    "nev": "Tisztasági festés két rétegben fehér színben, falhibák javításával",
+    "leiras": "Tisztasági festésről akkor beszélünk, amikor a falak jól állapotban vannak és csak egy felfrissítő festésre van szükség azonos színben.",
+    "munkadij": 1750,
+    "anyagdij": 250
+  },
+  {
+    "nev": "Iroda tisztasági festése két rétegben fehér színben, falhibák javításával",
+    "leiras": "Az iroda tisztasági festése során a cél általában az iroda környezetének frissítése és kellemesebbé tétele.",
+    "munkadij": 1750,
+    "anyagdij": 250
+  },
+  {
+    "nev": "Lépcsőház tisztasági festése két rétegben fehér színben, falhibák javításával",
+    "leiras": "Lépcsőház tisztasági festése során az a cél, hogy a közös terület friss és rendezett megjelenést kapjon.",
+    "munkadij": 1900,
+    "anyagdij": 250
+  },
+  {
+    "nev": "Tisztaságigépi festés (gépi festékszórás) egy rétegben fehér színben, falhibák javításával",
+    "leiras": "A tisztasági festés során a festékszóró gép használata hatékony módszer lehet, különösen nagyobb felületek festésére. A festékszóró géppel való festés számos előnnyel járhat, beleértve a gyorsabb munkavégzést és az egyenletes festék eloszlást.",
+    "munkadij": 1150,
+    "anyagdij": 200
+  },
+  {
+    "nev": "Tisztasági gépi festés (gépi festékszórás) két rétegben fehér színben, falhibák javításával",
+    "leiras": "A tisztasági festés során a festékszóró gép használata hatékony módszer lehet, különösen nagyobb felületek festésére. A festékszóró géppel való festés számos előnnyel járhat, beleértve a gyorsabb munkavégzést és az egyenletes festék eloszlást.",
+    "munkadij": 1750,
+    "anyagdij": 250
+  },
+  {
+    "nev": "Festés penészedés gátló falfestékkel két rétegben, fehér színben",
+    "leiras": "A penész elleni falfesték speciális összetevőkkel rendelkezik, amelyek gátolják a penész kialakulását és terjedését a falon.",
+    "munkadij": 1750,
+    "anyagdij": 420
+  },
+  {
+    "nev": "Homlokzatfestés két rétegben (sima, tagolatlan felületen)",
+    "leiras": "A homlokzatfesték felhordása sima vakolt vagy korábban festett, tagolatlan felületre történik.",
+    "munkadij": 2850,
+    "anyagdij": 0
+  },
+  {
+    "nev": "Homlokzatfestés két rétegben (durva, tagolatlan felületen)",
+    "leiras": "A homlokzatfesték felhordása kapart vagy dörzsölt vakoltra, tagolatlan felületre történik.",
+    "munkadij": 5000,
+    "anyagdij": 0
+  },
+  {
+    "nev": "Színhatár képzés",
+    "leiras": "A \"színhatár képzés\" egy festési technika vagy eljárás, amely során két különböző szín vagy színezett terület közötti határ jön létre.",
+    "munkadij": 400,
+    "anyagdij": 80
+  }
+]

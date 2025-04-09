@@ -1,0 +1,158 @@
+[
+  {
+    "nev": "Padló takarása fóliával, szegélyek maszkolása krepp ragasztószalaggal",
+    "leiras": "A festési munkálatok során védelmet biztosít a nem kívánt festékcseppek ellen.",
+    "munkadij": 550,
+    "anyagdij": 300
+  },
+  {
+    "nev": "Laminált padló takarása fóliával, szegélyek maszkolása szenzitív krepp ragasztó szalaggal",
+    "leiras": "Javasolt a szenzitív szalag használata, mert a hagyományos ragasztószalag eltávolítása során a modern, papírvékony bevonatú szegélyek hajlamosabbak a sérülésekre.",
+    "munkadij": 550,
+    "anyagdij": 400
+  },
+  {
+    "nev": "Padló és bútorok takarása fóliával, szegélyek maszkolása krepp ragasztószalaggal",
+    "leiras": "A festési munkálatok során védelmet biztosít a nem kívánt festékcseppek ellen bútorozott helyiségben.",
+    "munkadij": 750,
+    "anyagdij": 350
+  },
+  {
+    "nev": "Padló takarása fóliával és hullámpapírral",
+    "leiras": "Nagyobb bontási munkák esetén a padló teljes védelme érdekében javasolt a levédés fóliával és hullámpapírral.",
+    "munkadij": 850,
+    "anyagdij": 550
+  },
+  {
+    "nev": "Falkaparás (Régi, laza bevonat eltávolítása 3rtg-ig)",
+    "leiras": "A falkaparás a régi, laza bevonat eltávolítását jelenti a falakról. Ez a lépés előkészíti a felületet a további munkálatokhoz, mint mélyalapozás és glettelés.",
+    "munkadij": 1900,
+    "anyagdij": 0
+  },
+  {
+    "nev": "Laza műanyag alapú festék eltávolítása kaparással",
+    "leiras": "Műanyag alapú festékkel festett felületek laza festékrétegeinek eltávolítása. Ez a lépés előkészíti a felületet a további munkálatokhoz, mint mélyalapozás és glettelés.",
+    "munkadij": 1900,
+    "anyagdij": 0
+  },
+  {
+    "nev": "Tapéta bontása (Tapétaleoldó szerrel)",
+    "leiras": "A tapétaleoldó szerrel történő tapéta bontás során a tapétaréteget áztatjuk és fellazítjuk a felületén, hogy könnyen eltávolítható legyen.",
+    "munkadij": 1300,
+    "anyagdij": 100
+  },
+  {
+    "nev": "Falfelület mélyalapozása (impregnálás)",
+    "leiras": "A falfelület mélyalapozása javítja a glett és a festék tapadását, elősegítve a tartós bevonat kialakítását.",
+    "munkadij": 500,
+    "anyagdij": 200
+  },
+  {
+    "nev": "Glettelés egy rétegben, sima felületen",
+    "leiras": "A glettelés egy rétegben alkalmazása során a cél az egyenetlenségek, repedések vagy más kisebb felületi hibák kitöltése és simává tétele egyetlen glettelő réteg segítségével.",
+    "munkadij": 1250,
+    "anyagdij": 300
+  },
+  {
+    "nev": "Glettelés két rétegben régi lekapart felületen vagy új vakolaton",
+    "leiras": "A felújítási munkák során a glettelés két rétegben történiok, az első réteg a felület egyenetlenségeinek és hibáinak kitöltését szolgálja, míg a második réteg a simább és kifinomultabb felület elérésére szolgál.",
+    "munkadij": 2250,
+    "anyagdij": 500
+  },
+  {
+    "nev": "Glettelés három rétegben gipszes alapú glettanyaggal",
+    "leiras": "Romosabb, durvább felületek esetén szükséges a három rétgeg glettelés a szebb és simább felület érdekében.",
+    "munkadij": 3100,
+    "anyagdij": 750
+  },
+  {
+    "nev": "Glettelt felület csiszolása",
+    "leiras": "A készrelgettelt falat átcsiszoljuk porelszívós falcsiszolóval, hogy egyenletes és sima felületet érjünk el.",
+    "munkadij": 400,
+    "anyagdij": 50
+  },
+  {
+    "nev": "Felület erősítő üvegfátyol ragasztása",
+    "leiras": "Az üvegfátyol gyakran alkalmazzuk sűrűn repedezett falak és mennyezetek megerősítésére. Az üvegszálas szerkezet segít átfedni és stabilizálni a repedéseket, hozzájárulva a falak és mennyezetek erősségének és tartósságának növeléséhez.",
+    "munkadij": 1850,
+    "anyagdij": 650
+  },
+  {
+    "nev": "Alumínium élvédő felhelyezése",
+    "leiras": "Az alumínium élvédő segít kiegyenlíteni a pozitív sarkok esetleges kisebb egyenetlenségeit, valamint megvédi azokat a sérülésektől és kopástól.",
+    "munkadij": 700,
+    "anyagdij": 350
+  },
+  {
+    "nev": "Alumínium élvédő felhelyezése görbe, nem függő élekre",
+    "leiras": "Nem függő, görbe pozitív élek kiegyenesítése alumínium élvédővel.",
+    "munkadij": 2000,
+    "anyagdij": 700
+  },
+  {
+    "nev": "Műanyag flexibilis élvédő felhelyezése glettbe ágyazva",
+    "leiras": "Műanyag flexibilis élvédőket alkalmazzuk az íves, pozitív élek mentén, hogy azokat kiegyenlítsük, védelmet nyújtsunk sérülések és kopás ellen.",
+    "munkadij": 900,
+    "anyagdij": 650
+  },
+  {
+    "nev": "Strait-Flex papír-üvegszál élvédő felrakása",
+    "leiras": "A Strait-Flex papír-üvegszál kompozit élvédő egy nagyon erős bandázst biztosít az éleknek, megakadályozva a repedések vagy törések kialakulását.",
+    "munkadij": 1200,
+    "anyagdij": 750
+  },
+  {
+    "nev": "Vezetékhorony javítása 5 cm széleségig és 5 cm mélységig",
+    "leiras": "Villanyszerelési munkálatok után a vezetékhornyok kitöltése 6-30-as vakológipsszel",
+    "munkadij": 1500,
+    "anyagdij": 600
+  },
+  {
+    "nev": "Vezetékhorony javítása 5-10 cm széleségig és 5 cm mélységig",
+    "leiras": "Villanyszerelési munkálatok után a vezetékhornyok kitöltése 6-30-as vakológipsszel",
+    "munkadij": 2500,
+    "anyagdij": 1200
+  },
+  {
+    "nev": "Penészes felület kezelése HÉRA penészgátló lemosóoldattal",
+    "leiras": "A HÉRA penészgátló lemosóoldat segítségével hatékonyan kezelhető a penészes felületek, biztosítva a hatékony penészmentesítést és megelőzve annak visszatérését",
+    "munkadij": 500,
+    "anyagdij": 320
+  },
+  {
+    "nev": "Akriltömítés max. 2 mm-ig",
+    "leiras": "Falak negatív sarkainál a repedések, ajtó és ablak tokok fallal való találkozásai pontjainak kitöltése festhető akriltömítővel.",
+    "munkadij": 220,
+    "anyagdij": 110
+  },
+  {
+    "nev": "Diletáció, repedések javítása 3 mm szélességig",
+    "leiras": "A falak dilatációs repedéseinek hatékony javításához megfelelő szélességű dilatációs szalagot és rugalmas kitöltőanyagot használunk.",
+    "munkadij": 300,
+    "anyagdij": 100
+  },
+  {
+    "nev": "Villanyszerelési kötődobozok elfedése 100x100 mm-es gipszkarton javító lappal",
+    "leiras": "Az optikailag zavaró kötödoboz fedeleket eltávolítjuk, és a helyükre 100x100 mm-es gipszkarton javító lapokat helyezünk el, majd ezeket síkba gletteljük.",
+    "munkadij": 500,
+    "anyagdij": 800
+  },
+  {
+    "nev": "Szerelvénydoboz vakolófedél elhelyezése",
+    "leiras": "A célja az, hogy megakadályozza a glettszórás során felhasznált anyag bejutását a szerelvénydobozba.",
+    "munkadij": 150,
+    "anyagdij": 100
+  },
+  {
+    "nev": "Kiemelt ragasztott élvédő alkalmazása",
+    "leiras": "A kiemelt ragasztott élvédő esetén az élvédőt alapos ragasztóval erősítjük a felületre, hogy hosszú távú tartós védelmet nyújtson a különféle külső hatásokkal szemben.",
+    "munkadij": 1500,
+    "anyagdij": 800
+  },
+  {
+    "nev": "Felület tisztítása",
+    "leiras": "Az előkészítő munkálatok során a felületeket alaposan megtisztítjuk a portól, szennyeződésektől és egyéb akad��lyoktól, hogy a festék vagy tapéta tartósan jól tapadjon a falakra.",
+    "munkadij": 500,
+    "anyagdij": 0
+  }
+]
