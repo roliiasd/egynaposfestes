@@ -1,0 +1,74 @@
+[
+  {
+    "nev": "Makulatúra ragasztás",
+    "leiras": "Ez a szolgáltatás a makulatúra ragasztására vonatkozik, amely egy alapozó rétegként szolgál a tapétázás előtt.",
+    "munkadij": 1500,
+    "anyagdij": 300
+  },
+  {
+    "nev": "Makulatúra csíkragasztás",
+    "leiras": "Ez a szolgáltatás makulatúra csíkragasztását foglalja magában, különböző felületeken.",
+    "munkadij": 1000,
+    "anyagdij": 200
+  },
+  {
+    "nev": "Folyékony makulatúra felhordása",
+    "leiras": "A folyékony makulatúra felhordása biztosítja a sima és egyenletes alapot a tapétázás előtt.",
+    "munkadij": 1000,
+    "anyagdij": 300
+  },
+  {
+    "nev": "Tapétázás könnyű tapétával (pl. fűrészporos)",
+    "leiras": "Könnyű tapéta alkalmazása, például fűrészporos tapéta használata.",
+    "munkadij": 3500,
+    "anyagdij": 300
+  },
+  {
+    "nev": "Tapétázás tagolt felületen, könnyű tapétával (pl. fűrészporos)",
+    "leiras": "Ez a szolgáltatás könnyű tapéta felragasztását tartalmazza tagolt felületeken.",
+    "munkadij": 6000,
+    "anyagdij": 300
+  },
+  {
+    "nev": "Tapétázás középnehéz tapétával (habosított, vlies)",
+    "leiras": "Középnehéz tapéta használata, mint a habosított vagy vlies tapéták.",
+    "munkadij": 4200,
+    "anyagdij": 350
+  },
+  {
+    "nev": "Tapétázás tagolt felületen, középnehéz tapétával (habosított, vlies)",
+    "leiras": "Középnehéz tapéta felragasztása tagolt felületeken, mint például habosított vagy vlies tapéták esetében.",
+    "munkadij": 6500,
+    "anyagdij": 350
+  },
+  {
+    "nev": "Tapétázás nehéz tapétával",
+    "leiras": "Nehéz tapéták felragasztása, amely speciális technikát és nagyobb szakértelmet igényel.",
+    "munkadij": 5000,
+    "anyagdij": 400
+  },
+  {
+    "nev": "Tapétázás tagolt felületen, nehéz tapétával",
+    "leiras": "Nehéz tapéták felragasztása tagolt felületeken, amely különleges odafigyelést és szakértelmet igényel.",
+    "munkadij": 7500,
+    "anyagdij": 400
+  },
+  {
+    "nev": "Poszter vagy fotótapéta ragasztása",
+    "leiras": "Poszterek vagy fotótapéták felragasztása, egyedi designokkal.",
+    "munkadij": 6900,
+    "anyagdij": 450
+  },
+  {
+    "nev": "Üvegszálas tapétaragasztás",
+    "leiras": "Üvegszálas tapéta felragasztása, amely erős és tartós felületet biztosít.",
+    "munkadij": 2700,
+    "anyagdij": 300
+  },
+  {
+    "nev": "Bordűr felragasztása",
+    "leiras": "Bordűrök felragasztása, dekoratív kiegészítők a falak díszítésére.",
+    "munkadij": 1000,
+    "anyagdij": 200
+  }
+]
