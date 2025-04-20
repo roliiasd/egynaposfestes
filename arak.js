@@ -1,5 +1,4 @@
 
-
 //Lenyilo menu atalakito
 
 document.addEventListener('DOMContentLoaded', function () {
