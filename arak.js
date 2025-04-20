@@ -1,3 +1,5 @@
+
+
 //Lenyilo menu atalakito
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -16,34 +18,100 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+window.addEventListener('DOMContentLoaded', () =>{
+    getAlapMunkak();
+    getFestesArak();
+    getMazolasArak();
+});
 
-
-
-
-const tableBodyAlapMunkak = document.getElementById('tbody');
-const trAlapMunkak = document.createElement('tr');
-const divAlapMunkak = document.createElement('div');
-const tdAlapMunkak = document.createElement('td');
-
-
-window.addEventListener('DOMContentLoaded', getAlapMunkak => {
-
-    tdAlapMunkak.innerHTML = 'Padló takarása fóliával, <br>szegélyek maszkolása krepp ragasztószalaggal';
-    divAlapMunkak.style.marginTop = '10px'
-    divAlapMunkak.style.fontStyle = 'italic';
-    divAlapMunkak.style.color = '#555';
-    divAlapMunkak.innerHTML = 'A festési munkálatok során védelmet biztosít a nem kívánt festékcseppek ellen bútorozott helyiségben.';
-    tdAlapMunkak.append(divAlapMunkak);
-    trAlapMunkak.append(tdAlapMunkak);
-    tableBodyAlapMunkak.append(trAlapMunkak)
-    
-    
-})
-
-console.log(tableBodyAlapMunkak);
 async function getAlapMunkak() {
-    const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/alapmunkak/alapmunkak.json');
-    const data = await response.json();
-    console.log(data);
-    
-  }
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/alapmunkak/alapmunkak.json');
+        const munkak = await response.json();
+        displayAlapmunkak(munkak);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function displayAlapmunkak(munkak) {
+    const tbody = document.getElementById('tbody-alap');
+
+    munkak.forEach(munka => {
+        const sor  = document.createElement('tr');
+        sor.innerHTML = `
+            <td>
+            ${munka.nev}
+            <div class="tdDiv">${munka.leiras} </div> 
+            </td>
+            <td>${munka.anyagdij}</td>
+            <td>${munka.munkadij}</td>
+        `;
+        tbody.append(sor);
+    })
+}
+
+async function getFestesArak() {
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/festes/festes.json');
+        const jobs = await response.json();
+        displayFestes(jobs);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
+function displayFestes(jobs) {
+    const tbody = document.getElementById('tbody-fest');
+
+    jobs.forEach(job => {
+        const row  = document.createElement('tr');
+        row.innerHTML = `
+            <td>
+            ${job.nev}
+            <div class="tdDiv">${job.leiras} </div> 
+            </td>
+            <td>${job.anyagdij}</td>
+            <td>${job.munkadij}</td>
+        `;
+        tbody.append(row);
+    })
+}
+
+async function getMazolasArak() {
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/mazolas/mazolas.json');
+        const jobs = await response.json();
+        displayMazolas(jobs);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function displayMazolas(jobs) {
+    const tbody = document.getElementById('tbody-mazol');
+
+    jobs.forEach(job => {
+        const row  = document.createElement('tr');
+        row.innerHTML = `
+            <td>
+            ${job.nev}
+            <div class="tdDiv">${job.leiras} </div> 
+            </td>
+            <td>${job.anyagdij}</td>
+            <td>${job.munkadij}</td>
+        `;
+        tbody.append(row);
+    })
+}
+
+async function getTapetazasArak() {
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/tapetazas/tapetazas.json');
+        const jobs = await response.json();
+        displayTapetazas(jobs);
+    } catch (error) {
+        console.log(error);
+    }
+}

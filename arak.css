@@ -17,7 +17,12 @@ h2 {
         transform: scale(1);
     }
 }
-
+.tdDiv{
+    margin-top: 10px; 
+    font-size: 0.8rem;
+    font-style: italic; 
+    color: #555;
+}
 .pulse-button {
     animation: pulse 2.25s infinite;
 }
