@@ -137,7 +137,7 @@ function displayTapetazas(jobs) {
 
 async function getEgyebMunkak(){
     try {
-        const response  = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/egyeb/egyeb.json');
+        const response  = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/refs/heads/egyeb-munkak/egyeb-munkak.json');
         const jobs = await response.json();
         displayEgyebMunkak(jobs);
     } catch (error) {
