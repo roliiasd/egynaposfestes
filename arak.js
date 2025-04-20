@@ -21,6 +21,9 @@ window.addEventListener('DOMContentLoaded', () =>{
     getAlapMunkak();
     getFestesArak();
     getMazolasArak();
+    getTapetazasArak();
+    getEgyebMunkak();
+    getGipszkartonozas();
 });
 
 async function getAlapMunkak() {
@@ -113,4 +116,76 @@ async function getTapetazasArak() {
     } catch (error) {
         console.log(error);
     }
+}
+
+function displayTapetazas(jobs) {
+    const tbody = document.getElementById('tbody-tapeta');
+
+    jobs.forEach(job => {
+        const row  = document.createElement('tr');
+        row.innerHTML = `
+            <td>
+            ${job.nev}
+            <div class="tdDiv">${job.leiras} </div> 
+            </td>
+            <td>${job.anyagdij}</td>
+            <td>${job.munkadij}</td>
+        `;
+        tbody.append(row);
+    })
+}
+
+async function getEgyebMunkak(){
+    try {
+        const response  = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/egyeb/egyeb.json');
+        const jobs = await response.json();
+        displayEgyebMunkak(jobs);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function displayEgyebMunkak(jobs) {
+    const tbody = document.getElementById('tbody-egyeb');
+
+    jobs.forEach(job => {
+        const row  = document.createElement('tr');
+        row.innerHTML = `
+            <td>
+            ${job.nev}
+            <div class="tdDiv">${job.leiras} </div> 
+            </td>
+            <td>${job.anyagdij}</td>
+            <td>${job.munkadij}</td>
+        `;
+        tbody.append(row);
+    })
+}
+
+async function getGipszkartonozas(){
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/gipszkartonozas/gipszkartonozas.json');
+        const jobs = await response.json();
+        displayGipszkartonozas(jobs);
+    } catch (error) {
+        console.log(error);
+        
+    }
+}
+
+function displayGipszkartonozas(jobs) {
+    const tbody = document.getElementById('tbody-gipsz');
+
+    jobs.forEach(job => {
+        const row  = document.createElement('tr');
+        row.innerHTML = `
+            <td>
+            ${job.nev}
+            <div class="tdDiv">${job.leiras} </div> 
+            </td>
+            <td>${job.anyagdij}</td>
+            <td>${job.munkadij}</td>
+        `;
+        tbody.append(row);
+    })
 }
