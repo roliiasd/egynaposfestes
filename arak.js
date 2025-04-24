@@ -1,4 +1,3 @@
-
 //Lenyilo menu atalakito
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -24,6 +23,7 @@ window.addEventListener('DOMContentLoaded', () =>{
     getTapetazasArak();
     getEgyebMunkak();
     getGipszkartonozas();
+    
 });
 
 async function getAlapMunkak() {
@@ -159,7 +159,12 @@ function displayEgyebMunkak(jobs) {
             <td>${job.munkadij}</td>
         `;
         tbody.append(row);
+
+        if (job.leiras === "Ezek az árak 100m2 felett érvényesek.") {
+            //leirasElem.classList.add('special-description');
+        }
     })
+
 }
 
 async function getGipszkartonozas(){
@@ -171,6 +176,7 @@ async function getGipszkartonozas(){
         console.log(error);
         
     }
+
 }
 
 function displayGipszkartonozas(jobs) {

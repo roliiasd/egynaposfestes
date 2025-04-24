@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Navbar toggler clicked');
         const icon = document.getElementById('menu-icon');
         const navbarCollapse = document.getElementById('navbarNav');
-//asdas
+        //asdas
         if (navbarCollapse.classList.contains('show')) {
             //console.log('Collapse is open');
             icon.classList.remove('fa-caret-up');
@@ -16,12 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-
-
 // Görgetés figyelése
 window.addEventListener('scroll', toggleBackToTopButton);
-
 function toggleBackToTopButton() {
     const backToTopButton = document.getElementById("tetejereGomb");
     if (!backToTopButton) {
@@ -42,13 +38,160 @@ function toggleBackToTopButton() {
         //console.log("Eltűnik a gomb"); // Naplózás: Gomb eltűnik
     }
 }
-
 // Visszagörgetés a tetejére
 function scrollToTop() {
     //console.log("Visszagörgetés a tetejére indult"); // Naplózás: Visszagörgetés indult
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+window.addEventListener('DOMContentLoaded', () => {
+    getAlapMunkak();
+    getFestesArak();
+    getMazolasArak();
+    getTapetazasArak();
+    getEgyebMunkak();
+    getGipszkartonozas();
+
+});
+
+async function getAlapMunkak() {
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/alapmunkak/alapmunkak.json');
+        const jobs = await response.json();
+        displayAlapmunkak(jobs);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function displayAlapmunkak(jobs) {
+    const alapmunkakContainerDiv = document.getElementById('alapmunkakContainer');
+    alapmunkakContainerDiv.innerHTML = '';
+    jobs.forEach(job => {
+        //Pari container div
+        const alapmunkakPairContainerDiv = document.createElement('div');
+        alapmunkakPairContainerDiv.classList = 'pair-conainer';
+        //Work item div
+        const workItemDiv = document.createElement('div');
+        workItemDiv.classList = 'work-item';
+        const workItemH3 = document.createElement('h3');
+        workItemH3.innerText = job.nev;
+        const workItemP = document.createElement('p');
+        workItemP.style.color = 'white';
+        workItemP.innerText = `<strong>Munkadíj:</strong> ${job.munkadij} Ft/m²<br><strong>Anyagdíj:</strong> ${job.anyagdij} Ft/m²`;
+
+        //Calculator div
+        const calculatorItemDiv = document.createElement('div');
+        calculatorItemDiv.classList = 'calculator-item';
+        //form group div
+        const formGroupDiv = document.createElement('div');
+        formGroupDiv.classList = 'form-group';
+        const formGroupLabel = document.createElement('label');
+        formGroupLabel.setAttribute('for', job.id);
+        formGroupLabel.innerText = 'Adja meg a területet (m²):';
+        const formGroupInput = document.createElement('input');
+        formGroupInput.type = 'number';
+        formGroupInput.classList = 'form-control', 'area-input';
+        formGroupInput.id = job.id;
+        formGroupInput.dataset.munkadij = job.munkadij;
+        formGroupInput.dataset.anyagdij = job.anyagdij;
+        formGroupInput.ariaPlaceholder = 'Adja meg a területet ben';
+        formGroupInput.ariaValueMin = '0';
+
+        
+
+
+
+
+        workItemDiv.append(workItemH3, workItemP);
+        formGroupDiv.append(formGroupLabel, formGroupInput);
+        calculatorItemDiv.append(formGroupDiv);
+        alapmunkakPairContainerDiv.append(workItemDiv, calculatorItemDiv);
+        alapmunkakContainerDiv.append(alapmunkakPairContainerDiv);
+
+
+    })
+
+}
+
+async function getFestesArak() {
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/festes/festes.json');
+        const jobs = await response.json();
+        displayFestes(jobs);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
+function displayFestes(jobs) {
+    const tbody = document.getElementById('tbody-fest');
+
+}
+
+async function getMazolasArak() {
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/mazolas/mazolas.json');
+        const jobs = await response.json();
+        displayMazolas(jobs);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function displayMazolas(jobs) {
+    const tbody = document.getElementById('tbody-mazol');
+
+}
+
+async function getTapetazasArak() {
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/tapetazas/tapetazas.json');
+        const jobs = await response.json();
+        displayTapetazas(jobs);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function displayTapetazas(jobs) {
+    const tbody = document.getElementById('tbody-tapeta');
+
+}
+
+async function getEgyebMunkak() {
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/refs/heads/egyeb-munkak/egyeb-munkak.json');
+        const jobs = await response.json();
+        displayEgyebMunkak(jobs);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function displayEgyebMunkak(jobs) {
+    const tbody = document.getElementById('tbody-egyeb');
+
+}
+
+async function getGipszkartonozas() {
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/gipszkartonozas/gipszkartonozas.json');
+        const jobs = await response.json();
+        displayGipszkartonozas(jobs);
+    } catch (error) {
+        console.log(error);
+
+    }
+
+}
+
+function displayGipszkartonozas(jobs) {
+    const tbody = document.getElementById('tbody-gipsz');
+
+
+}
 
 
 //automata vegosszeg szamitas
@@ -88,11 +231,11 @@ function loadData() {
         }
     });
 }
-window.onload = function() {
+window.onload = function () {
     // A DOM elemek teljes betöltése után fut le
     const inputs = document.querySelectorAll('.area-input');
     inputs.forEach(input => {
-        input.addEventListener('input', function() {
+        input.addEventListener('input', function () {
             updateTotalCost(input.id);
         });
     });

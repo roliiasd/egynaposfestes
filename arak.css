@@ -1,4 +1,3 @@
-
 body {
     background-color: #323232;
 }
@@ -113,5 +112,15 @@ a[nav-link]:hover {
 .table-wrapper tr:nth-child(even) td {
     background-color: #f9f9f9;
     /* Minden második sor világosabb háttérrel */
+}
 
+.small-red-text {
+    font-size: 0.8rem;
+    color: red;
+}
+
+.special-description {
+    font-weight: bold;
+    color: red;
+    font-size: 14px;
 }
