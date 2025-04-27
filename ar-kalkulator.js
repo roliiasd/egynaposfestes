@@ -58,138 +58,140 @@ async function getAlapMunkak() {
     try {
         const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/alapmunkak/alapmunkak.json');
         const jobs = await response.json();
-        displayAlapmunkak(jobs);
+        displayJobs(jobs, 'Alapmunkák árai', 'alapmunkakTargetDiv');
     } catch (error) {
         console.log(error);
     }
 }
 
-function displayAlapmunkak(jobs) {
-    const alapmunkakContainerDiv = document.getElementById('alapmunkakContainer');
-    alapmunkakContainerDiv.innerHTML = '';
-    jobs.forEach(job => {
-        //Pari container div
-        const alapmunkakPairContainerDiv = document.createElement('div');
-        alapmunkakPairContainerDiv.classList = 'pair-conainer';
-        //Work item div
-        const workItemDiv = document.createElement('div');
-        workItemDiv.classList = 'work-item';
-        const workItemH3 = document.createElement('h3');
-        workItemH3.innerText = job.nev;
-        const workItemP = document.createElement('p');
-        workItemP.style.color = 'white';
-        workItemP.innerText = `<strong>Munkadíj:</strong> ${job.munkadij} Ft/m²<br><strong>Anyagdíj:</strong> ${job.anyagdij} Ft/m²`;
+function createJobCard(job) {
+    const pairContainerDiv = document.createElement('div');
+    pairContainerDiv.classList.add('pair-container');
 
-        //Calculator div
-        const calculatorItemDiv = document.createElement('div');
-        calculatorItemDiv.classList = 'calculator-item';
-        //form group div
-        const formGroupDiv = document.createElement('div');
-        formGroupDiv.classList = 'form-group';
-        const formGroupLabel = document.createElement('label');
-        formGroupLabel.setAttribute('for', job.id);
-        formGroupLabel.innerText = 'Adja meg a területet (m²):';
-        const formGroupInput = document.createElement('input');
-        formGroupInput.type = 'number';
-        formGroupInput.classList = 'form-control', 'area-input';
-        formGroupInput.id = job.id;
-        formGroupInput.dataset.munkadij = job.munkadij;
-        formGroupInput.dataset.anyagdij = job.anyagdij;
-        formGroupInput.ariaPlaceholder = 'Adja meg a területet ben';
-        formGroupInput.ariaValueMin = '0';
+    const workItemDiv = document.createElement('div');
+    workItemDiv.classList.add('work-item');
 
-        
+    const workItemH3 = document.createElement('h3');
+    workItemH3.innerText = job.nev;
 
+    const workItemP = document.createElement('p');
+    workItemP.style.color = 'white';
+    workItemP.innerHTML = `<strong>Munkadíj:</strong> ${job.munkadij} Ft/m²<br><strong>Anyagdíj:</strong> ${job.anyagdij} Ft/m²`;
 
+    workItemDiv.append(workItemH3, workItemP);
 
+    const calculatorItemDiv = document.createElement('div');
+    calculatorItemDiv.classList.add('calculator-item');
 
-        workItemDiv.append(workItemH3, workItemP);
-        formGroupDiv.append(formGroupLabel, formGroupInput);
-        calculatorItemDiv.append(formGroupDiv);
-        alapmunkakPairContainerDiv.append(workItemDiv, calculatorItemDiv);
-        alapmunkakContainerDiv.append(alapmunkakPairContainerDiv);
+    const formGroupDiv = document.createElement('div');
+    formGroupDiv.classList.add('form-group');
 
+    const formGroupLabel = document.createElement('label');
+    formGroupLabel.setAttribute('for', job.id);
+    formGroupLabel.innerText = 'Adja meg a területet (m²):';
 
-    })
+    const formGroupInput = document.createElement('input');
+    formGroupInput.type = 'number';
+    formGroupInput.classList.add('form-control', 'area-input');
+    formGroupInput.id = job.id;
+    formGroupInput.dataset.munkadij = job.munkadij;
+    formGroupInput.dataset.anyagdij = job.anyagdij;
+    formGroupInput.placeholder = 'Adja meg a területet';
+    formGroupInput.min = '0';
 
+    formGroupDiv.append(formGroupLabel, formGroupInput);
+    calculatorItemDiv.append(formGroupDiv);
+
+    pairContainerDiv.append(workItemDiv, calculatorItemDiv);
+
+    return pairContainerDiv;
 }
+function displayJobs(jobs, title, targetElementId) {
+    const containerDiv = document.createElement('div');
+    containerDiv.classList.add('container');
+
+    const rowDiv = document.createElement('div');
+    rowDiv.classList.add('py-5');
+
+    const titleH2 = document.createElement('h2');
+    titleH2.style.color = 'wheat';
+    titleH2.style.fontWeight = 'bold';
+    titleH2.classList.add('text-center', 'mb-4', 'title');
+    titleH2.innerText = title;
+
+    const sortDiv = document.createElement('div');
+    sortDiv.classList.add('d-flex', 'flex-column', 'flex-md-row', 'flex-wrap');
+
+    jobs.forEach(job => {
+        const jobCard = createJobCard(job);
+        sortDiv.appendChild(jobCard);
+    });
+
+    rowDiv.append(titleH2, sortDiv);
+    containerDiv.appendChild(rowDiv);
+
+    const target = document.getElementById(targetElementId);
+    if (target) {
+        target.appendChild(containerDiv);
+    } else {
+        console.error(`Nem található az elem ezzel az ID-val: ${targetElementId}`);
+    }
+}
+
+
+
+
 
 async function getFestesArak() {
     try {
         const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/festes/festes.json');
         const jobs = await response.json();
-        displayFestes(jobs);
+        displayJobs(jobs, 'Festés árak', 'festesTargetDiv');
     } catch (error) {
         console.log(error);
     }
 }
 
-
-function displayFestes(jobs) {
-    const tbody = document.getElementById('tbody-fest');
-
-}
 
 async function getMazolasArak() {
     try {
         const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/mazolas/mazolas.json');
         const jobs = await response.json();
-        displayMazolas(jobs);
+        displayJobs(jobs, 'Mázolás árak', 'mazolasTargetDiv');
     } catch (error) {
         console.log(error);
     }
-}
-
-function displayMazolas(jobs) {
-    const tbody = document.getElementById('tbody-mazol');
-
 }
 
 async function getTapetazasArak() {
     try {
         const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/tapetazas/tapetazas.json');
         const jobs = await response.json();
-        displayTapetazas(jobs);
+        displayJobs(jobs, 'Tapétázás árak', 'tapetazasTargetDiv');
     } catch (error) {
         console.log(error);
     }
-}
-
-function displayTapetazas(jobs) {
-    const tbody = document.getElementById('tbody-tapeta');
-
 }
 
 async function getEgyebMunkak() {
     try {
         const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/refs/heads/egyeb-munkak/egyeb-munkak.json');
         const jobs = await response.json();
-        displayEgyebMunkak(jobs);
+        displayJobs(jobs, 'Egyéb munkák árak', 'egyebMunkakTargetDiv');
     } catch (error) {
         console.log(error);
     }
-}
-
-function displayEgyebMunkak(jobs) {
-    const tbody = document.getElementById('tbody-egyeb');
-
 }
 
 async function getGipszkartonozas() {
     try {
         const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/gipszkartonozas/gipszkartonozas.json');
         const jobs = await response.json();
-        displayGipszkartonozas(jobs);
+        displayJobs(jobs, 'Gipszkartonozás árak', 'gipszkartonozasTargetDiv');
     } catch (error) {
         console.log(error);
 
     }
-
-}
-
-function displayGipszkartonozas(jobs) {
-    const tbody = document.getElementById('tbody-gipsz');
-
 
 }
 
