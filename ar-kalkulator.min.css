@@ -13,24 +13,67 @@ body {
     font-family: Arial, sans-serif;
 }
 
+
 /* Navbar stílus */
-.navbar {
-    background-color: #532727;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+.navbar{
+    background: black;
+    opacity: 0.9;
+}
+.nav-link {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    color: wheat;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-link:hover::after {
+    width: 60%;
+    background: black;
+}
+.nav-link.active::after {
+    width: 60%;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    background-color: wheat;
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-toggler-icon {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+}
+
+.navbar-brand img {
+    width: 150px;
 }
 
 .nav-link {
-    color: wheat !important;
+    color: white;
     font-weight: bold;
-    text-decoration: none;
-    margin: 0 10px;
+    transition: ease 0.3s;
 }
 
-.nav-link:hover {
-    color: #ff6600;
+.nav-link:hover{
+    color: black;
+    transform: scale(1.1);
+    background: white;
+    border-radius: 5px;
+    opacity: 0.8;
+
+}
+.nav-link a.active {
+    border-bottom: 2px solidrgb(255, 255, 255);
 }
 
 /* Pair-container */
