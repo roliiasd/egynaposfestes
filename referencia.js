@@ -1,4 +1,3 @@
-
 //Lenyilo menu atalakito
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -15,7 +14,41 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-//asdasd
+
+window.addEventListener('DOMContentLoaded', () => {
+
+})
+
+async function getEmelokosarasImages() {
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/refs/heads/emelokosaras-kepek/emelokosaras.json');
+        const images = await response.json();
+
+    } catch (error) {
+        
+    }
+}
+
+
+function createImageCard(img){
+    const tabContentDiv = document.createElement('div');
+    tabContentDiv.classList.add('tab-content', 'active');
+
+    const gridContainer = document.createElement('div');
+    gridContainer.classList.add('grid-container');
+
+    const gridItem = document.createElement('div');
+    gridItem.classList.add('grid-item');
+
+    const imgElement = document.createElement('img');
+    imgElement.src = img.image;
+    imgElement.alt = img.title;
+    imgElement.classList.add('img-fluid', 'imageModalTrigger');
+}
+function displayImages(images, targetElementId) {
+    
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');

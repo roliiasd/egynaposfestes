@@ -54,16 +54,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 });
 
-async function getAlapMunkak() {
-    try {
-        const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/alapmunkak/alapmunkak.json');
-        const jobs = await response.json();
-        displayJobs(jobs, 'Alapmunkák árai', 'alapmunkakTargetDiv');
-    } catch (error) {
-        console.log(error);
-    }
-}
-
 function createJobCard(job) {
     const pairContainerDiv = document.createElement('div');
     pairContainerDiv.classList.add('pair-container');
@@ -106,6 +96,7 @@ function createJobCard(job) {
 
     return pairContainerDiv;
 }
+
 function displayJobs(jobs, title, targetElementId) {
     const containerDiv = document.createElement('div');
     containerDiv.classList.add('container');
@@ -138,7 +129,15 @@ function displayJobs(jobs, title, targetElementId) {
     }
 }
 
-
+async function getAlapMunkak() {
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/alapmunkak/alapmunkak.json');
+        const jobs = await response.json();
+        displayJobs(jobs, 'Alapmunkák árai', 'alapmunkakTargetDiv');
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 
 
