@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
     const aLink = document.createElement('a');
-    aLink.href = 'index.html';
+    aLink.href = '../index.html';
     aLink.textContent = 'Vissza a főoldalra';
     aLink.id = 'vissza';
     const container = document.createElement('div');
