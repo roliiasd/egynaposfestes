@@ -1,11 +1,16 @@
 :root {
   /* CSS HEX */
-  --platinum: #d7dedcff;
+ --platinum: #d7dedcff;
   --timberwolf: #cfcfcdff;
   --eggplant: #563440ff;
   --dark-purple: #241623ff;
   --sage: #d0cd94ff;
   --myrtle-green: #3c787eff;
+  --rich-black: #001524;
+  --wenge: #564E58;
+  --onyx: #2E3532;
+  --sunset: #F6D8AE;
+  --imperial-red: #F71735;
 }
 
 body {
@@ -167,14 +172,20 @@ footer a:hover {
   background-color: #d14e00;
 }
 
-.calculatorBtn{
+.calculatorBtn {
   background: linear-gradient(135deg, var(--dark-purple), var(--myrtle-green));
   font-weight: bold;
   padding: 1.2rem;
   border: none;
   border-radius: 10px;
   font-size: 1.2rem;
+  transition: transform 0.5s ease-in-out;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.calculatorBtn:hover {
+  background: linear-gradient(135deg, var(--myrtle-green), var(--dark-purple));
+  color: white;
+  transform: scale(1.05);
 }
 
 h4,
@@ -224,7 +235,15 @@ section.py-5.jobButtons {
   padding: 4rem;
 }
 /* Kártya stílusok */
-.card {
+.card.rightSide {
+  color: #ffffff;
+  background: linear-gradient(-160deg, #1e1e2f, #3f3f64);
+  transition: 0.5s ease-in-out;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.card.leftSide {
   color: #ffffff;
   background: linear-gradient(160deg, #1e1e2f, #3f3f64);
   transition: 0.5s ease-in-out;
@@ -248,7 +267,18 @@ section.py-5.jobButtons {
   object-fit: cover;
 }
 
-.card-body {
+.card-body.rightSide {
+  background: linear-gradient(-145deg, rgb(61, 15, 104), #8f94fb);
+  color: white;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 20px;
+  transition: 0.5s ease-in-out;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.card-body.leftSide {
   background: linear-gradient(145deg, rgb(61, 15, 104), #8f94fb);
   color: white;
   max-width: 100%;
@@ -336,6 +366,12 @@ tr:hover td {
 
 .pulse {
   animation: pulse 1.65s infinite;
+  font-size: 1.5rem;
+  color: var(--imperial-red);
+  font-weight: bold;
+  margin-bottom: 15px;
+  display: inline-block;
+  text-decoration: none;
 }
 
 /* Reszponzív táblázat stílusok - fejlécek megőrzése mobil nézetben */
