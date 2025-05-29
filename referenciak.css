@@ -74,8 +74,16 @@ div.container.py-4{
   display: inline-block;
   overflow: hidden;
   color: white;
-  font-weight: bold;
+  font-weight: 600;
   text-decoration: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: white;
+  transform: scale(1.1);
+  border-radius: 5px;
+  opacity: 0.8;
 }
 
 .nav-link:hover::after {
@@ -108,20 +116,8 @@ div.container.py-4{
   width: 150px;
 }
 
-.nav-link {
-  color: white;
-  font-weight: bold;
-  transition: ease 0.3s;
-}
-
-.nav-link:hover {
-  color: white;
-  transform: scale(1.1);
-  border-radius: 5px;
-  opacity: 0.8;
-}
 .nav-link a.active {
-  border-bottom: 2px solidrgb(255, 255, 255);
+  border-bottom: 2px solid #ffffff
 }
 
 

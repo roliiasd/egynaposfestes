@@ -1,5 +1,6 @@
-:root{
-  --platinum: #d7dedcff;
+:root {
+  /* CSS HEX */
+ --platinum: #d7dedcff;
   --timberwolf: #cfcfcdff;
   --eggplant: #563440ff;
   --dark-purple: #241623ff;
@@ -10,6 +11,10 @@
   --onyx: #2E3532;
   --sunset: #F6D8AE;
   --imperial-red: #F71735;
+  --tiffany-blue: #98e2c6ff;
+  --cool-gray: #9a98b5ff;
+  --tropical-indigo: #a594f9ff;
+  --xanthous: #f7b32bff;
 }
 
 *{
@@ -34,6 +39,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* Navbar stílus */
 .navbar {
   background: linear-gradient(160deg, #1e1e2f, #3f3f64);
   backdrop-filter: blur(8px);
@@ -44,8 +50,16 @@ body {
   display: inline-block;
   overflow: hidden;
   color: white;
-  font-weight: bold;
+  font-weight: 600;
   text-decoration: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: white;
+  transform: scale(1.1);
+  border-radius: 5px;
+  opacity: 0.8;
 }
 
 .nav-link:hover::after {
@@ -78,20 +92,8 @@ body {
   width: 150px;
 }
 
-.nav-link {
-  color: white;
-  font-weight: bold;
-  transition: ease 0.3s;
-}
-
-.nav-link:hover {
-  color: white;
-  transform: scale(1.1);
-  border-radius: 5px;
-  opacity: 0.8;
-}
 .nav-link a.active {
-  border-bottom: 2px solidrgb(255, 255, 255);
+  border-bottom: 2px solid #ffffff
 }
 
 /* Pair-container */
@@ -120,10 +122,12 @@ body {
   color: #ecf0f1;
   max-width: 100%;
 }
-
+h2{
+  color: var(--xanthous);
+}
 /* Szövegek stílusa */
 .work-item h3 {
-  color: #d4af37;
+  color: var(--tropical-indigo);
   font-weight: bold;
 }
 

@@ -105,7 +105,6 @@ function displayJobs(jobs, title, targetElementId) {
     rowDiv.classList.add('py-5');
 
     const titleH2 = document.createElement('h2');
-    titleH2.style.color = 'wheat';
     titleH2.style.fontWeight = 'bold';
     titleH2.classList.add('text-center', 'mb-4', 'title');
     titleH2.innerText = title;
