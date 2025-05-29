@@ -83,7 +83,7 @@ function displayFestes(jobs) {
 
 async function getMazolasArak() {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/mazolas/mazolas.json');
+        const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/mazolas/mazolas.json',);
         const jobs = await response.json();
         displayMazolas(jobs);
     } catch (error) {

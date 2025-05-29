@@ -14,13 +14,13 @@
 }
 
 body {
-  background-color: #f8f9fa;
   font-family: "Work Sans", sans-serif;
 }
 
 .text-white {
   color: #929292;
 }
+
 
 /* Navbar stílus */
 .navbar {
@@ -82,7 +82,6 @@ body {
 .nav-link a.active {
   border-bottom: 2px solidrgb(255, 255, 255);
 }
-
 /* Footer stílus */
 footer {
   background-color: #333333;
@@ -198,6 +197,7 @@ section {
   background: #5a5a5a;
   font-weight: bold;
   padding: 3rem 0;
+  text-align: center;
 }
 section.py-5.jobButtons {
   background: linear-gradient(
@@ -234,6 +234,9 @@ section.py-5.jobButtons {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='111' height='111' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23786a60' fill-opacity='0.71'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.71'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
   padding: 4rem;
 }
+.card, footer{
+  user-select: none;
+}
 /* Kártya stílusok */
 .card.rightSide {
   color: #ffffff;
@@ -256,15 +259,6 @@ section.py-5.jobButtons {
   font-size: 1.2rem;
   color: #ffffff;
   font-weight: bold;
-}
-
-.card-text {
-  color: #ffffff;
-}
-
-.card-img-top {
-  height: 200px;
-  object-fit: cover;
 }
 
 .card-body.rightSide {
@@ -303,54 +297,6 @@ section.py-5.jobButtons {
   }
 }
 
-/* Táblázat stílusok */
-.table-wrapper {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  table-layout: auto;
-}
-
-.table td,
-.table th {
-  white-space: normal;
-  word-wrap: break-word;
-  padding: 12px;
-  text-align: left;
-}
-
-th {
-  background-color: #727272;
-  color: #ffffff;
-  padding: 12px;
-  font-weight: bold;
-}
-
-td {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  background-color: #f9f9f9;
-}
-
-tr:nth-child(even) td {
-  background-color: #ffffff;
-}
-
-tr:hover td {
-  background-color: #f1f1f1;
-}
-
-.table-bordered {
-  border: 1px solid #ccc;
-}
 
 @keyframes pulse {
   0% {
@@ -367,47 +313,13 @@ tr:hover td {
 .pulse {
   animation: pulse 1.65s infinite;
   font-size: 1.5rem;
-  color: var(--imperial-red);
   font-weight: bold;
   margin-bottom: 15px;
   display: inline-block;
   text-decoration: none;
-}
-
-/* Reszponzív táblázat stílusok - fejlécek megőrzése mobil nézetben */
-@media (max-width: 768px) {
-  .table thead {
-    display: table-header-group;
-  }
-
-  .table,
-  .table tbody,
-  .table tr,
-  .table td,
-  .table th {
-    display: table-row-group;
-    width: 100%;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-  }
-
-  .table tr {
-    margin-bottom: 15px;
-  }
-
-  .table td {
-    position: relative;
-    padding-left: 12px;
-    text-align: left;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-
-  .table th {
-    text-align: left;
-  }
-
-  .table td:before {
-    content: none;
-  }
+  user-select: none;
+  text-align: center;
+  color: var(--imperial-red);
+  align-items: center;
+  justify-content: center;
 }
