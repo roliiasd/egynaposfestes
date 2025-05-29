@@ -33,6 +33,7 @@ async function getEmelokosarasImages() {
 function createImageCard(img){
     const tabContentDiv = document.createElement('div');
     tabContentDiv.classList.add('tab-content', 'active');
+    tabContentDiv.id = img.name;
 
     const gridContainer = document.createElement('div');
     gridContainer.classList.add('grid-container');
@@ -44,10 +45,17 @@ function createImageCard(img){
     imgElement.src = img.image;
     imgElement.alt = img.title;
     imgElement.classList.add('img-fluid', 'imageModalTrigger');
+    imgElement.alt = img.image.Split('.')[0];
+
+    gridItem.append(imgElement);
+    gridContainer.append(gridItem);
+    tabContentDiv.append(gridContainer);
+    return tabContentDiv;
+
 }
-function displayImages(images, targetElementId) {
+// function displayImages(images, targetElementId) {
     
-}
+// }
 
 document.addEventListener('DOMContentLoaded', function() {
     const tabBtns = document.querySelectorAll('.tab-btn');

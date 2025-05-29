@@ -16,14 +16,14 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-window.addEventListener('DOMContentLoaded', () =>{
+window.addEventListener('DOMContentLoaded', () => {
     getAlapMunkak();
     getFestesArak();
     getMazolasArak();
     getTapetazasArak();
     getEgyebMunkak();
     getGipszkartonozas();
-    
+
 });
 
 async function getAlapMunkak() {
@@ -40,11 +40,11 @@ function displayAlapmunkak(munkak) {
     const tbody = document.getElementById('tbody-alap');
 
     munkak.forEach(munka => {
-        const sor  = document.createElement('tr');
+        const sor = document.createElement('tr');
         sor.innerHTML = `
             <td>
             ${munka.nev}
-            <div class="tdDiv">${munka.leiras} </div> 
+            <div class="tdDiv"><tt>${munka.leiras}</tt></div> 
             </td>
             <td>${munka.anyagdij}</td>
             <td>${munka.munkadij}</td>
@@ -68,11 +68,11 @@ function displayFestes(jobs) {
     const tbody = document.getElementById('tbody-fest');
 
     jobs.forEach(job => {
-        const row  = document.createElement('tr');
+        const row = document.createElement('tr');
         row.innerHTML = `
             <td>
             ${job.nev}
-            <div class="tdDiv">${job.leiras} </div> 
+            <div class="tdDiv"><tt>${job.leiras}</tt></div> 
             </td>
             <td>${job.anyagdij}</td>
             <td>${job.munkadij}</td>
@@ -95,11 +95,11 @@ function displayMazolas(jobs) {
     const tbody = document.getElementById('tbody-mazol');
 
     jobs.forEach(job => {
-        const row  = document.createElement('tr');
+        const row = document.createElement('tr');
         row.innerHTML = `
             <td>
             ${job.nev}
-            <div class="tdDiv">${job.leiras} </div> 
+            <div class="tdDiv"><tt>${job.leiras}</tt></div> 
             </td>
             <td>${job.anyagdij}</td>
             <td>${job.munkadij}</td>
@@ -122,11 +122,11 @@ function displayTapetazas(jobs) {
     const tbody = document.getElementById('tbody-tapeta');
 
     jobs.forEach(job => {
-        const row  = document.createElement('tr');
+        const row = document.createElement('tr');
         row.innerHTML = `
             <td>
             ${job.nev}
-            <div class="tdDiv">${job.leiras} </div> 
+            <div class="tdDiv"><tt>${job.leiras}</tt></div> 
             </td>
             <td>${job.anyagdij}</td>
             <td>${job.munkadij}</td>
@@ -135,9 +135,9 @@ function displayTapetazas(jobs) {
     })
 }
 
-async function getEgyebMunkak(){
+async function getEgyebMunkak() {
     try {
-        const response  = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/refs/heads/egyeb-munkak/egyeb-munkak.json');
+        const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/refs/heads/egyeb-munkak/egyeb-munkak.json');
         const jobs = await response.json();
         displayEgyebMunkak(jobs);
     } catch (error) {
@@ -149,11 +149,11 @@ function displayEgyebMunkak(jobs) {
     const tbody = document.getElementById('tbody-egyeb');
 
     jobs.forEach(job => {
-        const row  = document.createElement('tr');
+        const row = document.createElement('tr');
         row.innerHTML = `
             <td>
             ${job.nev}
-            <div class="tdDiv">${job.leiras} </div> 
+            <div class="tdDiv"><tt>${job.leiras}</tt></div> 
             </td>
             <td>${job.anyagdij}</td>
             <td>${job.munkadij}</td>
@@ -167,14 +167,14 @@ function displayEgyebMunkak(jobs) {
 
 }
 
-async function getGipszkartonozas(){
+async function getGipszkartonozas() {
     try {
         const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/gipszkartonozas/gipszkartonozas.json');
         const jobs = await response.json();
         displayGipszkartonozas(jobs);
     } catch (error) {
         console.log(error);
-        
+
     }
 
 }
@@ -183,11 +183,11 @@ function displayGipszkartonozas(jobs) {
     const tbody = document.getElementById('tbody-gipsz');
 
     jobs.forEach(job => {
-        const row  = document.createElement('tr');
+        const row = document.createElement('tr');
         row.innerHTML = `
             <td>
             ${job.nev}
-            <div class="tdDiv">${job.leiras} </div> 
+            <div class="tdDiv"><tt>${job.leiras}</tt></div> 
             </td>
             <td>${job.anyagdij}</td>
             <td>${job.munkadij}</td>

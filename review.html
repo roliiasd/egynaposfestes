@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reviews</title>
+    <title>Értékelések</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="review.min.css">
     <link rel="shortcut icon" href="https://roliiasd.github.io/egynaposfestes/kepek/logo.svg" type="image/x-icon">
@@ -13,38 +13,37 @@
         Vissza a főoldalra.
      </a>
     <button id="addReviewBtn" class="add-review-btn">
-        <i class="fas fa-plus"></i> Add Review
+        <i class="fas fa-plus"></i> Értékelj minket!
     </button>
 
     <div id="reviewFormPopup" class="popup-overlay">
         <div class="popup-content">
             <section class="review-form">
-                <h2>Write a Review</h2>
                 <form id="reviewForm">
                     <div class="form-group">
-                        <input type="text" id="name" placeholder="Your Name" required>
+                        <input type="text" id="name" placeholder="Név" required>
                     </div>
                     <div class="form-group">
                         <div class="star-rating">
-                            <i class="far fa-star" data-rating="1"></i>
-                            <i class="far fa-star" data-rating="2"></i>
-                            <i class="far fa-star" data-rating="3"></i>
-                            <i class="far fa-star" data-rating="4"></i>
-                            <i class="far fa-star" data-rating="5"></i>
+                            <i class="fas fa-star" data-value="1"></i>
+                            <i class="fas fa-star" data-value="2"></i> 
+                            <i class="fas fa-star" data-value="3"></i>
+                            <i class="fas fa-star" data-value="4"></i>
+                            <i class="fas fa-star" data-value="5"></i>   
                         </div>
                         <input type="hidden" id="rating" required value="0">
                     </div>
                     <div class="form-group">
-                        <textarea id="review" placeholder="Your Review" required></textarea>
+                        <textarea id="review" placeholder="Értkelésed..." required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="reviewImage" class="image-upload-label">
-                            <i class="fas fa-camera"></i> Add Photo
+                            <i class="fas fa-camera"></i> Fotó feltöltése
                             <input type="file" id="reviewImage" accept="image/*" class="image-input">
                         </label>
                         <div id="imagePreview" class="image-preview"></div>
                     </div>
-                    <button type="submit">Submit</button>
+                    <button type="submit">Értékelés</button>
                 </form>
             </section>
         </div>
