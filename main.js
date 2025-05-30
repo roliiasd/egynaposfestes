@@ -14,15 +14,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-//asdasd
-// Modal megjelenítése
-document.getElementById('privacy-button').onclick = function () {
-    document.getElementById('privacy-modal').style.display = 'block';
-};
-
-// Modal bezárása
-document.getElementById('privacy-close').onclick = function () {
-    document.getElementById('privacy-modal').style.display = 'none';
-};
-
-

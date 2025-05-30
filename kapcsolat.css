@@ -1,9 +1,29 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  /* CSS HEX */
+  --platinum: #d7dedcff;
+  --timberwolf: #cfcfcdff;
+  --eggplant: #563440ff;
+  --dark-purple: #241623ff;
+  --sage: #d0cd94ff;
+  --myrtle-green: #3c787eff;
+  --rich-black: #001524;
+  --wenge: #564e58;
+  --onyx: #2e3532;
+  --sunset: #f6d8ae;
+  --imperial-red: #f71735;
+  --tiffany-blue: #98e2c6ff;
+  --cool-gray: #9a98b5ff;
+  --tropical-indigo: #a594f9ff;
+  --xanthous: #f7b32bff;
 }
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
 /* Navbar stílus */
 .navbar {
   background: linear-gradient(160deg, #1e1e2f, #3f3f64);
@@ -58,20 +78,15 @@
 }
 
 .nav-link a.active {
-  border-bottom: 2px solid #ffffff
+  border-bottom: 2px solid #ffffff;
 }
-.card-body{
-  background: linear-gradient(
-    135deg,
-#5f5f5f 50%,
-#464646 50%
-  ) ;
+.card-body {
+  background: linear-gradient(135deg, #5f5f5f 50%, #464646 50%);
   color: white;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgb(255, 255, 255, 0.4);
 }
-
 
 section {
   background: linear-gradient(
@@ -86,43 +101,45 @@ section {
   );
   background-size: 40px 40px;
 }
+
 footer {
   margin-top: 70px;
-    color: white;
-    padding: 20px 0;
-    user-select: none;
+  color: white;
+  padding: 20px 0;
+  user-select: none;
 }
 
 footer a {
-    color: #929292;
-    font-weight: bold;
-    text-decoration: none;
+  color: #929292;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 footer a:hover {
-    color: #d3d3d3;
+  color: #d3d3d3;
 }
-/* asdasd */
-#specialis-szoveg {
-    color: #9c9a22;
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
-
-#specialis-szoveg:hover {
-    color: #ff00d4;
+.social-icons a {
+  color: var(--xanthous);
+  font-size: 24px;
+  transition: color 0.3s ease;
 }
-
 /* Szekció háttér */
 section {
-    background-color: #323335;
-    font-weight: bold;
-    padding: 3rem 0;
+  background-color: #323335;
+  font-weight: bold;
+  padding: 3rem 0;
 }
 
-a{
-    color: #459a55;
-    text-decoration: none;
+a {
+  color: #459a55;
+  text-decoration: none;
 }
 
-a:hover{
-    color: #459a55;
+a:hover {
+  color: #459a55;
 }

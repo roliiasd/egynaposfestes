@@ -1,16 +1,16 @@
 :root {
   /* CSS HEX */
- --platinum: #d7dedcff;
+  --platinum: #d7dedcff;
   --timberwolf: #cfcfcdff;
   --eggplant: #563440ff;
   --dark-purple: #241623ff;
   --sage: #d0cd94ff;
   --myrtle-green: #3c787eff;
   --rich-black: #001524;
-  --wenge: #564E58;
-  --onyx: #2E3532;
-  --sunset: #F6D8AE;
-  --imperial-red: #F71735;
+  --wenge: #564e58;
+  --onyx: #2e3532;
+  --sunset: #f6d8ae;
+  --imperial-red: #f71735;
   --tiffany-blue: #98e2c6ff;
   --cool-gray: #9a98b5ff;
   --tropical-indigo: #a594f9ff;
@@ -18,7 +18,7 @@
 }
 
 body {
-  font-family: "Ubuntu Mono", monospace;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -26,7 +26,6 @@ body {
 .text-white {
   color: #929292;
 }
-
 
 /* Navbar stílus */
 .navbar {
@@ -82,7 +81,7 @@ body {
 }
 
 .nav-link a.active {
-  border-bottom: 2px solid #ffffff
+  border-bottom: 2px solid #ffffff;
 }
 /* Footer stílus */
 footer {
@@ -100,6 +99,16 @@ footer a {
 footer a:hover {
   color: #d3d3d3;
 }
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+.social-icons a {
+  color: var(--xanthous)!important;
+}
+
 /* Adatvédelmi gomb stílusa */
 #privacy-button {
   background-color: #333333;
@@ -193,6 +202,11 @@ h4,
 h3 {
   font-weight: bold;
 }
+div.infoContainer a {
+  color: var(--tropical-indigo);
+  text-decoration: none;
+  font-weight: bold;
+}
 
 /* Szekció háttér */
 section {
@@ -236,7 +250,8 @@ section.py-5.jobButtons {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='111' height='111' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23786a60' fill-opacity='0.71'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.71'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
   padding: 4rem;
 }
-.card, footer{
+.card,
+footer {
   user-select: none;
 }
 /* Kártya stílusok */
@@ -299,7 +314,6 @@ section.py-5.jobButtons {
   }
 }
 
-
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -313,7 +327,7 @@ section.py-5.jobButtons {
 }
 
 .pulse {
-  animation: pulse 1.65s infinite, colorRotate 5s linear 0s infinite;
+  animation: pulse 1.65s infinite;
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 15px;
@@ -323,24 +337,5 @@ section.py-5.jobButtons {
   text-align: center;
   align-items: center;
   justify-content: center;
-}
-@keyframes colorRotate {
-  from {
-    color: #E8D7FF;
-  }
-  25% {
-    color: #8ee3f5;
-  }
-  35% {
-    color: #70CAD1;
-  }
-  50% {
-    color: #faf33e;
-  }
-  75%{
-    color: #E2A0FF;
-  }
-  100% {
-    color: #e86252;
-  }
+  color: var(--xanthous);
 }
