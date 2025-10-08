@@ -1,3 +1,22 @@
+:root {
+  /* CSS HEX */
+  --platinum: #d7dedcff;
+  --timberwolf: #cfcfcdff;
+  --eggplant: #563440ff;
+  --dark-purple: #241623ff;
+  --sage: #d0cd94ff;
+  --myrtle-green: #3c787eff;
+  --rich-black: #001524;
+  --wenge: #564e58;
+  --onyx: #2e3532;
+  --sunset: #f6d8ae;
+  --imperial-red: #f71735;
+  --tiffany-blue: #98e2c6ff;
+  --cool-gray: #9a98b5ff;
+  --tropical-indigo: #a594f9ff;
+  --xanthous: #f7b32bff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,15 +24,10 @@
 }
 /*  */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  background-color: black;
+  font-family: "Futura light", "Futura", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  background: var(--xanthous);
   color: white;
-  align-items: center;
-  justify-content: center;
-  height: 45vh;
 }
 
 a#vissza {
