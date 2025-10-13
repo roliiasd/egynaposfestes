@@ -1,50 +1,139 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GYIK (FAQ)</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Finesse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        [x-cloak] { display: none !important; }
+        .transition-max-height {
+            transition: max-height 0.3s ease-out;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
-
-  <div class="max-w-3xl mx-auto p-6">
-    <h1 class="text-3xl font-bold mb-6 text-center">Gyakran Ismételt Kérdések</h1>
-
-    <div class="space-y-4">
-      <!-- FAQ elem -->
-      <div class="bg-white rounded-2xl shadow p-4">
-        <button class="w-full flex justify-between items-center font-semibold text-lg toggle-btn">
-          Hogyan tudok regisztrálni?
-          <span class="text-gray-500">+</span>
-        </button>
-        <div class="mt-2 hidden answer text-gray-700">
-          A regisztrációhoz kattints a „Regisztráció” gombra, töltsd ki az űrlapot, majd erősítsd meg az e-mail címed.
+<body class="bg-gray-50 min-h-screen font-sans antialiased">
+    <div class="container mx-auto px-4 py-12 max-w-4xl" x-data="faqApp()">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">FAQ Finesse</h1>
+            <p class="text-gray-600">Find answers to common questions</p>
         </div>
-      </div>
 
-      <div class="bg-white rounded-2xl shadow p-4">
-        <button class="w-full flex justify-between items-center font-semibold text-lg toggle-btn">
-          Hogyan tudom módosítani az adataimat?
-          <span class="text-gray-500">+</span>
-        </button>
-        <div class="mt-2 hidden answer text-gray-700">
-          A bejelentkezés után a profilodnál megtalálod az adatmódosítási lehetőségeket.
+        <!-- Search -->
+        <div class="mb-8">
+            <div class="relative">
+                <input 
+                    x-model="searchQuery" 
+                    @input="filterFAQs()"
+                    type="text" 
+                    placeholder="Search FAQs..." 
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent shadow-sm"
+                >
+                <i data-feather="search" class="absolute right-3 top-3 text-gray-400"></i>
+            </div>
         </div>
-      </div>
 
-      <div class="bg-white rounded-2xl shadow p-4">
-        <button class="w-full flex justify-between items-center font-semibold text-lg toggle-btn">
-          Milyen fizetési lehetőségek vannak?
-          <span class="text-gray-500">+</span>
-        </button>
-        <div class="mt-2 hidden answer text-gray-700">
-          Bankkártyás fizetés, PayPal és átutalás áll rendelkezésedre.
+        <!-- FAQ Accordion -->
+        <div class="space-y-4">
+            <template x-for="(faq, index) in filteredFAQs" :key="index">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <button 
+                        @click="toggleFAQ(index)"
+                        class="w-full flex justify-between items-center px-6 py-4 text-left focus:outline-none"
+                    >
+                        <span class="font-medium text-gray-800" x-text="faq.question"></span>
+                        <i 
+                            data-feather="chevron-down" 
+                            class="transition-transform duration-200" 
+                            :class="{ 'transform rotate-180': faq.open }"
+                        ></i>
+                    </button>
+                    <div 
+                        x-show="faq.open" 
+                        x-cloak
+                        x-collapse
+                        class="px-6 pb-4 pt-0 transition-max-height overflow-hidden"
+                    >
+                        <p class="text-gray-600" x-text="faq.answer"></p>
+                    </div>
+                </div>
+            </template>
         </div>
-      </div>
+
+        <!-- Empty State -->
+        <div 
+            x-show="filteredFAQs.length === 0" 
+            x-cloak
+            class="text-center py-12"
+        >
+            <i data-feather="alert-circle" class="mx-auto text-gray-400 w-12 h-12 mb-4"></i>
+            <h3 class="text-xl font-medium text-gray-700 mb-2">No results found</h3>
+            <p class="text-gray-500">Try adjusting your search query</p>
+        </div>
     </div>
-  </div>
-<script src="faq.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        function faqApp() {
+            return {
+                searchQuery: '',
+                faqs: [
+                    {
+                        question: "How do I create an account?",
+                        answer: "Simply click on the 'Sign Up' button at the top right corner and fill in your details. You'll receive a confirmation email to verify your account."
+                    },
+                    {
+                        question: "What payment methods do you accept?",
+                        answer: "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for certain business accounts."
+                    },
+                    {
+                        question: "How can I reset my password?",
+                        answer: "Click on 'Forgot Password' on the login page, enter your email address, and we'll send you a link to reset your password."
+                    },
+                    {
+                        question: "Is there a mobile app available?",
+                        answer: "Yes! Our mobile app is available for both iOS and Android devices. You can download it from the App Store or Google Play Store."
+                    },
+                    {
+                        question: "How do I contact customer support?",
+                        answer: "You can reach our support team 24/7 through the live chat feature on our website or by emailing support@example.com."
+                    },
+                    {
+                        question: "What is your refund policy?",
+                        answer: "We offer a 30-day money-back guarantee for all our subscription plans. Just contact our support team within 30 days of purchase."
+                    }
+                ],
+                filteredFAQs: [],
+                init() {
+                    this.filteredFAQs = this.faqs.map(faq => ({ ...faq, open: false }));
+                    feather.replace();
+                },
+                toggleFAQ(index) {
+                    this.filteredFAQs[index].open = !this.filteredFAQs[index].open;
+                    feather.replace();
+                },
+                filterFAQs() {
+                    if (!this.searchQuery) {
+                        this.filteredFAQs = this.faqs.map(faq => ({ ...faq, open: false }));
+                        return;
+                    }
+                    
+                    const query = this.searchQuery.toLowerCase();
+                    this.filteredFAQs = this.faqs
+                        .filter(faq => 
+                            faq.question.toLowerCase().includes(query) || 
+                            faq.answer.toLowerCase().includes(query)
+                        )
+                        .map(faq => ({ ...faq, open: false }));
+                }
+            }
+        }
+    </script>
+    <script>
+        feather.replace();
+    </script>
 </body>
 </html>
