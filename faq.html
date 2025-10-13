@@ -1,139 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ Finesse</title>
+    <title>DarkFAQ - Minimal Knowledge Base</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     <style>
-        [x-cloak] { display: none !important; }
-        .transition-max-height {
-            transition: max-height 0.3s ease-out;
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            transform: translateX(5px);
+        }
+        .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .answer.active {
+            max-height: 500px;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2d3748;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4a5568;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #718096;
         }
     </style>
 </head>
-<body class="bg-gray-50 min-h-screen font-sans antialiased">
-    <div class="container mx-auto px-4 py-12 max-w-4xl" x-data="faqApp()">
-        <!-- Header -->
-        <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-gray-800 mb-2">FAQ Finesse</h1>
-            <p class="text-gray-600">Find answers to common questions</p>
-        </div>
-
-        <!-- Search -->
-        <div class="mb-8">
-            <div class="relative">
-                <input 
-                    x-model="searchQuery" 
-                    @input="filterFAQs()"
-                    type="text" 
-                    placeholder="Search FAQs..." 
-                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent shadow-sm"
-                >
-                <i data-feather="search" class="absolute right-3 top-3 text-gray-400"></i>
+<body class="bg-gray-900 text-gray-300 min-h-screen">
+    <div id="vanta-bg" class="fixed inset-0 -z-10 opacity-20"></div>
+    
+    <header class="container mx-auto px-4 py-12">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Dark<span class="text-blue-400">FAQ</span></h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">Your minimalist knowledge base with a sleek dark interface</p>
+            <div class="mt-8 relative max-w-md mx-auto">
+                <input type="text" placeholder="Search FAQs..." class="w-full bg-gray-800 rounded-lg py-3 px-5 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <i data-feather="search" class="absolute right-4 top-3 text-gray-500"></i>
             </div>
         </div>
+    </header>
 
-        <!-- FAQ Accordion -->
-        <div class="space-y-4">
-            <template x-for="(faq, index) in filteredFAQs" :key="index">
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <button 
-                        @click="toggleFAQ(index)"
-                        class="w-full flex justify-between items-center px-6 py-4 text-left focus:outline-none"
-                    >
-                        <span class="font-medium text-gray-800" x-text="faq.question"></span>
-                        <i 
-                            data-feather="chevron-down" 
-                            class="transition-transform duration-200" 
-                            :class="{ 'transform rotate-180': faq.open }"
-                        ></i>
-                    </button>
-                    <div 
-                        x-show="faq.open" 
-                        x-cloak
-                        x-collapse
-                        class="px-6 pb-4 pt-0 transition-max-height overflow-hidden"
-                    >
-                        <p class="text-gray-600" x-text="faq.answer"></p>
-                    </div>
+    <main class="container mx-auto px-4 pb-20 max-w-4xl">
+        <div class="bg-gray-800 rounded-xl shadow-2xl overflow-hidden">
+            <div class="border-b border-gray-700">
+                <div class="flex items-center justify-between px-6 py-4 bg-gray-700">
+                    <h2 class="text-xl font-semibold text-white">Frequently Asked Questions</h2>
+                    <span class="bg-blue-500 text-white text-sm px-3 py-1 rounded-full" id="faq-count">0 questions</span>
                 </div>
-            </template>
-        </div>
+            </div>
 
-        <!-- Empty State -->
-        <div 
-            x-show="filteredFAQs.length === 0" 
-            x-cloak
-            class="text-center py-12"
-        >
-            <i data-feather="alert-circle" class="mx-auto text-gray-400 w-12 h-12 mb-4"></i>
-            <h3 class="text-xl font-medium text-gray-700 mb-2">No results found</h3>
-            <p class="text-gray-500">Try adjusting your search query</p>
+            <div class="divide-y divide-gray-700" id="faq-container">
+                <!-- FAQ items will be loaded here -->
+                <div class="text-center py-10">
+                    <i data-feather="loader" class="animate-spin w-10 h-10 mx-auto text-gray-500"></i>
+                    <p class="mt-3 text-gray-400">Loading questions...</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <footer class="text-center py-8 text-gray-500 text-sm">
+        <p>© 2023 DarkFAQ. All rights reserved.</p>
+    </footer>
+
     <script>
-        function faqApp() {
-            return {
-                searchQuery: '',
-                faqs: [
-                    {
-                        question: "How do I create an account?",
-                        answer: "Simply click on the 'Sign Up' button at the top right corner and fill in your details. You'll receive a confirmation email to verify your account."
-                    },
-                    {
-                        question: "What payment methods do you accept?",
-                        answer: "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for certain business accounts."
-                    },
-                    {
-                        question: "How can I reset my password?",
-                        answer: "Click on 'Forgot Password' on the login page, enter your email address, and we'll send you a link to reset your password."
-                    },
-                    {
-                        question: "Is there a mobile app available?",
-                        answer: "Yes! Our mobile app is available for both iOS and Android devices. You can download it from the App Store or Google Play Store."
-                    },
-                    {
-                        question: "How do I contact customer support?",
-                        answer: "You can reach our support team 24/7 through the live chat feature on our website or by emailing support@example.com."
-                    },
-                    {
-                        question: "What is your refund policy?",
-                        answer: "We offer a 30-day money-back guarantee for all our subscription plans. Just contact our support team within 30 days of purchase."
-                    }
-                ],
-                filteredFAQs: [],
-                init() {
-                    this.filteredFAQs = this.faqs.map(faq => ({ ...faq, open: false }));
-                    feather.replace();
-                },
-                toggleFAQ(index) {
-                    this.filteredFAQs[index].open = !this.filteredFAQs[index].open;
-                    feather.replace();
-                },
-                filterFAQs() {
-                    if (!this.searchQuery) {
-                        this.filteredFAQs = this.faqs.map(faq => ({ ...faq, open: false }));
-                        return;
-                    }
-                    
-                    const query = this.searchQuery.toLowerCase();
-                    this.filteredFAQs = this.faqs
-                        .filter(faq => 
-                            faq.question.toLowerCase().includes(query) || 
-                            faq.answer.toLowerCase().includes(query)
-                        )
-                        .map(faq => ({ ...faq, open: false }));
-                }
+        // FAQ data (would normally be loaded from external file)
+        const faqs = [
+            {
+                question: "How do I reset my password?",
+                answer: "You can reset your password by going to the login page and clicking on 'Forgot Password'. Follow the instructions sent to your email.",
+                category: "Account"
+            },
+            {
+                question: "What payment methods do you accept?",
+                answer: "We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers.",
+                category: "Billing"
+            },
+            {
+                question: "Is there a mobile app available?",
+                answer: "Yes! Our mobile app is available for both iOS and Android. You can download it from the App Store or Google Play Store.",
+                category: "Mobile"
+            },
+            {
+                question: "How can I contact customer support?",
+                answer: "Our customer support team is available 24/7 via live chat on our website. You can also email us at support@example.com.",
+                category: "Support"
+            },
+            {
+                question: "What is your refund policy?",
+                answer: "We offer a 30-day money-back guarantee on all our plans. If you're not satisfied, simply contact our support team.",
+                category: "Billing"
+            },
+            {
+                question: "Do you offer discounts for non-profits?",
+                answer: "Yes, we offer special pricing for registered non-profit organizations. Please contact our sales team with your documentation.",
+                category: "Pricing"
+            }
+        ];
+
+        // Initialize Vanta.js background
+        VANTA.NET({
+            el: "#vanta-bg",
+            color: 0x4c7cf3,
+            backgroundColor: 0x111827,
+            points: 12,
+            maxDistance: 20,
+            spacing: 15
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            feather.replace();
+            loadFAQs();
+        });
+
+        function loadFAQs() {
+            const container = document.getElementById('faq-container');
+            const countElement = document.getElementById('faq-count');
+            
+            // Update count
+            countElement.textContent = `${faqs.length} ${faqs.length === 1 ? 'question' : 'questions'}`;
+            
+            // Clear loading state
+            container.innerHTML = '';
+            
+            // Add each FAQ item
+            faqs.forEach((faq, index) => {
+                const faqItem = document.createElement('div');
+                faqItem.className = 'faq-item px-6 py-4 cursor-pointer';
+                faqItem.innerHTML = `
+                    <div class="flex items-start justify-between" onclick="toggleAnswer(${index})">
+                        <div>
+                            <h3 class="text-lg font-medium text-white flex items-start">
+                                <span class="text-blue-400 mr-3">Q.</span>
+                                ${faq.question}
+                            </h3>
+                            <div class="answer mt-2 text-gray-400 pl-8">
+                                <p><span class="text-green-400 mr-2">A.</span>${faq.answer}</p>
+                            </div>
+                        </div>
+                        <i data-feather="chevron-down" class="text-gray-500 transition-transform" id="chevron-${index}"></i>
+                    </div>
+                `;
+                container.appendChild(faqItem);
+            });
+            
+            feather.replace();
+        }
+
+        function toggleAnswer(index) {
+            const answer = document.querySelectorAll('.answer')[index];
+            const chevron = document.getElementById(`chevron-${index}`);
+            
+            answer.classList.toggle('active');
+            
+            if (answer.classList.contains('active')) {
+                chevron.style.transform = 'rotate(180deg)';
+            } else {
+                chevron.style.transform = 'rotate(0deg)';
             }
         }
-    </script>
-    <script>
-        feather.replace();
     </script>
 </body>
 </html>
