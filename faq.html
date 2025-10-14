@@ -1,50 +1,29 @@
 <!DOCTYPE html>
 <html lang="hu">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GYIK (FAQ)</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 text-gray-900">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GYIK - FAQ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="faq.min.css" />
+  </head>
+  <body
+    class="bg-black text-gray-100 font-sans min-h-screen flex items-center justify-center p-6"
+  >
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <div class="content">
+      <div class="max-w-2xl w-full">
+        <h1 class="text-4xl font-bold text-center text-white-500 mb-8" style="font-family: 'Google Sans Code', monospace;">
+          Gyakran Ismételt Kérdések
+        </h1>
 
-  <div class="max-w-3xl mx-auto p-6">
-    <h1 class="text-3xl font-bold mb-6 text-center">Gyakran Ismételt Kérdések</h1>
-
-    <div class="space-y-4">
-      <!-- FAQ elem -->
-      <div class="bg-white rounded-2xl shadow p-4">
-        <button class="w-full flex justify-between items-center font-semibold text-lg toggle-btn">
-          Hogyan tudok regisztrálni?
-          <span class="text-gray-500">+</span>
-        </button>
-        <div class="mt-2 hidden answer text-gray-700">
-          A regisztrációhoz kattints a „Regisztráció” gombra, töltsd ki az űrlapot, majd erősítsd meg az e-mail címed.
-        </div>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow p-4">
-        <button class="w-full flex justify-between items-center font-semibold text-lg toggle-btn">
-          Hogyan tudom módosítani az adataimat?
-          <span class="text-gray-500">+</span>
-        </button>
-        <div class="mt-2 hidden answer text-gray-700">
-          A bejelentkezés után a profilodnál megtalálod az adatmódosítási lehetőségeket.
-        </div>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow p-4">
-        <button class="w-full flex justify-between items-center font-semibold text-lg toggle-btn">
-          Milyen fizetési lehetőségek vannak?
-          <span class="text-gray-500">+</span>
-        </button>
-        <div class="mt-2 hidden answer text-gray-700">
-          Bankkártyás fizetés, PayPal és átutalás áll rendelkezésedre.
+        <div id="faq-container" class="space-y-4">
+          <!-- A kérdések ide kerülnek betöltés után -->
         </div>
       </div>
     </div>
-  </div>
-<script src="faq.js"></script>
-
-</body>
+    <script src="faq.js"></script>
+  </body>
 </html>

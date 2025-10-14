@@ -1,41 +1,53 @@
-    document.querySelectorAll(".toggle-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const answer = btn.nextElementSibling;
-        const icon = btn.querySelector("span");
+async function loadFAQs() {
+        try {
+          const response = await fetch("https://raw.githubusercontent.com/roliiasd/json-files/refs/heads/faq/egynaposfestes_faq.json");
+          const faqs = await response.json();
 
-        answer.classList.toggle("hidden");
-        icon.textContent = answer.classList.contains("hidden") ? "+" : "−";
-      });
-    });
- 
- // JSON betöltése
-    fetch('faq.json')
-      .then(response => response.json())
-      .then(datagit => {
-        const container = document.getElementById('faq-container');
-        
-        data.forEach(item => {
-          // FAQ elem létrehozása
-          const faqItem = document.createElement('div');
-          faqItem.className = "bg-white rounded-2xl shadow p-4";
+          const container = document.getElementById("faq-container");
+          container.innerHTML = "";
 
-          const button = document.createElement('button');
-          button.className = "w-full flex justify-between items-center font-semibold text-lg toggle-btn";
-          button.innerHTML = `${item.question} <span class="text-gray-500">+</span>`;
+          faqs.forEach((item, index) => {
+            const faqItem = document.createElement("div");
+            faqItem.className =
+              "border border-orange-500 rounded-xl overflow-hidden bg-zinc-900 shadow-lg";
 
-          const answer = document.createElement('div');
-          answer.className = "mt-2 hidden answer text-gray-700";
-          answer.textContent = item.answer;
-
-          button.addEventListener('click', () => {
-            answer.classList.toggle('hidden');
-            const icon = button.querySelector('span');
-            icon.textContent = answer.classList.contains('hidden') ? '+' : '−';
+            faqItem.innerHTML = `
+            <button 
+              class="w-full text-left px-5 py-4 flex justify-between items-center hover:bg-orange-500/10 transition-colors"
+              onclick="toggleAnswer(${index})"
+            >
+              <span class="font-semibold text-lg">${item.question}</span>
+              <span id="icon-${index}" class="text-orange-500 text-2xl leading-none">+</span>
+            </button>
+            <div id="answer-${index}" class="hidden px-5 pb-5 text-gray-300">
+              ${item.answer}
+            </div>
+          `;
+            container.appendChild(faqItem);
           });
+        } catch (error) {
+          console.error("Hiba a FAQ betöltése közben:", error);
+        }
+      }
 
-          faqItem.appendChild(button);
-          faqItem.appendChild(answer);
-          container.appendChild(faqItem);
-        });
-      })
-      .catch(error => console.error('Hiba a JSON betöltésekor:', error));
+      // Válasz megjelenítése/elrejtése
+      function toggleAnswer(index) {
+        const answer = document.getElementById(`answer-${index}`);
+        const icon = document.getElementById(`icon-${index}`);
+        const isHidden = answer.classList.contains("hidden");
+
+        document
+          .querySelectorAll('[id^="answer-"]')
+          .forEach((a) => a.classList.add("hidden"));
+        document
+          .querySelectorAll('[id^="icon-"]')
+          .forEach((i) => (i.textContent = "+"));
+
+        if (isHidden) {
+          answer.classList.remove("hidden");
+          icon.textContent = "−";
+        }
+      }
+
+      // Betöltés indítása
+      loadFAQs();
