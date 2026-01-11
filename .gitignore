@@ -1,3 +1,7 @@
 /index
 /json-files-kepek
 /kepek
+/.vs
+./vscode
+./node_modules
+/public

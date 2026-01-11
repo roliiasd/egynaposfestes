@@ -1,58 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Értékelések</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="review.min.css">
-    <link rel="shortcut icon" href="https://roliiasd.github.io/egynaposfestes/kepek/logo.svg" type="image/x-icon">
-</head>
-<body>
-    <a href="index.html" id="vissza">
-        Vissza a főoldalra.
-     </a>
-    <button id="addReviewBtn" class="add-review-btn">
-        <i class="fas fa-plus"></i> Értékelj minket!
-    </button>
-
-    <div id="reviewFormPopup" class="popup-overlay">
-        <div class="popup-content">
-            <section class="review-form">
-                <form id="reviewForm">
-                    <div class="form-group">
-                        <input type="text" id="name" placeholder="Név" required>
-                    </div>
-                    <div class="form-group">
-                        <div class="star-rating">
-                            <i class="fas fa-star" data-value="1"></i>
-                            <i class="fas fa-star" data-value="2"></i> 
-                            <i class="fas fa-star" data-value="3"></i>
-                            <i class="fas fa-star" data-value="4"></i>
-                            <i class="fas fa-star" data-value="5"></i>   
-                        </div>
-                        <input type="hidden" id="rating" required value="0">
-                    </div>
-                    <div class="form-group">
-                        <textarea id="review" placeholder="Értkelésed..." required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="reviewImage" class="image-upload-label">
-                            <i class="fas fa-camera"></i> Fotó feltöltése
-                            <input type="file" id="reviewImage" accept="image/*" class="image-input">
-                        </label>
-                        <div id="imagePreview" class="image-preview"></div>
-                    </div>
-                    <button type="submit">Értékelés</button>
-                </form>
-            </section>
-        </div>
-    </div>
-
-    <div class="container">
-        <section class="reviews-container" id="reviewsContainer">
-        </section>
-    </div>
-    <script src="review.js"></script>
-</body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="review.min.css" />
+    <link
+      rel="shortcut icon"
+      href="https://roliiasd.github.io/egynaposfestes/kepek/logo.svg"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <a href="index.html" id="vissza"> Vissza a főoldalra. </a>
+    <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div
+      class="elfsight-app-1992f741-08b1-49cc-b65f-7365f911d1a2"
+      data-elfsight-app-lazy
+    ></div>
+  </body>
 </html>

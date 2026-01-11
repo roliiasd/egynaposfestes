@@ -29,25 +29,25 @@ window.addEventListener('DOMContentLoaded', () => {
 async function getAlapMunkak() {
     try {
         const response = await fetch('https://raw.githubusercontent.com/roliiasd/json-files/alapmunkak/alapmunkak.json');
-        const munkak = await response.json();
-        displayAlapmunkak(munkak);
+        const jobs = await response.json();
+        displayAlapmunkak(jobs);
     } catch (error) {
         console.log(error);
     }
 }
 
-function displayAlapmunkak(munkak) {
+function displayAlapmunkak(jobs) {
     const tbody = document.getElementById('tbody-alap');
 
-    munkak.forEach(munka => {
+    jobs.forEach(job => {
         const sor = document.createElement('tr');
         sor.innerHTML = `
             <td>
-            ${munka.nev}
-            <div class="tdDiv"><tt>${munka.leiras}</tt></div> 
+            ${job.nev}
+            <div class="tdDiv"><tt>${job.leiras}</tt></div> 
             </td>
-            <td>${munka.anyagdij}</td>
-            <td>${munka.munkadij}</td>
+            <td>${job.anyagdij}</td>
+            <td>${job.munkadij}</td>
         `;
         tbody.append(sor);
     })

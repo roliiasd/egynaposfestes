@@ -1,0 +1,8 @@
+database:
+  host: localhost
+  user: root
+  password: ""
+  database: egynaposfestes_review
+  port: 3306
+server:
+  port: 3000
