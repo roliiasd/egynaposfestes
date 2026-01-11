@@ -1,6 +1,6 @@
 async function loadFAQs() {
         try {
-          const response = await fetch("https://raw.githubusercontent.com/roliiasd/json-files/refs/heads/faq/egynaposfestes_faq.json");
+          const response = await fetch("https://raw.githubusercontent.com/roliiasd/json-files/refs/heads/faq/faq.json");
           const faqs = await response.json();
 
           const container = document.getElementById("faq-container");
